@@ -3,692 +3,704 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Old to Gold — Property Investment & Rent-to-Rent in Ireland</title>
-  <meta name="description" content="Old to Gold acquires, refurbishes and manages residential property in Limerick, Ireland. Investment opportunities and Rent-to-Rent for property owners.">
+  <title>Old to Gold, Property Investment &amp; Rent-to-Rent in Limerick</title>
+  <meta name="description" content="Old to Gold acquires derelict houses in Limerick, refurbishes them completely and lets them as long-term rental assets. Investment opportunities and Rent-to-Rent for property owners.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
-    tailwind.config={theme:{extend:{colors:{b:{
-      bg:'#FDFBF7',card:'#FFFFFF',surface:'#F8F2EA',border:'#EDE4D8',
-      ink:'#1A1613',muted:'#7A7069',soft:'#A79C92',
-      pink:'#E8457C',rose:'#B62F62',gold:'#F0C040',amber:'#9A7B1F'
-    }}},fontFamily:{sans:['Inter','sans-serif'],script:['Dancing Script','cursive'],serif:['Playfair Display','serif']}}}
+    tailwind.config={theme:{extend:{colors:{
+      paper:'#FBF9F6', card:'#FFFFFF', sand:'#F4EDE3', line:'#E7DED2',
+      ink:'#17130F', mid:'#6E6459', soft:'#7E7367',
+      pink:'#E8457C', pinkb:'#CE3369', pinkd:'#B32C5E', gold:'#F0C040', goldd:'#8A6A12',
+      night:'#141110'
+    },fontFamily:{display:['"Bricolage Grotesque"','system-ui','sans-serif'],sans:['"Instrument Sans"','system-ui','sans-serif']}}}}
   </script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-    body{font-family:'Inter',sans-serif;background:#FDFBF7;color:#1A1613;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-    .text-grad{background:linear-gradient(120deg,#E8457C,#F0C040);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .card{background:#fff;border:1px solid #EDE4D8;transition:border-color .4s,transform .4s,box-shadow .4s}
-    .card:hover{border-color:rgba(232,69,124,.35);transform:translateY(-3px);box-shadow:0 18px 40px -28px rgba(26,22,19,.35)}
-    .fade-up{opacity:0;transform:translateY(35px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
-    .fade-up.v{opacity:1;transform:translateY(0)}
-    .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
-    .nav-a{position:relative;letter-spacing:.08em}
-    .nav-a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:linear-gradient(90deg,#E8457C,#F0C040);transition:width .3s}
-    .nav-a:hover::after{width:100%}
-    .line-g{height:1px;background:linear-gradient(90deg,transparent,rgba(232,69,124,.28),rgba(240,192,64,.28),transparent)}
-    .page{display:none}.page.on{display:block}
-    .hero-bg{position:absolute;inset:0;overflow:hidden}
-    .hero-bg .orb{position:absolute;border-radius:50%;filter:blur(110px);animation:orbFloat 14s ease-in-out infinite}
-    .hero-bg .orb:nth-child(1){width:620px;height:620px;background:rgba(240,192,64,.35);top:-18%;right:-8%}
-    .hero-bg .orb:nth-child(2){width:520px;height:520px;background:rgba(232,69,124,.22);bottom:-22%;left:-8%;animation-delay:-5s}
-    .hero-bg .orb:nth-child(3){width:340px;height:340px;background:rgba(232,69,124,.12);top:38%;left:42%;animation-delay:-9s}
-    @keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-40px) scale(1.08)}66%{transform:translate(-20px,30px) scale(.94)}}
-    .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,22,19,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(26,22,19,.025) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse at center,#000 20%,transparent 72%);-webkit-mask-image:radial-gradient(ellipse at center,#000 20%,transparent 72%)}
-    .hero-frame{position:relative;border-radius:1.5rem;overflow:hidden;border:1px solid #EDE4D8;box-shadow:0 40px 80px -50px rgba(26,22,19,.55)}
-    .hero-frame img{width:100%;height:100%;object-fit:cover;object-position:center 18%;display:block}
-    .hero-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(200deg,rgba(240,192,64,.14),transparent 55%,rgba(232,69,124,.10));pointer-events:none}
-    .hero-mark{position:absolute;left:-26px;bottom:34px;background:#fff;border:1px solid #EDE4D8;border-radius:1rem;padding:14px 18px;box-shadow:0 24px 50px -32px rgba(26,22,19,.55)}
-    .mob-menu{position:fixed;inset:0;z-index:100;background:rgba(253,251,247,.98);backdrop-filter:blur(24px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0;pointer-events:none;transition:opacity .3s}
-    .mob-menu.on{opacity:1;pointer-events:all}
-    .toast-box{position:fixed;bottom:20px;right:20px;z-index:200;background:#fff;border:1px solid #EDE4D8;border-radius:12px;padding:12px 20px;display:flex;align-items:center;gap:8px;box-shadow:0 16px 40px -22px rgba(26,22,19,.4);transform:translateY(100px);opacity:0;transition:all .4s cubic-bezier(.22,1,.36,1)}
-    .toast-box.on{transform:translateY(0);opacity:1}
-    @keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .mq{animation:mq 26s linear infinite}
-    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:#FDFBF7}::-webkit-scrollbar-thumb{background:#E4D8C8;border-radius:3px}::-webkit-scrollbar-thumb:hover{background:#E8457C}
-    .nina-portrait{position:relative;overflow:hidden;border-radius:1.25rem;border:1px solid #EDE4D8}
-    .nina-portrait img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.22,1,.36,1)}
-    .nina-portrait:hover img{transform:scale(1.03)}
-    .nina-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(26,22,19,.62) 0%,transparent 48%);pointer-events:none}
-    .nina-small{position:absolute;right:-14px;bottom:-38px;width:132px;height:132px;border-radius:1rem;overflow:hidden;border:4px solid #FDFBF7;box-shadow:0 18px 40px -24px rgba(26,22,19,.5)}
-    .nina-small img{width:100%;height:100%;object-fit:cover}
-    .strip-img{height:300px;object-fit:cover;object-position:center 28%;filter:grayscale(.1)}
-    .goals-portrait{border-radius:1.25rem;overflow:hidden;border:1px solid #EDE4D8}
-    .goals-portrait img{width:100%;height:100%;object-fit:cover}
-    .goals-portrait::after{content:'';position:absolute;inset:0;background:rgba(26,22,19,.42)}
-    .ba-card{background:#fff;border:1px solid #EDE4D8;border-radius:1rem;overflow:hidden}
-    .ba-shot{overflow:hidden}
-    .ba-shot img{width:100%;display:block;transition:transform .7s cubic-bezier(.22,1,.36,1)}
-    .ba-card:hover .ba-shot img{transform:scale(1.03)}
-    .ba-card{transition:border-color .4s,box-shadow .4s}
-    .ba-card:hover{border-color:rgba(232,69,124,.35);box-shadow:0 18px 40px -28px rgba(26,22,19,.35)}
-    .cta-glow{box-shadow:0 14px 36px -16px rgba(232,69,124,.6)}
-    .pack-band{background:linear-gradient(120deg,rgba(232,69,124,.10),rgba(240,192,64,.16))}
-    .num{font-variant-numeric:tabular-nums}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Instrument Sans',system-ui,sans-serif;background:#FBF9F6;color:#17130F;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    ::selection{background:#E8457C;color:#fff}
+
+    /* ── Radius system: media & panels 20px, controls full pill, chips full pill ── */
+    .r-media{border-radius:20px}
+    .r-panel{border-radius:20px}
+
+    h1,h2,h3,h4,.dp{font-family:'Bricolage Grotesque',system-ui,sans-serif;letter-spacing:-.03em;font-weight:700}
+    .num{font-family:'Bricolage Grotesque',system-ui,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:-.04em}
+
+    /* ── Navigation: transparent at rest, brand pink once the page scrolls ── */
+    #nav{transition:background-color .45s cubic-bezier(.22,1,.36,1),color .45s,border-color .45s;border-bottom:1px solid transparent}
+    #nav a,#nav button{transition:color .3s,background-color .3s,border-color .3s}
+    #nav.solid{background:#CE3369;border-bottom-color:rgba(255,255,255,.14)}
+    #nav.solid .n-link,#nav.solid .n-mark,#nav.solid .n-ghost{color:#fff}
+    #nav.solid .n-mark .n-dim{color:rgba(255,255,255,.6)}
+    #nav.solid .n-mark .n-hi{color:#fff;-webkit-text-fill-color:#fff}
+    #nav.solid .n-ghost{border-color:rgba(255,255,255,.45)}
+    #nav.solid .n-ghost:hover{background:rgba(255,255,255,.14)}
+    #nav.solid .n-cta{background:#fff;color:#B32C5E}
+    #nav.solid .n-cta:hover{background:#17130F;color:#fff}
+    .n-link{position:relative}
+    .n-link::after{content:'';position:absolute;left:0;bottom:-4px;height:1px;width:0;background:currentColor;transition:width .3s cubic-bezier(.22,1,.36,1)}
+    .n-link:hover::after{width:100%}
+
+    .wordmark .n-hi{background:linear-gradient(96deg,#E8457C,#F0C040);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+    /* ── Reveal ── */
+    .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+    .rv.on{opacity:1;transform:none}
+    .r1{transition-delay:.07s}.r2{transition-delay:.14s}.r3{transition-delay:.21s}.r4{transition-delay:.28s}
+
+    /* ── Hero field: soft brand light, never a scrim over the portrait ── */
+    .field{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+    .field i{position:absolute;display:block;border-radius:50%;filter:blur(120px)}
+    .field i:nth-child(1){width:640px;height:640px;background:rgba(240,192,64,.34);top:-24%;right:4%}
+    .field i:nth-child(2){width:520px;height:520px;background:rgba(232,69,124,.20);top:34%;left:-14%}
+
+    .press{transition:transform .18s ease}
+    .press:active{transform:scale(.975)}
+
+    /* ── Marquee ── */
+    @keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .mq{animation:mq 34s linear infinite;width:max-content}
+
+    /* ── Media ── */
+    .ph{overflow:hidden;background:#F4EDE3}
+    .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    .zoom img{transition:transform .9s cubic-bezier(.22,1,.36,1)}
+    .zoom:hover img{transform:scale(1.035)}
+
+    .rule{height:1px;background:#E7DED2}
+
+    /* ── Project rows ── */
+    .prow{border-top:1px solid #E7DED2}
+    .prow:last-of-type{border-bottom:1px solid #E7DED2}
+
+    .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,140%);opacity:0;pointer-events:none;z-index:200;background:#17130F;color:#fff;border-radius:999px;padding:12px 22px;font-size:13px;display:flex;align-items:center;gap:9px;transition:transform .5s cubic-bezier(.22,1,.36,1),opacity .4s}
+    .toast.on{transform:translate(-50%,0);opacity:1;pointer-events:auto}
+
+    .mob{position:fixed;inset:0;z-index:100;background:#CE3369;color:#fff;display:flex;flex-direction:column;justify-content:center;padding:0 28px;gap:6px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.22,1,.36,1)}
+    .mob.on{transform:none}
+
+    ::-webkit-scrollbar{width:6px}
+    ::-webkit-scrollbar-track{background:#FBF9F6}
+    ::-webkit-scrollbar-thumb{background:#E0D4C4;border-radius:3px}
+    ::-webkit-scrollbar-thumb:hover{background:#E8457C}
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      .rv{opacity:1;transform:none;transition:none}
+      .mq{animation:none}
+      .zoom img,.press,#nav{transition:none}
+    }
   </style>
 </head>
 <body>
 
-<nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background:transparent">
-  <div class="max-w-[1300px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-    <a href="javascript:void(0)" onclick="goHome()" class="flex items-center gap-0.5"><span class="font-serif text-[18px] tracking-tight">old</span><span class="text-b-soft text-[18px] font-extralight mx-0.5">to</span><span class="font-serif text-[18px] tracking-tight text-grad font-semibold">gold</span></a>
-    <div class="hidden lg:flex items-center gap-7">
-      <a href="javascript:void(0)" onclick="goHome()" class="nav-a text-[10px] uppercase text-b-muted hover:text-b-ink transition" data-t="n_home">Home</a>
-      <a href="javascript:void(0)" onclick="goHomeAbout()" class="nav-a text-[10px] uppercase text-b-muted hover:text-b-ink transition" data-t="n_about">About</a>
-      <a href="javascript:void(0)" onclick="goProjects()" class="nav-a text-[10px] uppercase text-b-muted hover:text-b-ink transition" data-t="n_proj">Projects</a>
-      <a href="javascript:void(0)" onclick="goHomeR2R()" class="nav-a text-[10px] uppercase text-b-muted hover:text-b-ink transition" data-t="n_r2r">Rent-to-Rent</a>
-      <a href="javascript:void(0)" onclick="goHomeReels()" class="nav-a text-[10px] uppercase text-b-muted hover:text-b-ink transition" data-t="n_reels">Reels</a>
-      <a href="#" data-pack class="text-[9px] uppercase tracking-[.16em] font-medium px-4 py-2.5 rounded-full bg-b-ink text-white hover:bg-b-rose transition" data-t="n_pack">Investment Pack</a>
-      <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="w-8 h-8 rounded-full border border-b-border flex items-center justify-center text-b-muted hover:text-b-pink hover:border-b-pink transition"><i data-lucide="instagram" class="w-3.5 h-3.5"></i></a>
-      <button onclick="togLang()" id="lb" class="text-[9px] uppercase tracking-[.2em] px-3 py-1.5 rounded-full border border-b-border text-b-muted hover:border-b-pink hover:text-b-pink transition">PT</button>
+<span id="top-sentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:1px"></span>
+
+<nav id="nav" class="fixed top-0 inset-x-0 z-50">
+  <div class="max-w-[1320px] mx-auto px-6 lg:px-10 h-[72px] flex items-center justify-between">
+    <a href="javascript:void(0)" onclick="go('home')" class="n-mark wordmark font-display text-[19px] tracking-tight">old <span class="n-dim text-soft font-medium">to</span> <span class="n-hi">gold</span></a>
+
+    <div class="hidden lg:flex items-center gap-9">
+      <a href="javascript:void(0)" onclick="go('home')" class="n-link text-[13px] text-mid hover:text-ink" data-t="n_home">Home</a>
+      <a href="javascript:void(0)" onclick="jump('about')" class="n-link text-[13px] text-mid hover:text-ink" data-t="n_about">About</a>
+      <a href="javascript:void(0)" onclick="go('projects')" class="n-link text-[13px] text-mid hover:text-ink" data-t="n_proj">Projects</a>
+      <a href="javascript:void(0)" onclick="jump('r2r')" class="n-link text-[13px] text-mid hover:text-ink" data-t="n_r2r">Rent-to-Rent</a>
+      <div class="flex items-center gap-3 pl-2">
+        <button onclick="togLang()" id="lb" class="n-ghost text-[11px] font-medium px-3 py-1.5 rounded-full border border-line text-mid hover:border-ink hover:text-ink">PT</button>
+        <a href="#" data-pack class="n-cta press text-[12px] font-semibold px-5 py-2.5 rounded-full bg-ink text-white hover:bg-pinkb" data-t="n_pack">Investment pack</a>
+      </div>
     </div>
-    <button onclick="document.getElementById('mob').classList.add('on')" class="lg:hidden w-9 h-9 rounded-full border border-b-border flex items-center justify-center text-b-muted"><i data-lucide="menu" class="w-4 h-4"></i></button>
+
+    <button onclick="mob(true)" aria-label="Open menu" class="lg:hidden n-ghost w-10 h-10 rounded-full border border-line flex items-center justify-center text-ink"><i data-lucide="menu" class="w-4 h-4"></i></button>
   </div>
 </nav>
 
-<div id="mob" class="mob-menu">
-  <button onclick="this.parentElement.classList.remove('on')" class="absolute top-6 right-6 w-9 h-9 rounded-full border border-b-border flex items-center justify-center text-b-muted"><i data-lucide="x" class="w-4 h-4"></i></button>
-  <a href="javascript:void(0)" onclick="goHome();closeMob()" class="text-xl font-serif font-light text-b-muted hover:text-b-ink transition" data-t="n_home">Home</a>
-  <a href="javascript:void(0)" onclick="goHomeAbout();closeMob()" class="text-xl font-serif font-light text-b-muted hover:text-b-ink transition" data-t="n_about">About</a>
-  <a href="javascript:void(0)" onclick="goProjects();closeMob()" class="text-xl font-serif font-light text-b-muted hover:text-b-ink transition" data-t="n_proj">Projects</a>
-  <a href="javascript:void(0)" onclick="goHomeR2R();closeMob()" class="text-xl font-serif font-light text-b-muted hover:text-b-ink transition" data-t="n_r2r">Rent-to-Rent</a>
-  <a href="javascript:void(0)" onclick="goHomeReels();closeMob()" class="text-xl font-serif font-light text-b-muted hover:text-b-ink transition" data-t="n_reels">Reels</a>
-  <a href="#" data-pack onclick="closeMob()" class="mt-2 text-[10px] uppercase tracking-[.18em] px-6 py-3 rounded-full bg-b-ink text-white" data-t="n_pack">Investment Pack</a>
-  <button onclick="togLang()" class="text-[10px] uppercase tracking-[.2em] text-b-soft mt-1">PT / EN</button>
-  <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="text-b-rose text-sm flex items-center gap-2 mt-2"><i data-lucide="instagram" class="w-4 h-4"></i>@oldtogoldofficial</a>
+<div id="mobmenu" class="mob">
+  <button onclick="mob(false)" aria-label="Close menu" class="absolute top-5 right-6 w-10 h-10 rounded-full border border-white/40 flex items-center justify-center"><i data-lucide="x" class="w-4 h-4"></i></button>
+  <a href="javascript:void(0)" onclick="go('home');mob(false)" class="font-display text-4xl py-1.5" data-t="n_home">Home</a>
+  <a href="javascript:void(0)" onclick="jump('about');mob(false)" class="font-display text-4xl py-1.5" data-t="n_about">About</a>
+  <a href="javascript:void(0)" onclick="go('projects');mob(false)" class="font-display text-4xl py-1.5" data-t="n_proj">Projects</a>
+  <a href="javascript:void(0)" onclick="jump('r2r');mob(false)" class="font-display text-4xl py-1.5" data-t="n_r2r">Rent-to-Rent</a>
+  <div class="flex items-center gap-3 mt-9">
+    <a href="#" data-pack onclick="mob(false)" class="text-[12px] font-semibold px-6 py-3 rounded-full bg-white text-pinkd" data-t="n_pack">Investment pack</a>
+    <button onclick="togLang()" class="text-[12px] font-medium px-5 py-3 rounded-full border border-white/45">PT / EN</button>
+  </div>
+  <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="mt-8 text-[13px] flex items-center gap-2 text-white/85"><i data-lucide="instagram" class="w-4 h-4"></i>@oldtogoldofficial</a>
 </div>
 
-<!-- ═══ HOME ═══ -->
-<div id="pg-home" class="page on">
+<!-- ══════════ HOME ══════════ -->
+<main id="pg-home" class="page">
 
-  <section id="hero" class="relative min-h-screen flex items-center overflow-hidden pt-28 pb-20">
-    <div class="hero-bg"><div class="orb"></div><div class="orb"></div><div class="orb"></div></div>
-    <div class="hero-grid"></div>
-    <div class="relative z-10 w-full max-w-[1300px] mx-auto px-6 lg:px-10 grid lg:grid-cols-[1.05fr_.95fr] gap-14 lg:gap-20 items-center">
+  <!-- Hero: asymmetric split. Portrait is 1294x1719, shown at its true ratio so nothing is cut. -->
+  <section class="relative min-h-[100dvh] flex items-center pt-[72px] overflow-hidden">
+    <div class="field"><i></i><i></i></div>
+    <div class="relative z-10 w-full max-w-[1320px] mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-center py-12 lg:py-14">
 
-      <div class="text-center lg:text-left">
-        <p class="fade-up text-[9px] tracking-[.5em] uppercase text-b-soft mb-8" data-t="h_tag">Property Investment · Ireland</p>
-        <h1 class="fade-up d1 font-serif font-bold tracking-tight leading-[.86]" style="font-size:clamp(3.2rem,7.5vw,6.5rem)"><span class="text-b-ink">old</span></h1>
-        <h1 class="fade-up d2 font-serif font-bold tracking-tight leading-[.86] mb-6" style="font-size:clamp(3.2rem,7.5vw,6.5rem)"><span class="text-b-soft font-extralight">to</span> <span class="text-grad">gold</span></h1>
-        <p class="fade-up d3 font-script text-2xl sm:text-3xl text-b-rose/80 mb-6">with Nina Chagas</p>
-        <p class="fade-up d3 text-b-muted font-light max-w-md mx-auto lg:mx-0 mb-10 leading-relaxed" data-t="h_sub">We acquire, refurbish and manage residential property in Limerick — and open the same model to investors and owners.</p>
-        <div class="fade-up d4 flex flex-col sm:flex-row items-center lg:justify-start justify-center gap-4">
-          <a href="javascript:void(0)" onclick="goProjects()" class="group px-7 py-3.5 bg-b-pink text-white text-[10px] uppercase tracking-[.18em] font-medium rounded-full hover:bg-b-rose transition-all flex items-center gap-2.5 cta-glow" data-t="h_cta1">View Projects <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"></i></a>
-          <a href="#" data-pack class="px-7 py-3.5 border border-b-ink/15 text-b-ink/70 text-[10px] uppercase tracking-[.18em] rounded-full hover:border-b-ink/40 hover:text-b-ink transition-all flex items-center gap-2.5"><i data-lucide="download" class="w-3.5 h-3.5"></i><span data-t="h_cta2">Investment Pack</span></a>
+      <div class="lg:col-span-7 xl:col-span-6">
+        <p class="rv wordmark font-display text-[13px] tracking-tight text-mid mb-7">old <span class="text-soft">to</span> <span class="n-hi">gold</span><span class="text-soft font-sans font-normal tracking-normal">, with Nina Chagas</span></p>
+        <h1 class="rv r1 font-display text-[clamp(2.5rem,5.6vw,4.4rem)] leading-[.98] mb-7" data-t="h_t">
+          We buy derelict houses<br>and make them <span class="text-pink">earn.</span>
+        </h1>
+        <p class="rv r2 text-[16.5px] text-mid leading-[1.65] max-w-[46ch] mb-10" data-t="h_sub">Acquisition, full refurbishment and letting in Limerick, run end to end. Open to investors, and to owners done managing.</p>
+        <div class="rv r3 flex flex-wrap items-center gap-3.5">
+          <a href="javascript:void(0)" onclick="go('projects')" class="press group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-pinkb text-white text-[13px] font-semibold hover:bg-pinkd" data-t="h_cta1">See the three houses <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
+          <a href="#" data-pack class="press inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-ink/20 text-ink text-[13px] font-semibold hover:border-ink hover:bg-ink hover:text-white transition-colors" data-t="n_pack">Investment pack</a>
         </div>
       </div>
 
-      <div class="fade-up d2 hidden lg:block relative">
-        <div class="hero-frame aspect-[4/5]"><img src="https://z-cdn-media.chatglm.cn/files/4502f4d4-0acf-4930-9542-8e855a59c296.jpeg?auth_key=1883121374-fd09073df09044cc9878b72d35308358-0-29431f0e70fa3624cf6c77d6648e2e81" alt="Nina Chagas, founder of Old to Gold" loading="eager"></div>
-        <div class="hero-mark">
-          <p class="font-serif text-2xl font-bold text-b-rose num leading-none">3</p>
-          <p class="text-[9px] uppercase tracking-widest text-b-muted mt-1.5" data-t="n_pr">Projects</p>
-        </div>
+      <div class="lg:col-span-5 xl:col-span-6 flex lg:justify-end">
+        <figure class="rv r2 relative w-full max-w-[330px] lg:max-w-[392px]">
+          <div class="ph r-media zoom" style="aspect-ratio:1294/1719">
+            <img src="https://z-cdn-media.chatglm.cn/files/6c069f7b-756d-475d-aeda-83bfbfd69e27.jpeg?auth_key=1883121374-497abac49be443b6960193b4457a6e26-0-384bbb0499214755024e9599ee813468" alt="Nina Chagas, founder of Old to Gold" width="1294" height="1719" fetchpriority="high">
+          </div>
+          <figcaption class="absolute -left-4 bottom-7 bg-white r-panel border border-line px-5 py-4 shadow-[0_26px_50px_-34px_rgba(23,19,15,.6)]">
+            <p class="num text-3xl text-pink leading-none">3</p>
+            <p class="text-[11px] text-mid mt-1.5" data-t="h_badge">houses in Limerick</p>
+          </figcaption>
+        </figure>
       </div>
 
     </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block" style="animation:orbFloat 3s ease-in-out infinite"><div class="w-5 h-8 rounded-full border border-b-ink/15 flex items-start justify-center pt-1.5"><div class="w-1 h-2 bg-b-ink/25 rounded-full"></div></div></div>
   </section>
 
-  <div class="py-4 border-y border-b-border overflow-hidden bg-b-surface/50">
-    <div class="mq flex items-center gap-8 whitespace-nowrap" style="width:max-content">
-      <span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m1">Buy</span><span class="text-b-gold text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m2">Refurbish</span><span class="text-b-pink/50 text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m3">Rent</span><span class="text-b-gold text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m4">Refinance</span><span class="text-b-pink/50 text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m5">Repeat</span><span class="text-b-gold text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m6">Transform</span><span class="text-b-pink/50 text-[10px]">✦</span>
-      <span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m1">Buy</span><span class="text-b-gold text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m2">Refurbish</span><span class="text-b-pink/50 text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m3">Rent</span><span class="text-b-gold text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m4">Refinance</span><span class="text-b-pink/50 text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m5">Repeat</span><span class="text-b-gold text-[10px]">✦</span><span class="text-[10px] uppercase tracking-[.35em] text-b-muted" data-t="m6">Transform</span><span class="text-b-pink/50 text-[10px]">✦</span>
+  <!-- Marquee: the only one on the page -->
+  <div class="border-y border-line bg-sand/60 py-3.5 overflow-hidden">
+    <div class="mq flex items-center gap-7 whitespace-nowrap text-[12px] font-medium tracking-[.22em] uppercase text-mid">
+      <span data-t="m1">Buy</span><i data-lucide="asterisk" class="w-3 h-3 text-gold"></i>
+      <span data-t="m2">Refurbish</span><i data-lucide="asterisk" class="w-3 h-3 text-pink"></i>
+      <span data-t="m3">Let</span><i data-lucide="asterisk" class="w-3 h-3 text-gold"></i>
+      <span data-t="m4">Refinance</span><i data-lucide="asterisk" class="w-3 h-3 text-pink"></i>
+      <span data-t="m5">Repeat</span><i data-lucide="asterisk" class="w-3 h-3 text-gold"></i>
+      <span data-t="m1">Buy</span><i data-lucide="asterisk" class="w-3 h-3 text-gold"></i>
+      <span data-t="m2">Refurbish</span><i data-lucide="asterisk" class="w-3 h-3 text-pink"></i>
+      <span data-t="m3">Let</span><i data-lucide="asterisk" class="w-3 h-3 text-gold"></i>
+      <span data-t="m4">Refinance</span><i data-lucide="asterisk" class="w-3 h-3 text-pink"></i>
+      <span data-t="m5">Repeat</span><i data-lucide="asterisk" class="w-3 h-3 text-gold"></i>
     </div>
   </div>
 
-  <section id="about" class="py-28 px-6 lg:px-10">
-    <div class="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-14 lg:gap-20 items-center">
-      <div class="lg:col-span-5 fade-up">
-        <div class="relative">
-          <div class="nina-portrait aspect-[3/4]"><img src="https://z-cdn-media.chatglm.cn/files/94c9171a-246b-4068-bebd-4f2fd0bcbf57.jpeg?auth_key=1883121374-3f8a45a1faeb4a67bbff6bf5763e4125-0-cd603bedf7b46726fe25b701f4d7545b" alt="Nina Chagas" loading="lazy"><div class="absolute bottom-0 left-0 right-0 z-10 p-7"><p class="font-script text-xl text-white mb-1">Nina Chagas</p><p class="text-[9px] uppercase tracking-[.3em] text-white/70" data-t="nina_role">Founder &amp; CEO</p></div></div>
-          <div class="nina-small hidden sm:block"><img src="https://z-cdn-media.chatglm.cn/files/bc6d3be0-f60a-4a5c-b19a-8330a26438e9.jpeg?auth_key=1883121374-62ed8e38141c49c6b9a12aee5b5340da-0-660e0477ba9732b3104df2721297bd23" alt="Nina Chagas" loading="lazy"></div>
+  <!-- About: full-bleed landscape plate, text underneath. Image is 2048x1362, shown landscape. -->
+  <section id="about" class="pt-24 lg:pt-32 pb-24 lg:pb-32 scroll-mt-20">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+
+      <figure class="rv ph r-media zoom mb-14 lg:mb-20" style="aspect-ratio:2048/1362">
+        <img src="https://z-cdn-media.chatglm.cn/files/94c9171a-246b-4068-bebd-4f2fd0bcbf57.jpeg?auth_key=1883121374-3f8a45a1faeb4a67bbff6bf5763e4125-0-cd603bedf7b46726fe25b701f4d7545b" alt="Nina Chagas at the Old to Gold studio in Limerick" width="2048" height="1362" loading="lazy">
+      </figure>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div class="lg:col-span-5">
+          <h2 class="rv font-display text-[clamp(2rem,4vw,3.2rem)] leading-[1.02]" data-t="ab_t">Fifteen years in Limerick.<br>Three houses back in use.</h2>
         </div>
-        <div class="mt-14 sm:mt-10 flex items-center gap-6 pl-1">
-          <div class="text-center"><p class="font-serif text-2xl font-bold text-b-amber num">15+</p><p class="text-[9px] uppercase tracking-widest text-b-muted mt-1" data-t="n_yr">Years in Ireland</p></div>
-          <div class="w-px h-10 bg-b-border"></div>
-          <div class="text-center"><p class="font-serif text-2xl font-bold text-b-rose num">3</p><p class="text-[9px] uppercase tracking-widest text-b-muted mt-1" data-t="n_pr">Projects</p></div>
-          <div class="w-px h-10 bg-b-border"></div>
-          <div class="text-center"><p class="font-serif text-2xl font-bold text-b-amber num">Limerick</p><p class="text-[9px] uppercase tracking-widest text-b-muted mt-1" data-t="n_lo">Ireland</p></div>
-        </div>
-      </div>
-      <div class="lg:col-span-7">
-        <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-rose mb-5" data-t="ab_l">About</p>
-        <h2 class="fade-up d1 font-serif text-3xl sm:text-[2.75rem] font-semibold tracking-tight leading-tight mb-8" data-t="ab_t">Brazilian-Irish<br><em class="text-grad font-normal">property investor</em></h2>
-        <div class="fade-up d2 space-y-5 text-b-muted text-[15px] font-light leading-[1.85]">
-          <p data-t="ab_p1">Nina Chagas moved from Brazil to Ireland at eighteen. She built her career in Limerick, graduated from the University of Limerick in 2020, and has spent more than fifteen years learning the Irish market from the inside.</p>
-          <p data-t="ab_p2">She founded <strong class="text-b-ink font-medium">Old to Gold</strong> to do one thing well: acquire neglected properties, bring them back to a high standard, and hold them as long-term rental assets.</p>
-          <p data-t="ab_p3">The portfolio now spans three properties in Limerick. The same discipline that finds value in a derelict house is what she brings to every investor and owner she works with.</p>
-        </div>
-        <div class="fade-up d3 flex flex-wrap gap-3 mt-10">
-          <span class="text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-b-border text-b-muted" data-t="ab_k1">Acquisition</span>
-          <span class="text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-b-border text-b-muted" data-t="ab_k2">Full refurbishment</span>
-          <span class="text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-b-border text-b-muted" data-t="ab_k3">Letting &amp; management</span>
-          <span class="text-[10px] uppercase tracking-widest px-4 py-2 rounded-full border border-b-border text-b-muted" data-t="ab_k4">Rent-to-Rent</span>
+        <div class="lg:col-span-6 lg:col-start-7">
+          <div class="rv r1 space-y-5 text-[16px] text-mid leading-[1.72]">
+            <p data-t="ab_p1">Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than fifteen years learning this market from the inside.</p>
+            <p data-t="ab_p2">She founded <strong class="text-ink font-semibold">Old to Gold</strong> to do one thing properly: buy houses nobody else wants, bring them back to a high standard, and hold them.</p>
+          </div>
+          <div class="rv r2 grid grid-cols-3 gap-6 mt-10 pt-8 border-t border-line">
+            <div><p class="num text-3xl text-ink">15<span class="text-gold">+</span></p><p class="text-[12px] text-mid mt-1.5" data-t="s_yr">years in Ireland</p></div>
+            <div><p class="num text-3xl text-ink">3</p><p class="text-[12px] text-mid mt-1.5" data-t="s_pr">houses</p></div>
+            <div><p class="num text-3xl text-ink">2</p><p class="text-[12px] text-mid mt-1.5" data-t="s_le">let and running</p></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="overflow-hidden"><img src="https://z-cdn-media.chatglm.cn/files/49969c72-a083-423b-8cac-3a60b84da8fe.jpeg?auth_key=1883121374-888333038b27405895c14d7e07c0d6f4-0-0df6a0091fe7bf433aa55b454049abdd" alt="Old to Gold" class="strip-img w-full" loading="lazy"></div>
-  <div class="line-g max-w-[300px] mx-auto"></div>
+  <!-- What we do: numbered editorial list, offset grid. Not three equal cards. -->
+  <section class="pb-24 lg:pb-32">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <h2 class="rv font-display text-[clamp(2rem,4vw,3.2rem)] leading-[1.02] max-w-[16ch] mb-14" data-t="wd_t">Three stages, one house at a time.</h2>
 
-  <section class="py-28 px-6 lg:px-10">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="text-center mb-14">
-        <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-amber mb-5" data-t="wd_l">What We Do</p>
-        <h2 class="fade-up d1 font-serif text-3xl sm:text-[2.75rem] font-semibold tracking-tight" data-t="wd_t">From forgotten to <em class="text-grad font-normal">flawless</em></h2>
-      </div>
-      <div class="grid md:grid-cols-3 gap-5">
-        <div class="fade-up d1 card rounded-2xl p-9 group"><div class="w-11 h-11 rounded-xl bg-b-gold/20 flex items-center justify-center mb-6"><i data-lucide="search" class="w-5 h-5 text-b-amber"></i></div><h3 class="font-serif text-lg font-semibold mb-3" data-t="w1t">Find &amp; Acquire</h3><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="w1d">We identify abandoned and undervalued properties across Ireland with real transformation potential.</p></div>
-        <div class="fade-up d2 card rounded-2xl p-9 group"><div class="w-11 h-11 rounded-xl bg-b-pink/10 flex items-center justify-center mb-6"><i data-lucide="hammer" class="w-5 h-5 text-b-rose"></i></div><h3 class="font-serif text-lg font-semibold mb-3" data-t="w2t">Renovate &amp; Design</h3><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="w2d">Complete refurbishment with modern finishes, sustainable materials and layouts that maximise space.</p></div>
-        <div class="fade-up d3 card rounded-2xl p-9 group"><div class="w-11 h-11 rounded-xl bg-b-gold/20 flex items-center justify-center mb-6"><i data-lucide="trending-up" class="w-5 h-5 text-b-amber"></i></div><h3 class="font-serif text-lg font-semibold mb-3" data-t="w3t">Let &amp; Manage</h3><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="w3d">Transformed properties generate sustainable rental income and build long-term wealth.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-28 px-6 lg:px-10 bg-b-surface/60 border-y border-b-border">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="grid lg:grid-cols-2 gap-16 items-start">
-        <div>
-          <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-rose mb-5" data-t="gl_l">Strategy</p>
-          <h2 class="fade-up d1 font-serif text-3xl sm:text-[2.75rem] font-semibold tracking-tight leading-tight mb-6" data-t="gl_t">Our <em class="text-grad font-normal">goals</em></h2>
-          <p class="fade-up d2 text-b-muted font-light text-[15px] leading-[1.8] mb-8" data-t="gl_d">Old to Gold follows a proven property investment strategy designed to build long-term wealth.</p>
-          <div class="fade-up d3 goals-portrait aspect-[4/3] relative"><img src="https://z-cdn-media.chatglm.cn/files/6c069f7b-756d-475d-aeda-83bfbfd69e27.jpeg?auth_key=1883121374-497abac49be443b6960193b4457a6e26-0-384bbb0499214755024e9599ee813468" alt="Strategy" loading="lazy"><div class="absolute inset-0 z-10 flex items-center justify-center"><div class="text-center px-6"><p class="text-[10px] uppercase tracking-[.3em] text-white font-medium" data-t="gl_cy">Buy → Refurbish → Rent → Refinance → Repeat</p></div></div></div>
+      <div class="grid lg:grid-cols-12 gap-y-10 lg:gap-x-14">
+        <div class="rv lg:col-span-10 lg:col-start-1 grid sm:grid-cols-12 gap-5 sm:gap-10 items-baseline pt-8 border-t border-line">
+          <p class="num text-5xl sm:col-span-2 text-gold">01</p>
+          <h3 class="font-display text-2xl sm:col-span-3" data-t="w1t">Acquire</h3>
+          <p class="text-[15.5px] text-mid leading-[1.7] sm:col-span-7" data-t="w1d">Derelict and undervalued houses across Limerick, bought below the cost of what they become. Grant eligibility is checked before we bid.</p>
         </div>
-        <div class="space-y-4">
-          <div class="fade-up d1 flex gap-4 p-5 rounded-xl bg-b-card border border-b-border"><div class="w-9 h-9 rounded-lg bg-b-gold/20 flex items-center justify-center shrink-0"><i data-lucide="repeat" class="w-4 h-4 text-b-amber"></i></div><div><h4 class="text-sm font-medium mb-1" data-t="g1t">Buy, Refurbish, Rent, Refinance, Repeat</h4><p class="text-xs text-b-muted font-light leading-relaxed" data-t="g1d">Turn vacant houses into safe, sustainable homes.</p></div></div>
-          <div class="fade-up d2 flex gap-4 p-5 rounded-xl bg-b-card border border-b-border"><div class="w-9 h-9 rounded-lg bg-b-pink/10 flex items-center justify-center shrink-0"><i data-lucide="wallet" class="w-4 h-4 text-b-rose"></i></div><div><h4 class="text-sm font-medium mb-1" data-t="g2t">Long-Term Income Generation</h4><p class="text-xs text-b-muted font-light leading-relaxed" data-t="g2d">Generate sustainable rental income across a diversified portfolio.</p></div></div>
-          <div class="fade-up d3 flex gap-4 p-5 rounded-xl bg-b-card border border-b-border"><div class="w-9 h-9 rounded-lg bg-b-gold/20 flex items-center justify-center shrink-0"><i data-lucide="leaf" class="w-4 h-4 text-b-amber"></i></div><div><h4 class="text-sm font-medium mb-1" data-t="g3t">Sustainable Revitalisation</h4><p class="text-xs text-b-muted font-light leading-relaxed" data-t="g3d">Eco-friendly materials and energy-efficient solutions.</p></div></div>
-          <div class="fade-up d4 flex gap-4 p-5 rounded-xl bg-b-card border border-b-border"><div class="w-9 h-9 rounded-lg bg-b-pink/10 flex items-center justify-center shrink-0"><i data-lucide="users" class="w-4 h-4 text-b-rose"></i></div><div><h4 class="text-sm font-medium mb-1" data-t="g4t">Community Impact</h4><p class="text-xs text-b-muted font-light leading-relaxed" data-t="g4d">Revitalise neighbourhoods by transforming derelict properties.</p></div></div>
-          <div class="fade-up d5 flex gap-4 p-5 rounded-xl bg-b-card border border-b-border"><div class="w-9 h-9 rounded-lg bg-b-gold/20 flex items-center justify-center shrink-0"><i data-lucide="scale" class="w-4 h-4 text-b-amber"></i></div><div><h4 class="text-sm font-medium mb-1" data-t="g5t">Scale the Model</h4><p class="text-xs text-b-muted font-light leading-relaxed" data-t="g5d">Replicate across Ireland and expand into the Brazilian market.</p></div></div>
+        <div class="rv r1 lg:col-span-10 lg:col-start-3 grid sm:grid-cols-12 gap-5 sm:gap-10 items-baseline pt-8 border-t border-line">
+          <p class="num text-5xl sm:col-span-2 text-pink">02</p>
+          <h3 class="font-display text-2xl sm:col-span-3" data-t="w2t">Refurbish</h3>
+          <p class="text-[15.5px] text-mid leading-[1.7] sm:col-span-7" data-t="w2d">Full strip and rebuild. New layouts, new services, new bathrooms and kitchens, and a BER rating that makes the house cheap to run.</p>
+        </div>
+        <div class="rv r2 lg:col-span-10 lg:col-start-1 grid sm:grid-cols-12 gap-5 sm:gap-10 items-baseline pt-8 border-t border-line border-b pb-8">
+          <p class="num text-5xl sm:col-span-2 text-gold">03</p>
+          <h3 class="font-display text-2xl sm:col-span-3" data-t="w3t">Let and manage</h3>
+          <p class="text-[15.5px] text-mid leading-[1.7] sm:col-span-7" data-t="w3d">Tenants found, rent collected, repairs handled. The house is held as a long-term asset, not flipped.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ RENT-TO-RENT ═══ -->
-  <section id="r2r" class="py-28 px-6 lg:px-10">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="max-w-2xl mb-14">
-        <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-rose mb-5" data-t="r_l">Rent-to-Rent</p>
-        <h2 class="fade-up d1 font-serif text-3xl sm:text-[2.75rem] font-semibold tracking-tight leading-tight mb-6" data-t="r_t">A fixed rent every month.<br><em class="text-grad font-normal">None of the management.</em></h2>
-        <p class="fade-up d2 text-b-muted font-light text-[15px] leading-[1.85]" data-t="r_d">Rent-to-Rent is simple. We lease your property directly from you on a medium- to long-term agreement and pay you a fixed rent every month. We then take full responsibility for tenants, maintenance and day-to-day management. You are paid the same amount whether the property is occupied or not — and you never take a call about a broken boiler.</p>
-      </div>
+  <!-- Rent-to-Rent: step band on sand, then a two-panel split -->
+  <section id="r2r" class="scroll-mt-20">
+    <div class="bg-sand/70 border-y border-line py-24 lg:py-32">
+      <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+        <div class="max-w-[54ch] mb-14">
+          <h2 class="rv font-display text-[clamp(2rem,4.4vw,3.5rem)] leading-[1.01] mb-6" data-t="r_t">A fixed rent every month.<br><span class="text-pink">None of the management.</span></h2>
+          <p class="rv r1 text-[16.5px] text-mid leading-[1.7]" data-t="r_d">We lease your house from you on a long agreement and pay you the same amount every month. Tenants, repairs and compliance become our problem, not yours. You are paid whether the house is occupied or empty.</p>
+        </div>
 
-      <div class="mb-16">
-        <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-amber mb-7" data-t="r_hl">How it works</p>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <div class="fade-up d1 card rounded-2xl p-7"><span class="font-serif text-3xl text-b-gold font-bold num">01</span><h4 class="font-serif text-base font-semibold mt-4 mb-2" data-t="r_s1t">The agreement</h4><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="r_s1d">We agree a fixed monthly rent and a term — typically three to five years — in a written contract that follows Irish tenancy rules.</p></div>
-          <div class="fade-up d2 card rounded-2xl p-7"><span class="font-serif text-3xl text-b-pink font-bold num">02</span><h4 class="font-serif text-base font-semibold mt-4 mb-2" data-t="r_s2t">We prepare it</h4><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="r_s2d">Furnishing, compliance and any work needed to bring the property up to standard are carried out at our cost.</p></div>
-          <div class="fade-up d3 card rounded-2xl p-7"><span class="font-serif text-3xl text-b-gold font-bold num">03</span><h4 class="font-serif text-base font-semibold mt-4 mb-2" data-t="r_s3t">We manage it</h4><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="r_s3d">Finding tenants, collecting rent, repairs and inspections are all handled by us. You have one point of contact.</p></div>
-          <div class="fade-up d4 card rounded-2xl p-7"><span class="font-serif text-3xl text-b-pink font-bold num">04</span><h4 class="font-serif text-base font-semibold mt-4 mb-2" data-t="r_s4t">You get it back</h4><p class="text-[13px] text-b-muted font-light leading-relaxed" data-t="r_s4d">At the end of the term the property is returned to you in the same condition or better, fully maintained throughout.</p></div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="rv bg-card r-panel border border-line p-7">
+            <p class="num text-2xl text-gold mb-5">01</p>
+            <h3 class="font-display text-lg mb-2.5" data-t="r_s1t">The agreement</h3>
+            <p class="text-[14.5px] text-mid leading-[1.65]" data-t="r_s1d">A fixed monthly rent and a term, usually three to five years, written down and operated under Irish tenancy law.</p>
+          </div>
+          <div class="rv r1 bg-card r-panel border border-line p-7">
+            <p class="num text-2xl text-pink mb-5">02</p>
+            <h3 class="font-display text-lg mb-2.5" data-t="r_s2t">We prepare it</h3>
+            <p class="text-[14.5px] text-mid leading-[1.65]" data-t="r_s2d">Furnishing, compliance and any work needed to bring the house up to standard, at our cost.</p>
+          </div>
+          <div class="rv r2 bg-card r-panel border border-line p-7">
+            <p class="num text-2xl text-gold mb-5">03</p>
+            <h3 class="font-display text-lg mb-2.5" data-t="r_s3t">We run it</h3>
+            <p class="text-[14.5px] text-mid leading-[1.65]" data-t="r_s3d">Tenant sourcing, rent collection, repairs and inspections. One point of contact, which is us.</p>
+          </div>
+          <div class="rv r3 bg-card r-panel border border-line p-7">
+            <p class="num text-2xl text-pink mb-5">04</p>
+            <h3 class="font-display text-lg mb-2.5" data-t="r_s4t">You get it back</h3>
+            <p class="text-[14.5px] text-mid leading-[1.65]" data-t="r_s4d">At the end of the term the house returns to you in the same condition or better, maintained throughout.</p>
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="grid lg:grid-cols-2 gap-5">
-        <div class="fade-up rounded-2xl p-9 bg-b-card border border-b-border">
-          <div class="flex items-center gap-3 mb-6"><div class="w-10 h-10 rounded-xl bg-b-pink/10 flex items-center justify-center"><i data-lucide="key-round" class="w-4 h-4 text-b-rose"></i></div><h3 class="font-serif text-xl font-semibold" data-t="r_o_t">If you own a property</h3></div>
-          <ul class="space-y-3.5">
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-rose shrink-0 mt-0.5"></i><span data-t="r_o1">The same rent lands every month, including during void periods.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-rose shrink-0 mt-0.5"></i><span data-t="r_o2">No letting fees, no tenant screening, no late-night repair calls.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-rose shrink-0 mt-0.5"></i><span data-t="r_o3">Routine maintenance and wear and tear are covered by us.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-rose shrink-0 mt-0.5"></i><span data-t="r_o4">A long contract with a company that renovates for a living — the property is looked after.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-rose shrink-0 mt-0.5"></i><span data-t="r_o5">Ideal for owners living abroad, inheriting a house, or simply done with being a landlord.</span></li>
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10 py-24 lg:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div class="rv">
+          <h3 class="font-display text-[26px] mb-7 pb-5 border-b border-line" data-t="r_o_t">If you own a house</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-pink shrink-0 mt-1"></i><span data-t="r_o1">The same rent arrives every month, including through empty periods.</span></li>
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-pink shrink-0 mt-1"></i><span data-t="r_o2">No letting fees, no tenant screening, no calls at eleven at night.</span></li>
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-pink shrink-0 mt-1"></i><span data-t="r_o3">Routine maintenance and normal wear are covered by us.</span></li>
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-pink shrink-0 mt-1"></i><span data-t="r_o4">Built for owners living abroad, owners who inherited a house, and owners who have had enough.</span></li>
           </ul>
         </div>
-        <div class="fade-up d1 rounded-2xl p-9 bg-b-card border border-b-border">
-          <div class="flex items-center gap-3 mb-6"><div class="w-10 h-10 rounded-xl bg-b-gold/20 flex items-center justify-center"><i data-lucide="line-chart" class="w-4 h-4 text-b-amber"></i></div><h3 class="font-serif text-xl font-semibold" data-t="r_i_t">If you want to invest</h3></div>
-          <ul class="space-y-3.5">
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-amber shrink-0 mt-0.5"></i><span data-t="r_i1">Cash flow without buying: the capital goes into the contract and the fit-out, not a mortgage.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-amber shrink-0 mt-0.5"></i><span data-t="r_i2">The return comes from the spread between what is paid to the owner and what the property lets for.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-amber shrink-0 mt-0.5"></i><span data-t="r_i3">The model scales — each new agreement is a new income stream, not a new mortgage.</span></li>
-            <li class="flex gap-3 text-[14px] text-b-muted font-light"><i data-lucide="check" class="w-4 h-4 text-b-amber shrink-0 mt-0.5"></i><span data-t="r_i4">It runs alongside the buy-and-refurbish portfolio, which is where our operating experience comes from.</span></li>
+        <div class="rv r1">
+          <h3 class="font-display text-[26px] mb-7 pb-5 border-b border-line" data-t="r_i_t">If you want to invest</h3>
+          <ul class="space-y-4">
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-goldd shrink-0 mt-1"></i><span data-t="r_i1">Cash flow without buying. The capital goes into the agreement and the fit-out, not a mortgage.</span></li>
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-goldd shrink-0 mt-1"></i><span data-t="r_i2">The return is the gap between what the owner is paid and what the house lets for.</span></li>
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-goldd shrink-0 mt-1"></i><span data-t="r_i3">It scales. Each new agreement is another income stream, not another debt.</span></li>
+            <li class="flex gap-3.5 text-[15.5px] text-mid leading-[1.6]"><i data-lucide="check" class="w-4 h-4 text-goldd shrink-0 mt-1"></i><span data-t="r_i4">It runs beside the refurbishment portfolio, which is where the operating experience comes from.</span></li>
           </ul>
-          <p class="text-[11px] text-b-soft font-light leading-relaxed mt-7 pt-6 border-t border-b-border" data-t="r_note">Every arrangement is set out in a written agreement and operated in line with Irish residential tenancy law. Figures discussed are specific to each property — this page is information, not a financial promise.</p>
+          <p class="text-[12.5px] text-soft leading-[1.6] mt-8 pt-6 border-t border-line" data-t="r_note">Every arrangement is written down and operated under Irish residential tenancy law. Figures are specific to each house. This page is information, not a promise of return.</p>
         </div>
       </div>
 
-      <div class="fade-up text-center mt-12">
-        <a href="mailto:contact@oldtogold.ie?subject=Rent-to-Rent%20enquiry" class="inline-flex items-center gap-2.5 px-8 py-4 bg-b-ink text-white text-[10px] uppercase tracking-[.18em] font-medium rounded-full hover:bg-b-rose transition-all"><i data-lucide="mail" class="w-4 h-4"></i><span data-t="r_cta">Talk to us about your property</span></a>
+      <div class="rv r2 mt-14">
+        <a href="mailto:contact@oldtogold.ie?subject=Rent-to-Rent%20enquiry" class="press inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-ink text-white text-[13px] font-semibold hover:bg-pinkb transition-colors"><i data-lucide="mail" class="w-4 h-4"></i><span data-t="r_cta">Talk to us about your house</span></a>
       </div>
     </div>
   </section>
 
-  <!-- ═══ INVESTMENT PACK ═══ -->
-  <section class="py-24 px-6 lg:px-10">
-    <div class="max-w-[1000px] mx-auto">
-      <div class="fade-up pack-band rounded-3xl border border-b-border overflow-hidden">
-        <div class="grid md:grid-cols-[1fr_auto] items-center gap-8 p-10 lg:p-14">
-          <div>
-            <p class="text-[9px] tracking-[.4em] uppercase text-b-amber mb-4" data-t="pk_l">Property Information Pack</p>
-            <h3 class="font-serif text-2xl sm:text-3xl font-semibold tracking-tight mb-4" data-t="pk_t">Every number, in one document</h3>
-            <p class="text-b-muted font-light text-[15px] leading-relaxed max-w-lg" data-t="pk_d">Purchase price, refurbishment cost, projected rent and timeline for each property — plus how the Rent-to-Rent agreement is structured. Sent as a PDF.</p>
+  <!-- Investment pack: the one dark block on the page. Photo is 1526x2048, shown at true ratio. -->
+  <section class="bg-night text-white">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10 py-20 lg:py-24">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <figure class="rv lg:col-span-5">
+          <div class="ph r-media zoom" style="aspect-ratio:1526/2048;background:#221d1a">
+            <img src="https://z-cdn-media.chatglm.cn/files/bc6d3be0-f60a-4a5c-b19a-8330a26438e9.jpeg?auth_key=1883121374-62ed8e38141c49c6b9a12aee5b5340da-0-660e0477ba9732b3104df2721297bd23" alt="Nina Chagas reading the Old to Gold property pack" width="1526" height="2048" loading="lazy">
           </div>
-          <a href="#" data-pack class="shrink-0 group px-8 py-4 bg-b-pink text-white text-[10px] uppercase tracking-[.18em] font-semibold rounded-full hover:bg-b-rose transition-all flex items-center gap-3 cta-glow"><i data-lucide="file-down" class="w-4 h-4"></i><span data-t="pk_b">Download Investment Pack</span></a>
+        </figure>
+        <div class="rv r1 lg:col-span-6 lg:col-start-7">
+          <h2 class="font-display text-[clamp(2rem,4.2vw,3.4rem)] leading-[1.02] mb-6" data-t="pk_t">Every number,<br>in one <span class="text-gold">document.</span></h2>
+          <p class="text-[16.5px] text-white/65 leading-[1.7] max-w-[46ch] mb-9" data-t="pk_d">Purchase price, refurbishment cost, grant, projected rent and timeline for each house, plus how a Rent-to-Rent agreement is structured. Sent as a PDF.</p>
+          <div class="flex flex-wrap gap-3.5">
+            <a href="#" data-pack class="press inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-pinkb text-white text-[13px] font-semibold hover:bg-white hover:text-ink transition-colors"><i data-lucide="arrow-down-to-line" class="w-4 h-4"></i><span data-t="pk_b">Download the pack</span></a>
+            <a href="mailto:contact@oldtogold.ie" class="press inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full border border-white/30 text-white text-[13px] font-semibold hover:bg-white/10 transition-colors"><span data-t="pk_ask">Ask a question</span></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="reels" class="pb-28 px-6 lg:px-10">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="flex items-end justify-between mb-10">
-        <div><p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-rose mb-5 flex items-center gap-2"><i data-lucide="instagram" class="w-3 h-3"></i><span data-t="rl_l">Latest Reels</span></p><h2 class="fade-up d1 font-serif text-3xl sm:text-[2.75rem] font-semibold tracking-tight" data-t="rl_t">Follow the <em class="text-grad font-normal">journey</em></h2></div>
-        <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="fade-up d2 hidden sm:flex items-center gap-2 text-[10px] uppercase tracking-widest text-b-muted hover:text-b-rose transition">@oldtogoldofficial <i data-lucide="external-link" class="w-3 h-3"></i></a>
+  <!-- Reels -->
+  <section id="reels" class="py-24 lg:py-28 scroll-mt-20">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <div class="rv flex flex-wrap items-end justify-between gap-5 mb-10">
+        <h2 class="font-display text-[clamp(1.8rem,3.4vw,2.6rem)] leading-[1.05]" data-t="rl_t">The renovations, as they happen.</h2>
+        <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-[13px] font-medium text-mid hover:text-pinkd transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i>@oldtogoldofficial</a>
       </div>
-      <div class="fade-up d2"><script src="https://elfsightcdn.com/platform.js" async></script><div class="elfsight-app-c0d6b19e-723d-41d2-bcaf-8d790e19e241" data-elfsight-app-lazy></div></div>
+      <div class="rv r1"><script src="https://elfsightcdn.com/platform.js" async></script><div class="elfsight-app-c0d6b19e-723d-41d2-bcaf-8d790e19e241" data-elfsight-app-lazy></div></div>
     </div>
   </section>
 
-  <section class="py-28 px-6 lg:px-10 relative overflow-hidden bg-b-surface/60 border-t border-b-border">
-    <div class="max-w-2xl mx-auto text-center relative z-10">
-      <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-rose mb-5" data-t="ct_l">Get in Touch</p>
-      <h2 class="fade-up d1 font-serif text-3xl sm:text-[2.75rem] font-semibold tracking-tight mb-6" data-t="ct_t">Ready to transform<br>a <em class="text-grad font-normal">property?</em></h2>
-      <p class="fade-up d2 text-b-muted font-light mb-10" data-t="ct_d">Whether you own a property you would rather not manage, want to invest alongside us, or simply want to follow the journey — we would love to hear from you.</p>
-      <div class="fade-up d3 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="mailto:contact@oldtogold.ie" class="group px-8 py-4 bg-b-ink text-white text-[10px] uppercase tracking-[.18em] font-semibold rounded-full hover:bg-b-rose transition-all flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4"></i><span data-t="ct_b">Get in Touch</span></a>
-        <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="px-8 py-4 border border-b-ink/15 text-b-ink/70 text-[10px] uppercase tracking-[.18em] rounded-full hover:border-b-ink/40 hover:text-b-ink transition-all flex items-center gap-2.5"><i data-lucide="instagram" class="w-4 h-4"></i>Instagram</a>
+  <!-- Contact -->
+  <section class="border-t border-line py-24 lg:py-32">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <div class="grid lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-7">
+          <h2 class="rv font-display text-[clamp(2.2rem,5vw,4rem)] leading-[1.0] mb-7" data-t="ct_t">Tell us about<br>the property.</h2>
+          <p class="rv r1 text-[16.5px] text-mid leading-[1.7] max-w-[46ch] mb-10" data-t="ct_d">A house you would rather not manage, a house you want gone, or capital you want working in Limerick property. All three start the same way.</p>
+          <a href="mailto:contact@oldtogold.ie" class="rv r2 press inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full bg-pinkb text-white text-[13px] font-semibold hover:bg-pinkd transition-colors"><i data-lucide="mail" class="w-4 h-4"></i>contact@oldtogold.ie</a>
+        </div>
       </div>
     </div>
   </section>
-</div>
+</main>
 
-<!-- ═══ PROJECTS ═══ -->
-<div id="pg-projects" class="page">
+<!-- ══════════ PROJECTS ══════════ -->
+<main id="pg-projects" class="page" hidden>
 
-  <section class="pt-32 pb-10 px-6 lg:px-10">
-    <div class="max-w-[1200px] mx-auto text-center">
-      <p class="fade-up text-[9px] tracking-[.4em] uppercase text-b-rose mb-5" data-t="pj_l">Our Portfolio</p>
-      <h1 class="fade-up d1 font-serif text-5xl sm:text-7xl font-bold tracking-tight mb-4" data-t="pj_t">Projects</h1>
-      <p class="fade-up d2 text-b-muted font-light max-w-lg mx-auto" data-t="pj_s">Three properties in Limerick, Ireland — acquired, refurbished and held as long-term rental assets.</p>
+  <section class="pt-[136px] lg:pt-[168px] pb-14">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <h1 class="rv font-display text-[clamp(2.8rem,8vw,6.4rem)] leading-[.94] mb-8" data-t="pj_t">Three houses<br>in <span class="text-pink">Limerick.</span></h1>
+      <p class="rv r1 text-[16.5px] text-mid leading-[1.7] max-w-[48ch]" data-t="pj_s">Bought derelict, rebuilt to a standard we would live in, held for rent. Every figure below is the real one.</p>
     </div>
   </section>
 
-  <!-- SUMMARY -->
-  <section class="px-6 lg:px-10 pb-16">
-    <div class="max-w-[1200px] mx-auto grid md:grid-cols-3 gap-5">
+  <!-- Index: hover fills the row. This is the page's spine. -->
+  <section class="pb-24 lg:pb-28">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
 
-      <a href="#pj-maryfield" class="fade-up d1 card rounded-2xl p-7 block">
-        <div class="flex items-center justify-between mb-5"><span class="text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full bg-b-gold/25 text-b-amber font-medium" data-t="p3_b">New Project</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-b-soft"></i></div>
-        <h3 class="font-serif text-2xl font-semibold mb-1">Maryfield</h3>
-        <p class="text-xs text-b-muted mb-6">Limerick, Ireland</p>
-        <p class="text-[9px] uppercase tracking-widest text-b-soft mb-1" data-t="pj_val">Total investment</p>
-        <!-- TODO Maryfield: substituir €— pelo valor real -->
-        <p class="font-serif text-2xl font-bold text-b-amber num">€—</p>
+      <a href="javascript:void(0)" onclick="jump('p-kileely')" class="rv prow group block py-7 transition-colors duration-300 hover:bg-pinkb hover:text-white -mx-4 px-4 sm:-mx-7 sm:px-7 rounded-[14px]">
+        <div class="grid sm:grid-cols-12 gap-3 sm:gap-6 items-baseline">
+          <p class="num text-[13px] sm:col-span-1 text-soft group-hover:text-white/70">01</p>
+          <h2 class="font-display text-[clamp(1.7rem,3.4vw,2.7rem)] leading-none sm:col-span-5">Kileely Villas</h2>
+          <p class="text-[13px] sm:col-span-2 text-mid group-hover:text-white/80" data-t="p1_b">Completed</p>
+          <p class="num text-[clamp(1.3rem,2.4vw,1.9rem)] sm:col-span-3 sm:text-right">€331,129</p>
+          <span class="hidden sm:flex sm:col-span-1 justify-end"><i data-lucide="arrow-down-right" class="w-5 h-5 text-soft group-hover:text-white group-hover:rotate-[-45deg] transition-transform duration-300"></i></span>
+        </div>
       </a>
 
-      <a href="#pj-kileely" class="fade-up d2 card rounded-2xl p-7 block">
-        <div class="flex items-center justify-between mb-5"><span class="text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full bg-b-pink/12 text-b-rose font-medium" data-t="p1_b">Completed</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-b-soft"></i></div>
-        <h3 class="font-serif text-2xl font-semibold mb-1">Kileely Villas</h3>
-        <p class="text-xs text-b-muted mb-6">Limerick, Ireland · 3 bed · 84.5㎡</p>
-        <p class="text-[9px] uppercase tracking-widest text-b-soft mb-1" data-t="pj_val">Total investment</p>
-        <p class="font-serif text-2xl font-bold text-b-rose num">€331,129</p>
+      <a href="javascript:void(0)" onclick="jump('p-adelaide')" class="rv r1 prow group block py-7 transition-colors duration-300 hover:bg-pinkb hover:text-white -mx-4 px-4 sm:-mx-7 sm:px-7 rounded-[14px]">
+        <div class="grid sm:grid-cols-12 gap-3 sm:gap-6 items-baseline">
+          <p class="num text-[13px] sm:col-span-1 text-soft group-hover:text-white/70">02</p>
+          <h2 class="font-display text-[clamp(1.7rem,3.4vw,2.7rem)] leading-none sm:col-span-5">Adelaide Terrace</h2>
+          <p class="text-[13px] sm:col-span-2 text-mid group-hover:text-white/80" data-t="p2_b">In progress</p>
+          <p class="num text-[clamp(1.3rem,2.4vw,1.9rem)] sm:col-span-3 sm:text-right">€388,000</p>
+          <span class="hidden sm:flex sm:col-span-1 justify-end"><i data-lucide="arrow-down-right" class="w-5 h-5 text-soft group-hover:text-white group-hover:rotate-[-45deg] transition-transform duration-300"></i></span>
+        </div>
       </a>
 
-      <a href="#pj-adelaide" class="fade-up d3 card rounded-2xl p-7 block">
-        <div class="flex items-center justify-between mb-5"><span class="text-[9px] uppercase tracking-widest px-3 py-1.5 rounded-full bg-b-gold/25 text-b-amber font-medium" data-t="p2_b">In Progress</span><i data-lucide="arrow-up-right" class="w-4 h-4 text-b-soft"></i></div>
-        <h3 class="font-serif text-2xl font-semibold mb-1">Adelaide Terrace</h3>
-        <p class="text-xs text-b-muted mb-6">Henry Street, Limerick · 3 bed</p>
-        <p class="text-[9px] uppercase tracking-widest text-b-soft mb-1" data-t="pj_val">Total investment</p>
-        <p class="font-serif text-2xl font-bold text-b-amber num">€388,000</p>
+      <a href="javascript:void(0)" onclick="jump('p-maryfield')" class="rv r2 prow group block py-7 transition-colors duration-300 hover:bg-pinkb hover:text-white -mx-4 px-4 sm:-mx-7 sm:px-7 rounded-[14px]">
+        <div class="grid sm:grid-cols-12 gap-3 sm:gap-6 items-baseline">
+          <p class="num text-[13px] sm:col-span-1 text-soft group-hover:text-white/70">03</p>
+          <h2 class="font-display text-[clamp(1.7rem,3.4vw,2.7rem)] leading-none sm:col-span-5">Maryfield</h2>
+          <p class="text-[13px] sm:col-span-2 text-mid group-hover:text-white/80" data-t="p3_b">Just acquired</p>
+          <p class="num text-[clamp(1.3rem,2.4vw,1.9rem)] sm:col-span-3 sm:text-right text-soft group-hover:text-white/80" data-t="tbc">TBC</p>
+          <span class="hidden sm:flex sm:col-span-1 justify-end"><i data-lucide="arrow-down-right" class="w-5 h-5 text-soft group-hover:text-white group-hover:rotate-[-45deg] transition-transform duration-300"></i></span>
+        </div>
       </a>
 
     </div>
   </section>
 
-  <div class="line-g max-w-[200px] mx-auto mb-16"></div>
-
-  <!-- ═══ MARYFIELD ═══ -->
-  <section id="pj-maryfield" class="px-6 lg:px-10 pb-16 scroll-mt-24">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="text-center mb-10">
-        <div class="fade-up inline-flex items-center gap-3 mb-5"><span class="w-8 h-px bg-b-gold"></span><span class="text-[9px] tracking-[.4em] uppercase text-b-amber font-medium" data-t="p3_b">New Project</span><span class="w-8 h-px bg-b-gold"></span></div>
-        <h2 class="fade-up d1 font-serif text-4xl sm:text-5xl font-bold tracking-tight mb-4">Maryfield</h2>
-        <div class="fade-up d2 flex items-center justify-center gap-3 text-sm text-b-muted font-light"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-b-rose"></i><span class="uppercase tracking-[.15em] font-medium">Limerick</span><span class="text-b-border">·</span><span data-t="p3_meta">Details to be confirmed</span></div>
+  <!-- 01 Kileely -->
+  <section id="p-kileely" class="pb-24 lg:pb-28 scroll-mt-24">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <div class="rv flex items-end gap-6 mb-10">
+        <span class="num text-[clamp(3.4rem,9vw,7rem)] leading-[.8] text-gold">01</span>
+        <div class="pb-2">
+          <h2 class="font-display text-[clamp(1.8rem,3.6vw,2.9rem)] leading-none mb-2.5">Kileely Villas</h2>
+          <p class="text-[14px] text-mid">Limerick <span class="text-line">/</span> 3 bed <span class="text-line">/</span> 84.5 m² <span class="text-line">/</span> BER C1</p>
+        </div>
       </div>
 
-      <!-- ╔══════════════════════════════════════════════════════════════╗
-           ║  MARYFIELD — DADOS PENDENTES                                 ║
-           ║  Trocar cada "—" pelo valor real. Nada mais precisa mudar.   ║
-           ╚══════════════════════════════════════════════════════════════╝ -->
-      <div class="fade-up card rounded-3xl overflow-hidden">
-        <div class="grid lg:grid-cols-2">
-          <div class="p-8 lg:p-10">
-            <p class="text-[9px] tracking-[.3em] uppercase text-b-amber mb-2" data-t="p3_n">Property 03</p>
-            <h3 class="font-serif text-2xl font-semibold mb-1">Maryfield</h3>
-            <p class="text-xs text-b-muted mb-6">Limerick, Ireland</p>
-            <p class="text-sm text-b-muted font-light leading-relaxed mb-8" data-t="p3_d">Our third acquisition in Limerick. Full details and refurbishment plan will be published here shortly — the figures are available now in the Property Information Pack.</p>
-            <div class="grid grid-cols-4 gap-3">
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="bed-double" class="w-4 h-4 text-b-rose mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_bed">Beds</p><p class="font-semibold text-sm num">—</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="maximize" class="w-4 h-4 text-b-amber mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_size">Size</p><p class="font-semibold text-sm num">—</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="zap" class="w-4 h-4 text-b-amber mx-auto mb-1"></i><p class="text-[9px] text-b-muted">BER</p><p class="font-semibold text-sm num">—</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="home" class="w-4 h-4 text-b-rose mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_type">Type</p><p class="font-semibold text-sm num">—</p></div>
-            </div>
+      <!-- Headline figures, set at display size instead of buried in a table -->
+      <div class="rv r1 grid sm:grid-cols-3 gap-px bg-line r-panel overflow-hidden mb-12">
+        <div class="bg-paper p-7"><p class="text-[12px] text-mid mb-2.5" data-t="k_a">Bought for</p><p class="num text-[clamp(1.6rem,3vw,2.3rem)]">€145,000</p></div>
+        <div class="bg-paper p-7"><p class="text-[12px] text-mid mb-2.5" data-t="k_b">Rebuilt for</p><p class="num text-[clamp(1.6rem,3vw,2.3rem)] text-pink">€186,129</p></div>
+        <div class="bg-paper p-7"><p class="text-[12px] text-mid mb-2.5" data-t="k_c">Rent, per month</p><p class="num text-[clamp(1.6rem,3vw,2.3rem)] text-goldd">€3,000</p></div>
+      </div>
+
+      <p class="rv r1 text-[16px] text-mid leading-[1.7] max-w-[52ch] mb-12" data-t="p1_d">A three bedroom end of terrace, stripped back and rebuilt. Open plan kitchen and dining, living room, home office and a new bathroom. Electric heating, BER C1. Total cost €331,129, annual rent €36,000.</p>
+
+      <!-- Gallery: files are 629x877 branded posters, shown whole at their true ratio -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="gal"></div>
+    </div>
+  </section>
+
+  <!-- 02 Adelaide -->
+  <section id="p-adelaide" class="py-20 lg:py-24 bg-sand/60 border-y border-line scroll-mt-24">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <div class="rv flex items-end gap-6 mb-10">
+        <span class="num text-[clamp(3.4rem,9vw,7rem)] leading-[.8] text-pink">02</span>
+        <div class="pb-2">
+          <h2 class="font-display text-[clamp(1.8rem,3.6vw,2.9rem)] leading-none mb-2.5">Adelaide Terrace</h2>
+          <p class="text-[14px] text-mid">Henry Street, Limerick V94 E6C <span class="text-line">/</span> 3 bed</p>
+        </div>
+      </div>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="rv r1 text-[16px] text-mid leading-[1.7] mb-8" data-t="p2_d">A three bedroom end of terrace on Henry Street, minutes from the city centre, opposite the former Shannon Arms. Work is under way.</p>
+          <div class="rv r1 grid grid-cols-2 gap-px bg-line r-panel overflow-hidden">
+            <div class="bg-sand p-6"><p class="text-[12px] text-mid mb-2" data-t="a_a">Valuation</p><p class="num text-[clamp(1.4rem,2.6vw,2rem)] text-goldd">€317,200</p></div>
+            <div class="bg-sand p-6"><p class="text-[12px] text-mid mb-2" data-t="a_b">Rent, projected</p><p class="num text-[clamp(1.4rem,2.6vw,2rem)] text-pink">€3,000</p></div>
           </div>
-          <div class="p-8 lg:p-10 bg-b-surface/50 border-t lg:border-t-0 lg:border-l border-b-border">
-            <div class="bg-b-card rounded-xl border border-b-border p-6 space-y-3 text-sm h-full flex flex-col justify-center">
-              <h4 class="text-[10px] font-semibold text-b-muted uppercase tracking-wider mb-3" data-t="p_f">Financial Details</h4>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_pu">Purchase Price</span><span class="num">€—</span></div>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_er">Est. Refurbishment</span><span class="text-b-rose num">€—</span></div>
-              <div class="flex justify-between pt-3 border-t border-b-border"><span class="text-b-muted" data-t="p_to">Total Cost</span><span class="font-bold num">€—</span></div>
-              <div class="flex justify-between bg-b-gold/15 rounded-lg p-3"><span class="text-b-muted" data-t="p_ar">Anticipated Rent</span><span class="font-bold text-b-amber text-lg num">€—</span></div>
-            </div>
-          </div>
+        </div>
+
+        <div class="lg:col-span-6 lg:col-start-7">
+          <dl class="rv r2 text-[15px]">
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_pu">Purchase price</dt><dd class="num">€230,000</dd></div>
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_er">Refurbishment, estimated</dt><dd class="num">€150,000</dd></div>
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_fe">Fees</dt><dd class="num">€8,000</dd></div>
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_gr">Government grant</dt><dd class="num text-emerald-700">−€50,000</dd></div>
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_lo">Loan required</dt><dd class="num">€283,000</dd></div>
+            <div class="flex justify-between gap-4 py-4"><dt class="font-semibold" data-t="p_to">Total cost</dt><dd class="num text-lg font-semibold">€388,000</dd></div>
+          </dl>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ KILEELY ═══ -->
-  <section id="pj-kileely" class="px-6 lg:px-10 pb-10 scroll-mt-24">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="text-center mb-10">
-        <div class="fade-up inline-flex items-center gap-3 mb-5"><span class="w-8 h-px bg-b-pink/50"></span><span class="text-[9px] tracking-[.4em] uppercase text-b-rose font-medium" data-t="p1_b">Completed</span><span class="w-8 h-px bg-b-pink/50"></span></div>
-        <h2 class="fade-up d1 font-serif text-4xl sm:text-5xl font-bold tracking-tight mb-4">Kileely Villas</h2>
-        <div class="fade-up d2 flex flex-wrap items-center justify-center gap-3 text-sm text-b-muted font-light"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-b-rose"></i><span class="uppercase tracking-[.15em] font-medium">Limerick</span><span class="text-b-border">·</span><span>3 bed</span><span class="text-b-border">·</span><span>84.5㎡</span><span class="text-b-border">·</span><span>BER C1</span></div>
+  <!-- 03 Maryfield. Every "TBC" below is waiting on real data. -->
+  <section id="p-maryfield" class="py-24 lg:py-28 scroll-mt-24">
+    <div class="max-w-[1320px] mx-auto px-6 lg:px-10">
+      <div class="rv flex items-end gap-6 mb-10">
+        <span class="num text-[clamp(3.4rem,9vw,7rem)] leading-[.8] text-gold">03</span>
+        <div class="pb-2">
+          <h2 class="font-display text-[clamp(1.8rem,3.6vw,2.9rem)] leading-none mb-2.5">Maryfield</h2>
+          <p class="text-[14px] text-mid">Limerick</p>
+        </div>
       </div>
-    </div>
-  </section>
 
-  <section class="px-6 lg:px-10 pb-14">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5" id="ba-grid"></div>
-    </div>
-  </section>
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <p class="rv r1 lg:col-span-5 text-[16px] text-mid leading-[1.7]" data-t="p3_d">The third house, bought and about to start. Costings and the refurbishment plan are published here as soon as the schedule is signed off. The current figures are already in the investment pack.</p>
 
-  <section class="px-6 lg:px-10 pb-16">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="fade-up card rounded-3xl overflow-hidden">
-        <div class="grid lg:grid-cols-2">
-          <div class="p-8 lg:p-10">
-            <p class="text-[9px] tracking-[.3em] uppercase text-b-rose mb-2" data-t="p1_n">Property 01</p>
-            <h3 class="font-serif text-2xl font-semibold mb-1">3 Kileely Villas</h3>
-            <p class="text-xs text-b-muted mb-6">Limerick, Ireland · 84.5㎡</p>
-            <p class="text-sm text-b-muted font-light leading-relaxed mb-8" data-t="p1_d">A 3-bedroom end-of-terrace house. Open-plan kitchen and dining, living room, home office and a modern bathroom. Electric heating, BER C1.</p>
-            <div class="grid grid-cols-4 gap-3">
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="bed-double" class="w-4 h-4 text-b-rose mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_bed">Beds</p><p class="font-semibold text-sm num">3</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="maximize" class="w-4 h-4 text-b-amber mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_size">Size</p><p class="font-semibold text-sm num">84.5㎡</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="zap" class="w-4 h-4 text-b-amber mx-auto mb-1"></i><p class="text-[9px] text-b-muted">BER</p><p class="font-semibold text-sm">C1</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="thermometer" class="w-4 h-4 text-b-rose mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_heat">Heating</p><p class="font-semibold text-sm" data-t="f_elec">Electric</p></div>
-            </div>
-          </div>
-          <div class="p-8 lg:p-10 bg-b-surface/50 border-t lg:border-t-0 lg:border-l border-b-border">
-            <div class="bg-b-card rounded-xl border border-b-border p-6 space-y-3 text-sm h-full flex flex-col justify-center">
-              <h4 class="text-[10px] font-semibold text-b-muted uppercase tracking-wider mb-3" data-t="p_f">Financial Details</h4>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_pu">Purchase Price</span><span class="num">€145,000</span></div>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_re">Refurbishment</span><span class="text-b-rose num">€186,129</span></div>
-              <div class="flex justify-between pt-3 border-t border-b-border"><span class="text-b-muted" data-t="p_to">Total Cost</span><span class="font-bold num">€331,129</span></div>
-              <div class="flex justify-between bg-b-pink/8 rounded-lg p-3"><span class="text-b-muted" data-t="p_ra">Monthly Rent</span><span class="font-bold text-b-rose text-lg num">€3,000</span></div>
-              <div class="flex justify-between bg-b-gold/15 rounded-lg p-3"><span class="text-b-muted" data-t="p_an">Annual Rent</span><span class="font-bold text-b-amber text-lg num">€36,000</span></div>
-            </div>
-          </div>
+        <!-- TODO Maryfield: trocar cada TBC pelo valor real -->
+        <div class="rv r2 lg:col-span-6 lg:col-start-7">
+          <dl class="text-[15px]">
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_pu">Purchase price</dt><dd class="num text-soft" data-t="tbc">TBC</dd></div>
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_er">Refurbishment, estimated</dt><dd class="num text-soft" data-t="tbc">TBC</dd></div>
+            <div class="flex justify-between gap-4 py-3.5 border-b border-line"><dt class="text-mid" data-t="p_ar">Rent, projected</dt><dd class="num text-soft" data-t="tbc">TBC</dd></div>
+            <div class="flex justify-between gap-4 py-4"><dt class="font-semibold" data-t="p_to">Total cost</dt><dd class="num text-soft" data-t="tbc">TBC</dd></div>
+          </dl>
+          <a href="#" data-pack class="press inline-flex items-center gap-2.5 mt-8 px-6 py-3 rounded-full border border-ink/20 text-ink text-[13px] font-semibold hover:bg-ink hover:text-white transition-colors"><i data-lucide="arrow-down-to-line" class="w-4 h-4"></i><span data-t="pk_b">Download the pack</span></a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══ ADELAIDE ═══ -->
-  <section id="pj-adelaide" class="px-6 lg:px-10 pb-16 scroll-mt-24">
-    <div class="max-w-[1200px] mx-auto">
-      <div class="text-center mb-10">
-        <div class="fade-up inline-flex items-center gap-3 mb-5"><span class="w-8 h-px bg-b-gold"></span><span class="text-[9px] tracking-[.4em] uppercase text-b-amber font-medium" data-t="p2_b">In Progress</span><span class="w-8 h-px bg-b-gold"></span></div>
-        <h2 class="fade-up d1 font-serif text-4xl sm:text-5xl font-bold tracking-tight mb-4">Adelaide Terrace</h2>
-        <div class="fade-up d2 flex flex-wrap items-center justify-center gap-3 text-sm text-b-muted font-light"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-b-rose"></i><span class="uppercase tracking-[.15em] font-medium">Henry Street, Limerick</span><span class="text-b-border">·</span><span>3 bed</span><span class="text-b-border">·</span><span>V94 E6C</span></div>
-      </div>
-
-      <div class="fade-up card rounded-3xl overflow-hidden">
-        <div class="grid lg:grid-cols-2">
-          <div class="p-8 lg:p-10">
-            <p class="text-[9px] tracking-[.3em] uppercase text-b-amber mb-2" data-t="p2_n">Property 02</p>
-            <h3 class="font-serif text-2xl font-semibold mb-1">3 Adelaide Terrace</h3>
-            <p class="text-xs text-b-muted mb-6">Henry Street, Limerick V94 E6C</p>
-            <p class="text-sm text-b-muted font-light leading-relaxed mb-8" data-t="p2_d">A 3-bedroom end-of-terrace on Henry Street, a short walk from the city centre and opposite the former Shannon Arms.</p>
-            <div class="grid grid-cols-4 gap-3">
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="bed-double" class="w-4 h-4 text-b-rose mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_bed">Beds</p><p class="font-semibold text-sm num">3</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="map-pin" class="w-4 h-4 text-b-amber mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_loc">Location</p><p class="font-semibold text-sm" data-t="f_centre">City centre</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="home" class="w-4 h-4 text-b-amber mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_type">Type</p><p class="font-semibold text-sm" data-t="f_terr">Terrace</p></div>
-              <div class="bg-b-surface rounded-xl p-3 text-center"><i data-lucide="trending-up" class="w-4 h-4 text-b-rose mx-auto mb-1"></i><p class="text-[9px] text-b-muted" data-t="f_val">Valuation</p><p class="font-semibold text-sm num">€317K</p></div>
-            </div>
-          </div>
-          <div class="p-8 lg:p-10 bg-b-surface/50 border-t lg:border-t-0 lg:border-l border-b-border">
-            <div class="bg-b-card rounded-xl border border-b-border p-6 space-y-3 text-sm">
-              <h4 class="text-[10px] font-semibold text-b-muted uppercase tracking-wider mb-3" data-t="p_f">Financial Details</h4>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_pu">Purchase Price</span><span class="num">€230,000</span></div>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_er">Est. Refurbishment</span><span class="text-b-rose num">€150,000</span></div>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_fe">Fees</span><span class="num">€8,000</span></div>
-              <div class="flex justify-between pt-3 border-t border-b-border"><span class="text-b-muted" data-t="p_to">Total Cost</span><span class="font-bold num">€388,000</span></div>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_gr">Government Grant</span><span class="text-emerald-600 num">−€50,000</span></div>
-              <div class="flex justify-between"><span class="text-b-muted" data-t="p_lo2">Loan Required</span><span class="num">€283,000</span></div>
-              <div class="flex justify-between bg-b-pink/8 rounded-lg p-3"><span class="text-b-muted" data-t="p_ar">Anticipated Rent</span><span class="font-bold text-b-rose num">€3,000 / mo</span></div>
-              <div class="flex justify-between bg-b-gold/15 rounded-lg p-3"><span class="text-b-muted" data-t="p_va2">Valuation</span><span class="font-bold text-b-amber num">€317,200</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PACK CTA -->
-  <section class="px-6 lg:px-10 pb-20">
-    <div class="max-w-[900px] mx-auto">
-      <div class="fade-up pack-band rounded-3xl border border-b-border py-14 px-8 lg:px-14 text-center">
-        <div class="w-14 h-14 rounded-2xl bg-b-card border border-b-border flex items-center justify-center mx-auto mb-7"><i data-lucide="file-text" class="w-6 h-6 text-b-rose"></i></div>
-        <h3 class="fade-up d1 font-serif text-3xl font-bold tracking-tight mb-4" data-t="pk_t2">Want the full numbers?</h3>
-        <p class="fade-up d2 text-b-muted font-light text-[15px] max-w-lg mx-auto mb-9 leading-relaxed" data-t="pk_d2">The Property Information Pack has the complete breakdown for each project — costs, timelines, projected rent and how to take part.</p>
-        <div class="fade-up d3 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="#" data-pack class="group px-9 py-4 bg-b-pink text-white text-[11px] uppercase tracking-[.18em] font-semibold rounded-full hover:bg-b-rose transition-all flex items-center gap-3 cta-glow"><i data-lucide="file-down" class="w-4 h-4"></i><span data-t="pk_b">Download Investment Pack</span><i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i></a>
-          <a href="mailto:contact@oldtogold.ie" class="px-7 py-4 border border-b-ink/15 text-b-ink/70 text-[10px] uppercase tracking-[.18em] rounded-full hover:border-b-ink/40 hover:text-b-ink transition-all flex items-center gap-2.5"><i data-lucide="mail" class="w-4 h-4"></i><span data-t="pk_ask">Ask a question</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="text-center pb-16">
-    <a href="javascript:void(0)" onclick="goHome()" class="inline-flex items-center gap-2 text-b-muted hover:text-b-ink transition text-[10px] uppercase tracking-widest"><i data-lucide="arrow-left" class="w-3 h-3"></i><span data-t="back">Back to Home</span></a>
+  <div class="max-w-[1320px] mx-auto px-6 lg:px-10 pb-24">
+    <a href="javascript:void(0)" onclick="go('home')" class="inline-flex items-center gap-2 text-[13px] font-medium text-mid hover:text-pinkd transition-colors"><i data-lucide="arrow-left" class="w-4 h-4"></i><span data-t="back">Back to home</span></a>
   </div>
-</div>
+</main>
 
-<!-- FOOTER -->
-<footer class="border-t border-b-border py-14 px-6 lg:px-10 bg-b-surface/40">
-  <div class="max-w-[1200px] mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
-    <div>
-      <span class="font-serif text-[18px]">old <span class="text-b-soft font-extralight">to</span> <span class="text-grad font-semibold">gold</span></span>
-      <p class="font-script text-b-rose/70 mt-0.5 text-lg">with Nina Chagas</p>
-      <p class="text-xs text-b-muted font-light mt-4 leading-relaxed" data-t="f_d">Turning Ireland's forgotten homes into places worth living in — and worth investing in.</p>
+<footer class="border-t border-line bg-sand/40">
+  <div class="max-w-[1320px] mx-auto px-6 lg:px-10 py-16">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-12 gap-10 mb-14">
+      <div class="lg:col-span-5">
+        <p class="wordmark font-display text-[19px] tracking-tight mb-2">old <span class="text-soft font-medium">to</span> <span class="n-hi">gold</span></p>
+        <p class="text-[14px] text-mid leading-[1.7] max-w-[34ch]" data-t="f_d">Derelict houses in Limerick, bought, rebuilt and let. Founded by Nina Chagas.</p>
+      </div>
+      <div class="lg:col-span-3">
+        <h3 class="text-[12px] font-semibold text-soft mb-4" data-t="f_l">Pages</h3>
+        <ul class="space-y-2.5 text-[14px]">
+          <li><a href="javascript:void(0)" onclick="jump('about')" class="text-mid hover:text-pinkd transition-colors" data-t="n_about">About</a></li>
+          <li><a href="javascript:void(0)" onclick="go('projects')" class="text-mid hover:text-pinkd transition-colors" data-t="n_proj">Projects</a></li>
+          <li><a href="javascript:void(0)" onclick="jump('r2r')" class="text-mid hover:text-pinkd transition-colors" data-t="n_r2r">Rent-to-Rent</a></li>
+          <li><a href="#" data-pack class="text-mid hover:text-pinkd transition-colors" data-t="n_pack">Investment pack</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-4">
+        <h3 class="text-[12px] font-semibold text-soft mb-4" data-t="f_c">Contact</h3>
+        <ul class="space-y-2.5 text-[14px]">
+          <li><a href="mailto:contact@oldtogold.ie" class="text-mid hover:text-pinkd transition-colors">contact@oldtogold.ie</a></li>
+          <li class="text-mid">Limerick, Ireland</li>
+          <li><a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-mid hover:text-pinkd transition-colors"><i data-lucide="instagram" class="w-4 h-4"></i>@oldtogoldofficial</a></li>
+        </ul>
+      </div>
     </div>
-    <div>
-      <h4 class="text-[9px] uppercase tracking-widest text-b-soft mb-4" data-t="f_l">Links</h4>
-      <ul class="space-y-2.5">
-        <li><a href="javascript:void(0)" onclick="goHomeAbout()" class="text-sm text-b-muted hover:text-b-rose transition" data-t="n_about">About</a></li>
-        <li><a href="javascript:void(0)" onclick="goProjects()" class="text-sm text-b-muted hover:text-b-rose transition" data-t="n_proj">Projects</a></li>
-        <li><a href="javascript:void(0)" onclick="goHomeR2R()" class="text-sm text-b-muted hover:text-b-rose transition" data-t="n_r2r">Rent-to-Rent</a></li>
-        <li><a href="#" data-pack class="text-sm text-b-muted hover:text-b-rose transition" data-t="n_pack">Investment Pack</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-[9px] uppercase tracking-widest text-b-soft mb-4" data-t="f_c">Contact</h4>
-      <ul class="space-y-2.5">
-        <li><a href="mailto:contact@oldtogold.ie" class="flex items-center gap-2 text-sm text-b-muted hover:text-b-rose transition"><i data-lucide="mail" class="w-3.5 h-3.5 text-b-rose"></i>contact@oldtogold.ie</a></li>
-        <li class="flex items-center gap-2 text-sm text-b-muted"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-b-rose"></i>Limerick, Ireland</li>
-      </ul>
-    </div>
-    <div>
-      <h4 class="text-[9px] uppercase tracking-widest text-b-soft mb-4">Social</h4>
-      <a href="https://www.instagram.com/oldtogoldofficial/" target="_blank" rel="noopener" class="w-10 h-10 rounded-full border border-b-border flex items-center justify-center text-b-muted hover:text-b-rose hover:border-b-pink transition"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-    </div>
-  </div>
-  <div class="border-t border-b-border pt-7 flex flex-col sm:flex-row items-center justify-between gap-3">
-    <p class="text-[10px] text-b-soft">&copy; 2025 Old to Gold</p>
-    <p class="text-[10px] text-b-soft" data-t="f_n">Founded by Nina Chagas · Limerick, Ireland</p>
+    <div class="rule mb-6"></div>
+    <p class="text-[12px] text-soft">&copy; 2025 Old to Gold</p>
   </div>
 </footer>
 
-<div id="toast" class="toast-box"><i data-lucide="check-circle" class="w-4 h-4 text-b-rose" style="flex-shrink:0"></i><span id="tmsg" class="text-sm" style="color:#1A1613"></span></div>
+<div id="toast" class="toast"><i data-lucide="info" class="w-4 h-4 text-gold" style="flex-shrink:0"></i><span id="tmsg"></span></div>
 
 <script>
-/* ╔═══════════════════════════════════════════════════════════════════════╗
-   ║  PDF DE VENDA — troque a linha abaixo pela URL do PDF.                ║
-   ║  Vale para todos os botoes "Investment Pack" do site (nav, home,      ║
-   ║  projetos, rodape). Enquanto for '#', os botoes mostram um aviso.     ║
-   ╚═══════════════════════════════════════════════════════════════════════╝ */
+/* ─────────────────────────────────────────────────────────────
+   PDF DE VENDA. Troque a linha abaixo pela URL do PDF.
+   Vale para todos os botoes "Investment pack" do site.
+   Enquanto for '#', os botoes avisam que o material sai em breve.
+   ───────────────────────────────────────────────────────────── */
 var INVESTMENT_PACK_URL = '#';
 
-var INTERIORES=[
-  {img:'https://z-cdn-media.chatglm.cn/files/bdedf599-e2de-41bf-85bf-35fe05fd8c5c.jpg?auth_key=1883125311-91e9c466f02b41149364fb4f7075098b-0-419757e2d5bbc93f189f187ac1f0127c',label:'Bathroom',label_pt:'Banheiro'},
-  {img:'https://z-cdn-media.chatglm.cn/files/512a1cc4-a9cb-4f8e-b418-e73d377a5808.jpg?auth_key=1883125311-e1920e7f915e4693a598945d3bc80b9e-0-1db81388bc17bf14e4dab7251329be02',label:'Kitchen',label_pt:'Cozinha'},
-  {img:'https://z-cdn-media.chatglm.cn/files/a7a6530a-484d-4ef2-83f2-fae96369508e.jpg?auth_key=1883125311-0affbf62eef44b1d8513da467171120b-0-ef8d7b2f44f8e1cf736e7f395cbdfc78',label:'Living Room',label_pt:'Sala de Estar'},
-  {img:'https://z-cdn-media.chatglm.cn/files/698e7d39-b5f8-438d-bf79-17ed18515003.jpg?auth_key=1883125311-9f910d7f3f2b44e58e6153485e5b4a79-0-32a6364039ba11c0abfef44e06f23d08',label:'Living Room II',label_pt:'Sala de Estar II'},
-  {img:'https://z-cdn-media.chatglm.cn/files/cabed3fe-cbd6-4c91-a9ee-f853c38cadab.jpg?auth_key=1883125311-89057c26bc4d4737a809ed8404aa4648-0-4464af9f947b2a74bba5c5ffb90101e0',label:'Kitchen II',label_pt:'Cozinha II'},
-  {img:'https://z-cdn-media.chatglm.cn/files/34e73e16-b83f-4707-b2dd-450c05eccebc.jpg?auth_key=1883125311-f888fcfd3e484ce7998e494c4afbb935-0-093e4b4cf26744313d8e868494a59559',label:'Hallway',label_pt:'Corredor'}
+var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Colagens antes/depois da Kileely. Arquivos de 629x877, exibidos
+   inteiros e nunca acima de ~400px de largura, que e o limite antes
+   de a imagem comecar a borrar. */
+var GALLERY=[
+  {img:'https://z-cdn-media.chatglm.cn/files/bdedf599-e2de-41bf-85bf-35fe05fd8c5c.jpg?auth_key=1883125311-91e9c466f02b41149364fb4f7075098b-0-419757e2d5bbc93f189f187ac1f0127c',en:'Bathroom',pt:'Banheiro'},
+  {img:'https://z-cdn-media.chatglm.cn/files/512a1cc4-a9cb-4f8e-b418-e73d377a5808.jpg?auth_key=1883125311-e1920e7f915e4693a598945d3bc80b9e-0-1db81388bc17bf14e4dab7251329be02',en:'Kitchen',pt:'Cozinha'},
+  {img:'https://z-cdn-media.chatglm.cn/files/a7a6530a-484d-4ef2-83f2-fae96369508e.jpg?auth_key=1883125311-0affbf62eef44b1d8513da467171120b-0-ef8d7b2f44f8e1cf736e7f395cbdfc78',en:'Living room',pt:'Sala de estar'},
+  {img:'https://z-cdn-media.chatglm.cn/files/698e7d39-b5f8-438d-bf79-17ed18515003.jpg?auth_key=1883125311-9f910d7f3f2b44e58e6153485e5b4a79-0-32a6364039ba11c0abfef44e06f23d08',en:'Living room, second view',pt:'Sala de estar, segundo angulo'},
+  {img:'https://z-cdn-media.chatglm.cn/files/cabed3fe-cbd6-4c91-a9ee-f853c38cadab.jpg?auth_key=1883125311-89057c26bc4d4737a809ed8404aa4648-0-4464af9f947b2a74bba5c5ffb90101e0',en:'Kitchen, second view',pt:'Cozinha, segundo angulo'},
+  {img:'https://z-cdn-media.chatglm.cn/files/34e73e16-b83f-4707-b2dd-450c05eccebc.jpg?auth_key=1883125311-f888fcfd3e484ce7998e494c4afbb935-0-093e4b4cf26744313d8e868494a59559',en:'Hallway',pt:'Corredor'}
 ];
-var grid=document.getElementById('ba-grid');
-/* Galeria da Kileely Villas. Cada arquivo ja e uma colagem antes/depois real,
-   entao a imagem aparece inteira. O layout antigo cortava a colagem em duas
-   metades e duplicava a mesma foto com filtro cinza rotulada "Antes". */
-for(var i=0;i<INTERIORES.length;i++){
-  var d=INTERIORES[i];var c=document.createElement('div');c.className='fade-up d'+((i%3)+1)+' ba-card';
-  c.innerHTML='<div class="ba-shot"><img src="'+d.img+'" alt="'+d.label+'" loading="lazy"></div><div style="padding:12px 16px;border-top:1px solid #EDE4D8"><p style="font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:#7A7069;font-weight:500" data-ba-label="'+d.label_pt+'">'+d.label+'</p></div>';
-  grid.appendChild(c);
+
+function buildGallery(){
+  var g=document.getElementById('gal'); if(!g) return;
+  g.innerHTML='';
+  for(var i=0;i<GALLERY.length;i++){
+    var d=GALLERY[i];
+    var fig=document.createElement('figure');
+    fig.className='rv r'+((i%3)+1)+' ph r-media zoom border border-line';
+    fig.style.aspectRatio='629/877';
+    fig.innerHTML='<img src="'+d.img+'" alt="Kileely Villas, '+d[L]+', before and after" width="629" height="877" loading="lazy">';
+    g.appendChild(fig);
+  }
+  observe();
 }
 
 var L='en';
 var T={
-en:{n_home:'Home',n_about:'About',n_proj:'Projects',n_r2r:'Rent-to-Rent',n_reels:'Reels',n_pack:'Investment Pack',
-h_tag:'Property Investment · Ireland',h_sub:'We acquire, refurbish and manage residential property in Limerick — and open the same model to investors and owners.',h_cta1:'View Projects',h_cta2:'Investment Pack',
-m1:'Buy',m2:'Refurbish',m3:'Rent',m4:'Refinance',m5:'Repeat',m6:'Transform',
-nina_role:'Founder &amp; CEO',n_yr:'Years in Ireland',n_pr:'Projects',n_lo:'Ireland',
-ab_l:'About',ab_t:'Brazilian-Irish<br><em class="text-grad font-normal">property investor</em>',
-ab_p1:'Nina Chagas moved from Brazil to Ireland at eighteen. She built her career in Limerick, graduated from the University of Limerick in 2020, and has spent more than fifteen years learning the Irish market from the inside.',
-ab_p2:'She founded <strong class="text-b-ink font-medium">Old to Gold</strong> to do one thing well: acquire neglected properties, bring them back to a high standard, and hold them as long-term rental assets.',
-ab_p3:'The portfolio now spans three properties in Limerick. The same discipline that finds value in a derelict house is what she brings to every investor and owner she works with.',
-ab_k1:'Acquisition',ab_k2:'Full refurbishment',ab_k3:'Letting &amp; management',ab_k4:'Rent-to-Rent',
-wd_l:'What We Do',wd_t:'From forgotten to <em class="text-grad font-normal">flawless</em>',
-w1t:'Find &amp; Acquire',w1d:'We identify abandoned and undervalued properties across Ireland with real transformation potential.',
-w2t:'Renovate &amp; Design',w2d:'Complete refurbishment with modern finishes, sustainable materials and layouts that maximise space.',
-w3t:'Let &amp; Manage',w3d:'Transformed properties generate sustainable rental income and build long-term wealth.',
-gl_l:'Strategy',gl_t:'Our <em class="text-grad font-normal">goals</em>',gl_d:'Old to Gold follows a proven property investment strategy designed to build long-term wealth.',gl_cy:'Buy → Refurbish → Rent → Refinance → Repeat',
-g1t:'Buy, Refurbish, Rent, Refinance, Repeat',g1d:'Turn vacant houses into safe, sustainable homes.',
-g2t:'Long-Term Income Generation',g2d:'Generate sustainable rental income across a diversified portfolio.',
-g3t:'Sustainable Revitalisation',g3d:'Eco-friendly materials and energy-efficient solutions.',
-g4t:'Community Impact',g4d:'Revitalise neighbourhoods by transforming derelict properties.',
-g5t:'Scale the Model',g5d:'Replicate across Ireland and expand into the Brazilian market.',
-r_l:'Rent-to-Rent',r_t:'A fixed rent every month.<br><em class="text-grad font-normal">None of the management.</em>',
-r_d:'Rent-to-Rent is simple. We lease your property directly from you on a medium- to long-term agreement and pay you a fixed rent every month. We then take full responsibility for tenants, maintenance and day-to-day management. You are paid the same amount whether the property is occupied or not — and you never take a call about a broken boiler.',
-r_hl:'How it works',
-r_s1t:'The agreement',r_s1d:'We agree a fixed monthly rent and a term — typically three to five years — in a written contract that follows Irish tenancy rules.',
-r_s2t:'We prepare it',r_s2d:'Furnishing, compliance and any work needed to bring the property up to standard are carried out at our cost.',
-r_s3t:'We manage it',r_s3d:'Finding tenants, collecting rent, repairs and inspections are all handled by us. You have one point of contact.',
-r_s4t:'You get it back',r_s4d:'At the end of the term the property is returned to you in the same condition or better, fully maintained throughout.',
-r_o_t:'If you own a property',
-r_o1:'The same rent lands every month, including during void periods.',
-r_o2:'No letting fees, no tenant screening, no late-night repair calls.',
-r_o3:'Routine maintenance and wear and tear are covered by us.',
-r_o4:'A long contract with a company that renovates for a living — the property is looked after.',
-r_o5:'Ideal for owners living abroad, inheriting a house, or simply done with being a landlord.',
+en:{n_home:'Home',n_about:'About',n_proj:'Projects',n_r2r:'Rent-to-Rent',n_pack:'Investment pack',
+h_t:'We buy derelict houses<br>and make them <span class="text-pink">earn.</span>',h_sub:'Acquisition, full refurbishment and letting in Limerick, run end to end. Open to investors, and to owners done managing.',h_cta1:'See the three houses',h_badge:'houses in Limerick',
+m1:'Buy',m2:'Refurbish',m3:'Let',m4:'Refinance',m5:'Repeat',
+ab_t:'Fifteen years in Limerick.<br>Three houses back in use.',
+ab_p1:'Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than fifteen years learning this market from the inside.',
+ab_p2:'She founded <strong class="text-ink font-semibold">Old to Gold</strong> to do one thing properly: buy houses nobody else wants, bring them back to a high standard, and hold them.',
+s_yr:'years in Ireland',s_pr:'houses',s_le:'let and running',
+wd_t:'Three stages, one house at a time.',
+w1t:'Acquire',w1d:'Derelict and undervalued houses across Limerick, bought below the cost of what they become. Grant eligibility is checked before we bid.',
+w2t:'Refurbish',w2d:'Full strip and rebuild. New layouts, new services, new bathrooms and kitchens, and a BER rating that makes the house cheap to run.',
+w3t:'Let and manage',w3d:'Tenants found, rent collected, repairs handled. The house is held as a long-term asset, not flipped.',
+r_t:'A fixed rent every month.<br><span class="text-pink">None of the management.</span>',
+r_d:'We lease your house from you on a long agreement and pay you the same amount every month. Tenants, repairs and compliance become our problem, not yours. You are paid whether the house is occupied or empty.',
+r_s1t:'The agreement',r_s1d:'A fixed monthly rent and a term, usually three to five years, written down and operated under Irish tenancy law.',
+r_s2t:'We prepare it',r_s2d:'Furnishing, compliance and any work needed to bring the house up to standard, at our cost.',
+r_s3t:'We run it',r_s3d:'Tenant sourcing, rent collection, repairs and inspections. One point of contact, which is us.',
+r_s4t:'You get it back',r_s4d:'At the end of the term the house returns to you in the same condition or better, maintained throughout.',
+r_o_t:'If you own a house',
+r_o1:'The same rent arrives every month, including through empty periods.',
+r_o2:'No letting fees, no tenant screening, no calls at eleven at night.',
+r_o3:'Routine maintenance and normal wear are covered by us.',
+r_o4:'Built for owners living abroad, owners who inherited a house, and owners who have had enough.',
 r_i_t:'If you want to invest',
-r_i1:'Cash flow without buying: the capital goes into the contract and the fit-out, not a mortgage.',
-r_i2:'The return comes from the spread between what is paid to the owner and what the property lets for.',
-r_i3:'The model scales — each new agreement is a new income stream, not a new mortgage.',
-r_i4:'It runs alongside the buy-and-refurbish portfolio, which is where our operating experience comes from.',
-r_note:'Every arrangement is set out in a written agreement and operated in line with Irish residential tenancy law. Figures discussed are specific to each property — this page is information, not a financial promise.',
-r_cta:'Talk to us about your property',
-pk_l:'Property Information Pack',pk_t:'Every number, in one document',pk_d:'Purchase price, refurbishment cost, projected rent and timeline for each property — plus how the Rent-to-Rent agreement is structured. Sent as a PDF.',pk_b:'Download Investment Pack',
-pk_t2:'Want the full numbers?',pk_d2:'The Property Information Pack has the complete breakdown for each project — costs, timelines, projected rent and how to take part.',pk_ask:'Ask a question',
-rl_l:'Latest Reels',rl_t:'Follow the <em class="text-grad font-normal">journey</em>',
-ct_l:'Get in Touch',ct_t:'Ready to transform<br>a <em class="text-grad font-normal">property?</em>',ct_d:'Whether you own a property you would rather not manage, want to invest alongside us, or simply want to follow the journey — we would love to hear from you.',ct_b:'Get in Touch',
-pj_l:'Our Portfolio',pj_t:'Projects',pj_s:'Three properties in Limerick, Ireland — acquired, refurbished and held as long-term rental assets.',pj_val:'Total investment',
-p1_b:'Completed',p2_b:'In Progress',p3_b:'New Project',
-p1_n:'Property 01',p2_n:'Property 02',p3_n:'Property 03',
-p1_d:'A 3-bedroom end-of-terrace house. Open-plan kitchen and dining, living room, home office and a modern bathroom. Electric heating, BER C1.',
-p2_d:'A 3-bedroom end-of-terrace on Henry Street, a short walk from the city centre and opposite the former Shannon Arms.',
-p3_d:'Our third acquisition in Limerick. Full details and refurbishment plan will be published here shortly — the figures are available now in the Property Information Pack.',
-p3_meta:'Details to be confirmed',
-f_bed:'Beds',f_size:'Size',f_type:'Type',f_heat:'Heating',f_elec:'Electric',f_loc:'Location',f_centre:'City centre',f_terr:'Terrace',f_val:'Valuation',
-p_f:'Financial Details',p_pu:'Purchase Price',p_re:'Refurbishment',p_er:'Est. Refurbishment',p_to:'Total Cost',p_ra:'Monthly Rent',p_an:'Annual Rent',p_fe:'Fees',p_gr:'Government Grant',p_lo2:'Loan Required',p_ar:'Anticipated Rent',p_va2:'Valuation',
-back:'Back to Home',
-f_d:'Turning Ireland\'s forgotten homes into places worth living in — and worth investing in.',f_l:'Links',f_c:'Contact',f_n:'Founded by Nina Chagas · Limerick, Ireland',
-ba_before:'Before',ba_after:'After',
-toast:'Language changed to English',pack_soon:'The Investment Pack will be available shortly.'},
+r_i1:'Cash flow without buying. The capital goes into the agreement and the fit-out, not a mortgage.',
+r_i2:'The return is the gap between what the owner is paid and what the house lets for.',
+r_i3:'It scales. Each new agreement is another income stream, not another debt.',
+r_i4:'It runs beside the refurbishment portfolio, which is where the operating experience comes from.',
+r_note:'Every arrangement is written down and operated under Irish residential tenancy law. Figures are specific to each house. This page is information, not a promise of return.',
+r_cta:'Talk to us about your house',
+pk_t:'Every number,<br>in one <span class="text-gold">document.</span>',
+pk_d:'Purchase price, refurbishment cost, grant, projected rent and timeline for each house, plus how a Rent-to-Rent agreement is structured. Sent as a PDF.',
+pk_b:'Download the pack',pk_ask:'Ask a question',
+rl_t:'The renovations, as they happen.',
+ct_t:'Tell us about<br>the property.',
+ct_d:'A house you would rather not manage, a house you want gone, or capital you want working in Limerick property. All three start the same way.',
+pj_t:'Three houses<br>in <span class="text-pink">Limerick.</span>',
+pj_s:'Bought derelict, rebuilt to a standard we would live in, held for rent. Every figure below is the real one.',
+p1_b:'Completed',p2_b:'In progress',p3_b:'Just acquired',
+k_a:'Bought for',k_b:'Rebuilt for',k_c:'Rent, per month',
+p1_d:'A three bedroom end of terrace, stripped back and rebuilt. Open plan kitchen and dining, living room, home office and a new bathroom. Electric heating, BER C1. Total cost €331,129, annual rent €36,000.',
+a_a:'Valuation',a_b:'Rent, projected',
+p2_d:'A three bedroom end of terrace on Henry Street, minutes from the city centre, opposite the former Shannon Arms. Work is under way.',
+p3_d:'The third house, bought and about to start. Costings and the refurbishment plan are published here as soon as the schedule is signed off. The current figures are already in the investment pack.',
+p_pu:'Purchase price',p_er:'Refurbishment, estimated',p_fe:'Fees',p_gr:'Government grant',p_lo:'Loan required',p_to:'Total cost',p_ar:'Rent, projected',
+tbc:'TBC',back:'Back to home',
+f_d:'Derelict houses in Limerick, bought, rebuilt and let. Founded by Nina Chagas.',f_l:'Pages',f_c:'Contact',
+toast:'Language changed to English',pack_soon:'The investment pack goes live shortly.'},
 
-pt:{n_home:'Início',n_about:'Sobre',n_proj:'Projetos',n_r2r:'Rent-to-Rent',n_reels:'Reels',n_pack:'Material de Investimento',
-h_tag:'Investimento Imobiliário · Irlanda',h_sub:'Compramos, reformamos e administramos imóveis residenciais em Limerick — e abrimos o mesmo modelo a investidores e proprietários.',h_cta1:'Ver Projetos',h_cta2:'Material de Investimento',
-m1:'Comprar',m2:'Reformar',m3:'Alugar',m4:'Refinanciar',m5:'Repetir',m6:'Transformar',
-nina_role:'Fundadora &amp; CEO',n_yr:'Anos na Irlanda',n_pr:'Projetos',n_lo:'Irlanda',
-ab_l:'Sobre',ab_t:'Investidora imobiliária<br><em class="text-grad font-normal">brasilo-irlandesa</em>',
-ab_p1:'Nina Chagas saiu do Brasil para a Irlanda aos dezoito anos. Construiu a carreira em Limerick, formou-se na Universidade de Limerick em 2020 e passou mais de quinze anos aprendendo o mercado irlandês por dentro.',
-ab_p2:'Fundou a <strong class="text-b-ink font-medium">Old to Gold</strong> para fazer uma coisa bem feita: adquirir imóveis negligenciados, devolvê-los a um alto padrão e mantê-los como ativos de aluguel de longo prazo.',
-ab_p3:'O portfólio hoje reúne três propriedades em Limerick. A mesma disciplina que enxerga valor numa casa abandonada é a que ela leva a cada investidor e proprietário com quem trabalha.',
-ab_k1:'Aquisição',ab_k2:'Reforma completa',ab_k3:'Locação &amp; gestão',ab_k4:'Rent-to-Rent',
-wd_l:'O Que Fazemos',wd_t:'De esquecida a <em class="text-grad font-normal">impecável</em>',
-w1t:'Encontrar &amp; Adquirir',w1d:'Identificamos propriedades abandonadas e subvalorizadas por toda a Irlanda com real potencial de transformação.',
-w2t:'Reformar &amp; Projetar',w2d:'Reforma completa com acabamentos modernos, materiais sustentáveis e plantas que aproveitam cada metro.',
-w3t:'Alugar &amp; Administrar',w3d:'Imóveis transformados geram renda de aluguel sustentável e constroem patrimônio de longo prazo.',
-gl_l:'Estratégia',gl_t:'Nossos <em class="text-grad font-normal">objetivos</em>',gl_d:'A Old to Gold segue uma estratégia comprovada de investimento imobiliário, desenhada para construir patrimônio de longo prazo.',gl_cy:'Comprar → Reformar → Alugar → Refinanciar → Repetir',
-g1t:'Comprar, Reformar, Alugar, Refinanciar, Repetir',g1d:'Transformar casas vagas em moradias seguras e sustentáveis.',
-g2t:'Geração de Renda de Longo Prazo',g2d:'Gerar renda de aluguel sustentável com um portfólio diversificado.',
-g3t:'Revitalização Sustentável',g3d:'Materiais ecológicos e soluções energeticamente eficientes.',
-g4t:'Impacto na Comunidade',g4d:'Revitalizar bairros transformando imóveis degradados.',
-g5t:'Escalar o Modelo',g5d:'Replicar pela Irlanda e expandir para o mercado brasileiro.',
-r_l:'Rent-to-Rent',r_t:'Um aluguel fixo todo mês.<br><em class="text-grad font-normal">Zero gestão para você.</em>',
-r_d:'O Rent-to-Rent é simples. Alugamos o seu imóvel diretamente de você por um contrato de médio a longo prazo e pagamos um valor fixo todo mês. A partir daí, assumimos inquilinos, manutenção e toda a gestão do dia a dia. Você recebe o mesmo valor com o imóvel ocupado ou vazio — e nunca mais atende telefonema sobre caldeira quebrada.',
-r_hl:'Como funciona',
-r_s1t:'O contrato',r_s1d:'Acordamos um aluguel mensal fixo e um prazo — normalmente de três a cinco anos — num contrato escrito, dentro das regras de locação irlandesas.',
-r_s2t:'Preparamos o imóvel',r_s2d:'Mobília, adequação às normas e qualquer obra necessária para levar o imóvel ao padrão correm por nossa conta.',
-r_s3t:'Administramos',r_s3d:'Encontrar inquilinos, cobrar aluguel, reparos e vistorias ficam com a gente. Você tem um único ponto de contato.',
-r_s4t:'Você recebe de volta',r_s4d:'Ao fim do prazo, o imóvel volta para você nas mesmas condições ou melhores, mantido durante todo o contrato.',
-r_o_t:'Se você tem um imóvel',
-r_o1:'O mesmo aluguel entra todo mês, inclusive nos períodos de vacância.',
-r_o2:'Sem taxa de locação, sem selecionar inquilino, sem ligação de reparo à meia-noite.',
-r_o3:'Manutenção de rotina e desgaste natural são por nossa conta.',
-r_o4:'Um contrato longo com uma empresa que vive de reformar — o imóvel é bem cuidado.',
-r_o5:'Ideal para quem mora fora, herdou uma casa ou simplesmente cansou de ser locador.',
+pt:{n_home:'Início',n_about:'Sobre',n_proj:'Projetos',n_r2r:'Rent-to-Rent',n_pack:'Material completo',
+h_t:'Compramos casas abandonadas<br>e fazemos elas <span class="text-pink">render.</span>',h_sub:'Compra, reforma completa e locação em Limerick, de ponta a ponta. Aberto a investidores e a proprietários cansados de administrar.',h_cta1:'Ver as três casas',h_badge:'casas em Limerick',
+m1:'Comprar',m2:'Reformar',m3:'Alugar',m4:'Refinanciar',m5:'Repetir',
+ab_t:'Quinze anos em Limerick.<br>Três casas de volta ao uso.',
+ab_p1:'Nina Chagas saiu do Brasil para a Irlanda aos dezoito anos, construiu a carreira em Limerick e formou-se na Universidade de Limerick em 2020. São mais de quinze anos aprendendo este mercado por dentro.',
+ab_p2:'Fundou a <strong class="text-ink font-semibold">Old to Gold</strong> para fazer uma coisa bem feita: comprar casas que ninguém quer, devolvê-las a um alto padrão e mantê-las.',
+s_yr:'anos na Irlanda',s_pr:'casas',s_le:'alugadas e rodando',
+wd_t:'Três etapas, uma casa por vez.',
+w1t:'Comprar',w1d:'Casas abandonadas e subvalorizadas em Limerick, compradas abaixo do que valem depois de prontas. A elegibilidade a subsídio é checada antes da proposta.',
+w2t:'Reformar',w2d:'Demolição interna e reconstrução. Nova planta, novas instalações, banheiros e cozinha novos, e um BER que deixa a casa barata de manter.',
+w3t:'Alugar e administrar',w3d:'Inquilino encontrado, aluguel cobrado, reparo resolvido. A casa fica como ativo de longo prazo, não é revendida.',
+r_t:'Um aluguel fixo todo mês.<br><span class="text-pink">Zero gestão para você.</span>',
+r_d:'Alugamos a sua casa de você por um contrato longo e pagamos o mesmo valor todo mês. Inquilino, reparo e regularização viram problema nosso, não seu. Você recebe com a casa ocupada ou vazia.',
+r_s1t:'O contrato',r_s1d:'Um aluguel mensal fixo e um prazo, normalmente de três a cinco anos, por escrito e dentro da lei de locação irlandesa.',
+r_s2t:'Preparamos a casa',r_s2d:'Mobília, regularização e qualquer obra necessária para levar a casa ao padrão, por nossa conta.',
+r_s3t:'Tocamos o dia a dia',r_s3d:'Buscar inquilino, cobrar aluguel, fazer reparo e vistoria. Um único ponto de contato, que somos nós.',
+r_s4t:'Você recebe de volta',r_s4d:'Ao fim do prazo a casa volta para você nas mesmas condições ou melhores, mantida do início ao fim.',
+r_o_t:'Se você tem uma casa',
+r_o1:'O mesmo aluguel entra todo mês, inclusive nos períodos vazios.',
+r_o2:'Sem taxa de locação, sem selecionar inquilino, sem ligação às onze da noite.',
+r_o3:'Manutenção de rotina e desgaste normal ficam por nossa conta.',
+r_o4:'Feito para quem mora fora, quem herdou uma casa e quem já cansou.',
 r_i_t:'Se você quer investir',
-r_i1:'Fluxo de caixa sem comprar: o capital vai para o contrato e a adequação, não para uma hipoteca.',
-r_i2:'O retorno vem da diferença entre o que é pago ao proprietário e o que o imóvel rende de aluguel.',
-r_i3:'O modelo escala — cada novo contrato é uma nova fonte de renda, não uma nova dívida.',
-r_i4:'Roda em paralelo ao portfólio de compra e reforma, de onde vem a nossa experiência operacional.',
-r_note:'Todo acordo é formalizado por escrito e opera dentro da lei irlandesa de locação residencial. Os números variam conforme o imóvel — esta página é informação, não promessa de rentabilidade.',
-r_cta:'Fale conosco sobre o seu imóvel',
-pk_l:'Material de Investimento',pk_t:'Todos os números, num só documento',pk_d:'Preço de compra, custo de reforma, aluguel projetado e cronograma de cada imóvel — além de como o contrato de Rent-to-Rent é estruturado. Enviado em PDF.',pk_b:'Baixar Material de Investimento',
-pk_t2:'Quer os números completos?',pk_d2:'O Material de Investimento traz o detalhamento completo de cada projeto — custos, prazos, aluguel projetado e como participar.',pk_ask:'Tirar uma dúvida',
-rl_l:'Últimos Reels',rl_t:'Acompanhe a <em class="text-grad font-normal">jornada</em>',
-ct_l:'Entre em Contato',ct_t:'Pronto para transformar<br>um <em class="text-grad font-normal">imóvel?</em>',ct_d:'Se você tem um imóvel que prefere não administrar, quer investir junto ou só acompanhar a jornada — vamos adorar ouvir você.',ct_b:'Entre em Contato',
-pj_l:'Nosso Portfólio',pj_t:'Projetos',pj_s:'Três propriedades em Limerick, Irlanda — adquiridas, reformadas e mantidas como ativos de aluguel de longo prazo.',pj_val:'Investimento total',
-p1_b:'Concluído',p2_b:'Em Andamento',p3_b:'Novo Projeto',
-p1_n:'Propriedade 01',p2_n:'Propriedade 02',p3_n:'Propriedade 03',
-p1_d:'Casa geminada de 3 quartos. Cozinha e sala de jantar integradas, sala de estar, escritório e banheiro moderno. Aquecimento elétrico, BER C1.',
-p2_d:'Casa geminada de 3 quartos na Henry Street, a poucos minutos do centro e em frente ao antigo Shannon Arms.',
-p3_d:'Nossa terceira aquisição em Limerick. Detalhes completos e plano de reforma serão publicados aqui em breve — os números já estão no Material de Investimento.',
-p3_meta:'Detalhes a confirmar',
-f_bed:'Quartos',f_size:'Área',f_type:'Tipo',f_heat:'Aquec.',f_elec:'Elétrico',f_loc:'Local',f_centre:'Centro',f_terr:'Geminada',f_val:'Avaliação',
-p_f:'Detalhes Financeiros',p_pu:'Preço de Compra',p_re:'Reforma',p_er:'Reforma Estimada',p_to:'Custo Total',p_ra:'Aluguel Mensal',p_an:'Aluguel Anual',p_fe:'Taxas',p_gr:'Subsídio do Governo',p_lo2:'Financiamento',p_ar:'Aluguel Previsto',p_va2:'Avaliação',
-back:'Voltar ao Início',
-f_d:'Transformando as casas esquecidas da Irlanda em lugares que valem a pena morar — e investir.',f_l:'Links',f_c:'Contato',f_n:'Fundada por Nina Chagas · Limerick, Irlanda',
-ba_before:'Antes',ba_after:'Depois',
-toast:'Idioma alterado para Português',pack_soon:'O Material de Investimento estará disponível em breve.'}};
+r_i1:'Fluxo de caixa sem comprar. O capital vai para o contrato e a adequação, não para uma hipoteca.',
+r_i2:'O retorno é a diferença entre o que o proprietário recebe e o que a casa rende de aluguel.',
+r_i3:'Escala. Cada contrato novo é mais uma fonte de renda, não mais uma dívida.',
+r_i4:'Roda ao lado do portfólio de reforma, que é de onde vem a experiência operacional.',
+r_note:'Todo acordo é feito por escrito e opera dentro da lei irlandesa de locação residencial. Os números variam conforme a casa. Esta página é informação, não promessa de retorno.',
+r_cta:'Fale conosco sobre a sua casa',
+pk_t:'Todos os números,<br>num só <span class="text-gold">documento.</span>',
+pk_d:'Preço de compra, custo de reforma, subsídio, aluguel projetado e cronograma de cada casa, além de como o contrato de Rent-to-Rent é estruturado. Enviado em PDF.',
+pk_b:'Baixar o material',pk_ask:'Tirar uma dúvida',
+rl_t:'As reformas, acontecendo.',
+ct_t:'Conte para a gente<br>sobre o imóvel.',
+ct_d:'Uma casa que você prefere não administrar, uma casa que você quer fora das suas mãos, ou capital que você quer trabalhando em imóvel em Limerick. Os três começam do mesmo jeito.',
+pj_t:'Três casas<br>em <span class="text-pink">Limerick.</span>',
+pj_s:'Compradas abandonadas, reconstruídas num padrão em que a gente moraria, mantidas para alugar. Todo número abaixo é o número real.',
+p1_b:'Concluída',p2_b:'Em obra',p3_b:'Recém-comprada',
+k_a:'Comprada por',k_b:'Reformada por',k_c:'Aluguel, por mês',
+p1_d:'Casa geminada de três quartos, desmontada por dentro e reconstruída. Cozinha e jantar integrados, sala, escritório e banheiro novo. Aquecimento elétrico, BER C1. Custo total €331.129, aluguel anual €36.000.',
+a_a:'Avaliação',a_b:'Aluguel, projetado',
+p2_d:'Casa geminada de três quartos na Henry Street, a minutos do centro, em frente ao antigo Shannon Arms. A obra está em andamento.',
+p3_d:'A terceira casa, comprada e prestes a começar. Custos e plano de reforma entram aqui assim que o cronograma for fechado. Os números atuais já estão no material completo.',
+p_pu:'Preço de compra',p_er:'Reforma, estimada',p_fe:'Taxas',p_gr:'Subsídio do governo',p_lo:'Financiamento',p_to:'Custo total',p_ar:'Aluguel, projetado',
+tbc:'A definir',back:'Voltar ao início',
+f_d:'Casas abandonadas em Limerick, compradas, reconstruídas e alugadas. Fundada por Nina Chagas.',f_l:'Páginas',f_c:'Contato',
+toast:'Idioma alterado para português',pack_soon:'O material completo entra no ar em breve.'}};
 
 function togLang(){
   L=(L==='en')?'pt':'en';
   document.getElementById('lb').textContent=(L==='en')?'PT':'EN';
   document.documentElement.lang=(L==='en')?'en':'pt-BR';
   var els=document.querySelectorAll('[data-t]');
-  for(var i=0;i<els.length;i++){var k=els[i].getAttribute('data-t');if(T[L][k])els[i].innerHTML=T[L][k]}
-  var lb=document.querySelectorAll('[data-ba-label]');
-  for(var m=0;m<lb.length;m++){var alt=lb[m].getAttribute('data-ba-label');lb[m].setAttribute('data-ba-label',lb[m].textContent);lb[m].textContent=alt}
-  showToast(T[L].toast);
+  for(var i=0;i<els.length;i++){var k=els[i].getAttribute('data-t');if(T[L][k]!==undefined)els[i].innerHTML=T[L][k]}
+  buildGallery();
+  lucide.createIcons();
+  toast(T[L].toast);
 }
-function showPage(id){var p=document.querySelectorAll('.page');for(var i=0;i<p.length;i++)p[i].classList.remove('on');document.getElementById(id).classList.add('on');window.scrollTo({top:0,behavior:'smooth'});setTimeout(runObserver,100)}
-function goHome(){showPage('pg-home')}
-function goProjects(){showPage('pg-projects')}
-function scrollTo_(id){var e=document.getElementById(id);if(e)e.scrollIntoView({behavior:'smooth'})}
-function goHomeAbout(){showPage('pg-home');setTimeout(function(){scrollTo_('about')},200)}
-function goHomeReels(){showPage('pg-home');setTimeout(function(){scrollTo_('reels')},200)}
-function goHomeR2R(){showPage('pg-home');setTimeout(function(){scrollTo_('r2r')},200)}
-function closeMob(){document.getElementById('mob').classList.remove('on')}
-function showToast(msg){var t=document.getElementById('toast'),s=document.getElementById('tmsg');s.textContent=msg;t.classList.add('on');setTimeout(function(){t.classList.remove('on')},3000)}
-function runObserver(){var items=document.querySelectorAll('.fade-up:not(.v)');var obs=new IntersectionObserver(function(entries){for(var i=0;i<entries.length;i++){if(entries[i].isIntersecting){entries[i].target.classList.add('v');obs.unobserve(entries[i].target)}}},{threshold:.06,rootMargin:'0px 0px -20px 0px'});for(var j=0;j<items.length;j++)obs.observe(items[j])}
+
+/* ── Navigation ── */
+function showPage(id){
+  var pages=document.querySelectorAll('.page');
+  for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!==id);
+  window.scrollTo({top:0,behavior:REDUCED?'auto':'smooth'});
+  observe();
+}
+function go(name){showPage('pg-'+name)}
+function jump(id){
+  var el=document.getElementById(id); if(!el)return;
+  var pg=el.closest('.page'), wasHidden=pg&&pg.hidden;
+  if(wasHidden)showPage(pg.id);
+  setTimeout(function(){el.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'})},wasHidden?140:0);
+}
+function mob(open){document.getElementById('mobmenu').classList.toggle('on',open)}
+
+function toast(msg){
+  var t=document.getElementById('toast');
+  document.getElementById('tmsg').textContent=msg;
+  t.classList.add('on');
+  clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove('on')},3200);
+}
+
+/* ── Reveal on enter. IntersectionObserver, no scroll listener. ── */
+var io=null;
+function observe(){
+  var items=document.querySelectorAll('.rv:not(.on)');
+  if(REDUCED){for(var i=0;i<items.length;i++)items[i].classList.add('on');return}
+  if(!io){io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}});
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'})}
+  for(var j=0;j<items.length;j++)io.observe(items[j]);
+}
+
+/* ── Nav inverts to brand pink once the page leaves the top ── */
+function watchNav(){
+  var s=document.getElementById('top-sentinel'), nav=document.getElementById('nav');
+  new IntersectionObserver(function(e){nav.classList.toggle('solid',!e[0].isIntersecting)},{threshold:0}).observe(s);
+}
+
 function wirePack(){
   var links=document.querySelectorAll('[data-pack]');
   for(var i=0;i<links.length;i++){
@@ -697,16 +709,18 @@ function wirePack(){
       links[i].setAttribute('target','_blank');
       links[i].setAttribute('rel','noopener');
     }else{
-      links[i].addEventListener('click',function(e){e.preventDefault();showToast(T[L].pack_soon)});
+      links[i].addEventListener('click',function(e){e.preventDefault();toast(T[L].pack_soon)});
     }
   }
 }
-window.addEventListener('scroll',function(){
-  var n=document.getElementById('nav');
-  if(window.scrollY>60){n.style.background='rgba(253,251,247,.88)';n.style.backdropFilter='blur(24px)';n.style.borderBottom='1px solid #EDE4D8'}
-  else{n.style.background='transparent';n.style.backdropFilter='none';n.style.borderBottom='none'}
+
+document.addEventListener('DOMContentLoaded',function(){
+  buildGallery();
+  lucide.createIcons();
+  observe();
+  watchNav();
+  wirePack();
 });
-document.addEventListener('DOMContentLoaded',function(){lucide.createIcons();runObserver();wirePack()});
 </script>
 </body>
 </html>
