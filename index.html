@@ -115,6 +115,7 @@
        entao a paisagem nao entra num quadro retrato. ── */
     .cf-stage{position:relative;perspective:1500px;perspective-origin:50% 50%;
       height:clamp(330px,42vw,520px);touch-action:pan-y}
+    .cf-compact{height:clamp(320px,36vw,430px);perspective:1100px}
     .cf-track{position:absolute;inset:0;transform-style:preserve-3d}
     .cf-item{position:absolute;top:50%;left:50%;height:100%;width:auto;margin:0;cursor:pointer;
       transform-origin:50% 50%;backface-visibility:hidden;
@@ -229,16 +230,15 @@
         </div>
       </div>
 
-      <div class="lg:col-span-5 relative">
-        <figure class="rv r2 bezel bezel-flat max-w-[400px] mx-auto lg:ml-auto lg:mr-0">
-          <div class="core ph zoom" style="aspect-ratio:1294/1719">
-            <img src="https://z-cdn-media.chatglm.cn/files/6c069f7b-756d-475d-aeda-83bfbfd69e27.jpeg?auth_key=1883121374-497abac49be443b6960193b4457a6e26-0-384bbb0499214755024e9599ee813468" alt="Nina Chagas, founder of Old to Gold" width="1294" height="1719" fetchpriority="high">
+      <div class="lg:col-span-5">
+        <div class="rv r2">
+          <div class="cf-stage cf-compact" id="cfStage" role="group" aria-roledescription="carousel" aria-label="Nina Chagas">
+            <div class="cf-track" id="cfTrack"></div>
           </div>
-        </figure>
-        <div class="rv r4 hidden sm:block absolute left-0 lg:-left-8 bottom-10 bezel bezel-gold w-[150px] -rotate-[3deg]">
-          <div class="core px-5 py-4">
-            <p class="num text-[34px] leading-none text-ink">3</p>
-            <p class="text-[11.5px] text-ink/70 mt-2" data-t="h_c2">houses</p>
+          <div class="flex items-center justify-center gap-4 mt-6">
+            <button class="cf-nav" id="cfPrev" data-al="cf_prev" aria-label="Previous photo"><i data-lucide="arrow-left" class="w-4 h-4"></i></button>
+            <div class="flex items-center gap-2" id="cfDots" role="tablist" aria-label="Photos"></div>
+            <button class="cf-nav" id="cfNext" data-al="cf_next" aria-label="Next photo"><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
           </div>
         </div>
       </div>
@@ -287,33 +287,24 @@
 
   <!-- About -->
   <section id="about" class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-28 scroll-mt-28">
-
-    <!-- Coverflow 3D. Montado em JS a partir de GALLERY_NINA. -->
-    <div class="rv mb-12 lg:mb-16">
-      <div class="cf-stage" id="cfStage" role="group" aria-roledescription="carousel" aria-label="Nina Chagas">
-        <div class="cf-track" id="cfTrack"></div>
-      </div>
-      <div class="flex items-center justify-center gap-5 mt-8">
-        <button class="cf-nav" id="cfPrev" data-al="cf_prev" aria-label="Previous photo"><i data-lucide="arrow-left" class="w-4 h-4"></i></button>
-        <div class="flex items-center gap-2" id="cfDots" role="tablist" aria-label="Photos"></div>
-        <button class="cf-nav" id="cfNext" data-al="cf_next" aria-label="Next photo"><i data-lucide="arrow-right" class="w-4 h-4"></i></button>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
-      <div class="lg:col-span-5">
-        <span class="rv tag bg-sand text-goldd mb-6" data-t="ab_tag">About</span>
-        <h2 class="rv r1 font-display text-[clamp(2rem,4vw,3.1rem)] leading-[1.0]" data-t="ab_t">Fifteen years in Limerick.<br>Three houses back in use.</h2>
-      </div>
-      <div class="lg:col-span-6 lg:col-start-7">
-        <div class="rv r2 space-y-5 text-[16px] text-mid leading-[1.7]">
-          <p data-t="ab_p1">Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than fifteen years learning this market from the inside.</p>
-          <p data-t="ab_p2">She founded <strong class="text-ink font-semibold">Old to Gold</strong> to do one thing properly: buy houses nobody else wants, bring them back to a high standard, and hold them.</p>
+    <div class="rv bezel bezel-sand bezel-flat">
+      <div class="core px-6 sm:px-10 lg:px-12 py-12 lg:py-14">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
+          <div class="lg:col-span-5">
+            <span class="tag bg-white text-goldd mb-6" data-t="ab_tag">About</span>
+            <h2 class="font-display text-[clamp(2rem,4vw,3.1rem)] leading-[1.0]" data-t="ab_t">Fifteen years in Limerick.<br>Three houses back in use.</h2>
+          </div>
+          <div class="lg:col-span-6 lg:col-start-7">
+            <div class="space-y-5 text-[16px] text-mid leading-[1.7]">
+              <p data-t="ab_p1">Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than fifteen years learning this market from the inside.</p>
+              <p data-t="ab_p2">She founded <strong class="text-ink font-semibold">Old to Gold</strong> to do one thing properly: buy houses nobody else wants, bring them back to a high standard, and hold them.</p>
+            </div>
+          </div>
         </div>
-        <div class="rv r3 grid grid-cols-3 gap-3 mt-9">
-          <div class="bezel bezel-flat"><div class="core bg-sand px-5 py-5"><p class="num text-[26px] leading-none">2007</p><p class="text-[11px] text-mid mt-2" data-t="ab_s1">arrived in Ireland</p></div></div>
-          <div class="bezel bezel-flat"><div class="core bg-sand px-5 py-5"><p class="num text-[26px] leading-none">2020</p><p class="text-[11px] text-mid mt-2" data-t="ab_s2">graduated, UL</p></div></div>
-          <div class="bezel bezel-flat"><div class="core bg-sand px-5 py-5"><p class="num text-[26px] leading-none">3</p><p class="text-[11px] text-mid mt-2" data-t="ab_s3">houses acquired</p></div></div>
+        <div class="grid sm:grid-cols-3 gap-3 mt-10 pt-10 border-t border-line">
+          <div class="bezel bezel-flat"><div class="core px-6 py-6"><p class="num text-[30px] leading-none">2007</p><p class="text-[12px] text-mid mt-2.5" data-t="ab_s1">arrived in Ireland</p></div></div>
+          <div class="bezel bezel-flat"><div class="core px-6 py-6"><p class="num text-[30px] leading-none">2020</p><p class="text-[12px] text-mid mt-2.5" data-t="ab_s2">graduated, UL</p></div></div>
+          <div class="bezel bezel-gold"><div class="core px-6 py-6"><p class="num text-[30px] leading-none text-ink">3</p><p class="text-[12px] text-ink/70 mt-2.5" data-t="ab_s3">houses acquired</p></div></div>
         </div>
       </div>
     </div>
@@ -691,7 +682,7 @@ var GALLERY_NINA=[
   {src:'https://z-cdn-media.chatglm.cn/files/bc6d3be0-f60a-4a5c-b19a-8330a26438e9.jpeg?auth_key=1883121374-62ed8e38141c49c6b9a12aee5b5340da-0-660e0477ba9732b3104df2721297bd23',w:1526,h:2048},
   {src:'https://z-cdn-media.chatglm.cn/files/49969c72-a083-423b-8cac-3a60b84da8fe.jpeg?auth_key=1883121374-888333038b27405895c14d7e07c0d6f4-0-0df6a0091fe7bf433aa55b454049abdd',w:1475,h:2048}
 ];
-var cfAt=0, cfItems=[], cfDots=[], cfTimer=null, cfHeld=false;
+var cfAt=0, cfItems=[], cfDots=[], cfTimer=null, cfHeld=false, cfHover=false;
 
 function buildCarousel(){
   var track=document.getElementById('cfTrack'), dots=document.getElementById('cfDots');
@@ -718,12 +709,18 @@ function buildCarousel(){
 function cfLayout(){
   var stage=document.getElementById('cfStage'); if(!stage||!cfItems.length) return;
   var n=cfItems.length;
-  var step=Math.min(300, Math.max(120, stage.clientWidth*0.235));
+  var tight=stage.classList.contains('cf-compact');
+  var reach=tight?1:2;                                    /* vizinhos visiveis */
+  var step=tight
+    ? Math.min(150, Math.max(80, stage.clientWidth*0.30))
+    : Math.min(300, Math.max(120, stage.clientWidth*0.235));
+  var depth=tight?150:210, tilt=tight?30:26, shrink=tight?0.16:0.1;
   for(var i=0;i<n;i++){
     var d=i-cfAt;
     if(d>n/2)d-=n; if(d<-n/2)d+=n;          /* caminho circular mais curto */
-    var a=Math.abs(d), far=a>2;
-    cfItems[i].style.transform='translate(-50%,-50%) translateX('+(d*step)+'px) translateZ('+(-a*210)+'px) rotateY('+(-d*26)+'deg) scale('+(1-a*0.1)+')';
+    var a=Math.abs(d), far=a>reach;
+    var grow=(cfHover&&d===0)?1.09:1;       /* mouse em cima aumenta a da frente */
+    cfItems[i].style.transform='translate(-50%,-50%) translateX('+(d*step)+'px) translateZ('+(-a*depth)+'px) rotateY('+(-d*tilt)+'deg) scale('+((1-a*shrink)*grow)+')';
     cfItems[i].style.opacity=far?0:1-a*0.2;
     cfItems[i].style.zIndex=String(50-a);
     cfItems[i].style.pointerEvents=far?'none':'auto';
@@ -751,9 +748,12 @@ function wireCarousel(){
   document.getElementById('cfNext').addEventListener('click',cfNext);
   document.getElementById('cfPrev').addEventListener('click',cfPrev);
 
-  /* pausa enquanto o visitante esta olhando ou navegando */
-  ['mouseenter','focusin'].forEach(function(ev){stage.addEventListener(ev,function(){cfHeld=true;clearInterval(cfTimer)})});
-  ['mouseleave','focusout'].forEach(function(ev){stage.addEventListener(ev,function(){cfHeld=false;cfRestart()})});
+  /* Mouse em cima aumenta a foto da frente e o carrossel segue passando.
+     Pausa so quando alguem esta navegando pelo teclado ou a aba saiu de vista. */
+  stage.addEventListener('mouseenter',function(){cfHover=true;cfLayout()});
+  stage.addEventListener('mouseleave',function(){cfHover=false;cfLayout()});
+  stage.addEventListener('focusin',function(){cfHeld=true;clearInterval(cfTimer)});
+  stage.addEventListener('focusout',function(){cfHeld=false;cfRestart()});
   document.addEventListener('visibilitychange',function(){document.hidden?clearInterval(cfTimer):cfRestart()});
 
   stage.setAttribute('tabindex','0');
