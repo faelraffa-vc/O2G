@@ -115,11 +115,10 @@
        entao a paisagem nao entra num quadro retrato. ── */
     .cf-stage{position:relative;perspective:1500px;perspective-origin:50% 50%;
       height:clamp(330px,42vw,520px);touch-action:pan-y}
-    .cf-compact{height:clamp(320px,36vw,430px);perspective:1100px}
+    .cf-compact{height:clamp(340px,40vw,480px);perspective:1150px}
     .cf-track{position:absolute;inset:0;transform-style:preserve-3d}
     .cf-item{position:absolute;top:50%;left:50%;height:100%;width:auto;margin:0;cursor:pointer;
-      transform-origin:50% 50%;backface-visibility:hidden;
-      transition:transform .95s var(--e),opacity .95s var(--e)}
+      transform-origin:50% 50%;backface-visibility:hidden;will-change:transform,opacity}
     .cf-item>.core{height:100%;box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 44px 70px -46px rgba(23,19,15,.6)}
     .cf-item img{height:100%;width:100%;object-fit:cover;display:block}
     .cf-item[aria-current="true"]{cursor:default}
@@ -673,8 +672,11 @@ var GALLERY=[
 ];
 
 
-/* ── Coverflow 3D das fotos da Nina. Cada foto guarda a largura e a altura
-   reais, entao a paisagem fica paisagem e nada e recortado. ── */
+/* ── Coverflow 3D das fotos da Nina.
+   A posicao e um numero fracionario que avanca todo quadro, entao o
+   movimento e continuo: nao existe parada nem salto entre fotos.
+   Cada foto guarda largura e altura reais, porque uma das cinco e
+   paisagem e num quadro de proporcao unica ela seria cortada. ── */
 var GALLERY_NINA=[
   {src:'https://z-cdn-media.chatglm.cn/files/6c069f7b-756d-475d-aeda-83bfbfd69e27.jpeg?auth_key=1883121374-497abac49be443b6960193b4457a6e26-0-384bbb0499214755024e9599ee813468',w:1294,h:1719},
   {src:'https://z-cdn-media.chatglm.cn/files/4502f4d4-0acf-4930-9542-8e855a59c296.jpeg?auth_key=1883121374-fd09073df09044cc9878b72d35308358-0-29431f0e70fa3624cf6c77d6648e2e81',w:1362,h:2048},
@@ -682,7 +684,16 @@ var GALLERY_NINA=[
   {src:'https://z-cdn-media.chatglm.cn/files/bc6d3be0-f60a-4a5c-b19a-8330a26438e9.jpeg?auth_key=1883121374-62ed8e38141c49c6b9a12aee5b5340da-0-660e0477ba9732b3104df2721297bd23',w:1526,h:2048},
   {src:'https://z-cdn-media.chatglm.cn/files/49969c72-a083-423b-8cac-3a60b84da8fe.jpeg?auth_key=1883121374-888333038b27405895c14d7e07c0d6f4-0-0df6a0091fe7bf433aa55b454049abdd',w:1475,h:2048}
 ];
-var cfAt=0, cfItems=[], cfDots=[], cfTimer=null, cfHeld=false, cfHover=false;
+
+var CF_SPEED = 0.155;   /* fotos por segundo. Mais baixo, mais lento. */
+var CF_GROW  = 1.10;    /* quanto a foto da frente cresce com o mouse em cima */
+var CF_FADE  = 0.85;    /* largura da zona de saida. Fora dela a foto e opaca. */
+
+var cfItems=[], cfDots=[];
+var cfPos=0;            /* posicao continua, nao arredondada */
+var cfTo=null;          /* alvo quando alguem usa seta ou ponto */
+var cfGrow=1;           /* aumento suavizado, para nao pular */
+var cfHover=false, cfHeld=false, cfRaf=null, cfLast=0;
 
 function buildCarousel(){
   var track=document.getElementById('cfTrack'), dots=document.getElementById('cfDots');
@@ -694,85 +705,110 @@ function buildCarousel(){
     fig.className='cf-item bezel bezel-flat';
     fig.style.aspectRatio=d.w+'/'+d.h;
     fig.innerHTML='<div class="core ph"><img src="'+d.src+'" alt="Nina Chagas" width="'+d.w+'" height="'+d.h+'" loading="lazy"></div>';
-    fig.addEventListener('click',function(){ if(i!==cfAt){cfGo(i)} });
+    fig.addEventListener('click',function(){cfSeek(i)});
     track.appendChild(fig); cfItems.push(fig);
 
     var dot=document.createElement('button');
     dot.className='cf-dot'; dot.setAttribute('role','tab');
     dot.setAttribute('aria-label','Photo '+(i+1));
-    dot.addEventListener('click',function(){cfGo(i)});
+    dot.addEventListener('click',function(){cfSeek(i)});
     dots.appendChild(dot); cfDots.push(dot);
   });
   cfLayout();
+}
+
+/* distancia circular assinada mais curta entre duas posicoes */
+function cfDelta(from,to,n){
+  var d=(to-from)%n; if(d>n/2)d-=n; if(d<-n/2)d+=n; return d;
 }
 
 function cfLayout(){
   var stage=document.getElementById('cfStage'); if(!stage||!cfItems.length) return;
   var n=cfItems.length;
   var tight=stage.classList.contains('cf-compact');
-  var reach=tight?1:2;                                    /* vizinhos visiveis */
+  var reach=tight?1.9:2.6;
   var step=tight
-    ? Math.min(150, Math.max(80, stage.clientWidth*0.30))
+    ? Math.min(160, Math.max(86, stage.clientWidth*0.31))
     : Math.min(300, Math.max(120, stage.clientWidth*0.235));
-  var depth=tight?150:210, tilt=tight?30:26, shrink=tight?0.16:0.1;
+  var depth=tight?150:210, tilt=tight?30:26, shrink=tight?0.15:0.1;
+  var front=Math.round(cfPos);
+
   for(var i=0;i<n;i++){
-    var d=i-cfAt;
-    if(d>n/2)d-=n; if(d<-n/2)d+=n;          /* caminho circular mais curto */
-    var a=Math.abs(d), far=a>reach;
-    var grow=(cfHover&&d===0)?1.09:1;       /* mouse em cima aumenta a da frente */
-    cfItems[i].style.transform='translate(-50%,-50%) translateX('+(d*step)+'px) translateZ('+(-a*depth)+'px) rotateY('+(-d*tilt)+'deg) scale('+((1-a*shrink)*grow)+')';
-    cfItems[i].style.opacity=far?0:1-a*0.2;
-    cfItems[i].style.zIndex=String(50-a);
-    cfItems[i].style.pointerEvents=far?'none':'auto';
-    cfItems[i].setAttribute('aria-current', d===0?'true':'false');
-    cfDots[i].setAttribute('aria-selected', d===0?'true':'false');
+    var d=cfDelta(cfPos,i,n);            /* fracionario, muda a cada quadro */
+    var a=Math.abs(d);
+    var vis=Math.max(0,Math.min(1,(reach-a)/CF_FADE));  /* opaca ate a borda, some so no fim */
+    var grow=1+(cfGrow-1)*Math.max(0,1-a);
+    cfItems[i].style.transform='translate(-50%,-50%) translateX('+(d*step)+'px) translateZ('+(-a*depth)+'px) rotateY('+(-d*tilt)+'deg) scale('+((1-Math.min(a,3)*shrink)*grow)+')';
+    cfItems[i].style.opacity=vis;
+    cfItems[i].style.zIndex=String(100-Math.round(a*10));
+    cfItems[i].style.pointerEvents=vis<0.35?'none':'auto';
+    var isFront=(((front%n)+n)%n)===i;
+    cfItems[i].setAttribute('aria-current',isFront?'true':'false');
+    cfDots[i].setAttribute('aria-selected',isFront?'true':'false');
   }
 }
 
-function cfGo(i){
-  var n=cfItems.length; if(!n) return;
-  cfAt=((i%n)+n)%n;
+function cfFrame(t){
+  var n=cfItems.length; if(!n){cfRaf=null;return}
+  if(!cfLast)cfLast=t;
+  var dt=Math.min((t-cfLast)/1000,0.05); cfLast=t;
+
+  if(cfTo!==null){
+    var diff=cfTo-cfPos;
+    if(Math.abs(diff)<0.0015){cfPos=cfTo;cfTo=null}
+    else cfPos+=diff*Math.min(1,dt*4.2);
+  }else if(!cfHeld){
+    cfPos+=CF_SPEED*dt;                  /* deriva continua */
+  }
+
+  var want=cfHover?CF_GROW:1;
+  cfGrow+=(want-cfGrow)*Math.min(1,dt*5.5);
+
   cfLayout();
-  cfRestart();
+  cfRaf=requestAnimationFrame(cfFrame);
 }
-function cfNext(){cfGo(cfAt+1)}
-function cfPrev(){cfGo(cfAt-1)}
-function cfRestart(){
-  clearInterval(cfTimer);
-  if(REDUCED||cfHeld) return;
-  cfTimer=setInterval(function(){cfGo(cfAt+1)},5200);
+
+function cfSeek(i){
+  var n=cfItems.length; if(!n)return;
+  cfTo=cfPos+cfDelta(cfPos,i,n);
 }
+function cfStep(dir){ cfTo=(cfTo===null?Math.round(cfPos):Math.round(cfTo))+dir }
 
 function wireCarousel(){
   var stage=document.getElementById('cfStage'); if(!stage) return;
-  document.getElementById('cfNext').addEventListener('click',cfNext);
-  document.getElementById('cfPrev').addEventListener('click',cfPrev);
+  document.getElementById('cfNext').addEventListener('click',function(){cfStep(1)});
+  document.getElementById('cfPrev').addEventListener('click',function(){cfStep(-1)});
 
-  /* Mouse em cima aumenta a foto da frente e o carrossel segue passando.
-     Pausa so quando alguem esta navegando pelo teclado ou a aba saiu de vista. */
-  stage.addEventListener('mouseenter',function(){cfHover=true;cfLayout()});
-  stage.addEventListener('mouseleave',function(){cfHover=false;cfLayout()});
-  stage.addEventListener('focusin',function(){cfHeld=true;clearInterval(cfTimer)});
-  stage.addEventListener('focusout',function(){cfHeld=false;cfRestart()});
-  document.addEventListener('visibilitychange',function(){document.hidden?clearInterval(cfTimer):cfRestart()});
+  /* Mouse em cima aumenta a foto da frente. O carrossel nao para. */
+  stage.addEventListener('mouseenter',function(){cfHover=true});
+  stage.addEventListener('mouseleave',function(){cfHover=false});
+
+  /* Segura so para quem navega pelo teclado */
+  stage.addEventListener('focusin',function(){cfHeld=true});
+  stage.addEventListener('focusout',function(){cfHeld=false});
 
   stage.setAttribute('tabindex','0');
   stage.addEventListener('keydown',function(e){
-    if(e.key==='ArrowRight'){e.preventDefault();cfNext()}
-    if(e.key==='ArrowLeft'){e.preventDefault();cfPrev()}
+    if(e.key==='ArrowRight'){e.preventDefault();cfStep(1)}
+    if(e.key==='ArrowLeft'){e.preventDefault();cfStep(-1)}
   });
 
-  /* arrastar no toque e no mouse */
-  var x0=null;
-  stage.addEventListener('pointerdown',function(e){x0=e.clientX});
-  stage.addEventListener('pointerup',function(e){
-    if(x0===null)return;
-    var dx=e.clientX-x0; x0=null;
-    if(Math.abs(dx)>44){dx<0?cfNext():cfPrev()}
+  /* Arrastar move junto com o dedo, sem esperar soltar */
+  var last=null;
+  stage.addEventListener('pointerdown',function(e){last=e.clientX;cfHeld=true;cfTo=null;stage.setPointerCapture(e.pointerId)});
+  stage.addEventListener('pointermove',function(e){
+    if(last===null)return;
+    var tight=stage.classList.contains('cf-compact');
+    var step=tight?Math.min(160,Math.max(86,stage.clientWidth*0.31)):Math.min(300,Math.max(120,stage.clientWidth*0.235));
+    cfPos-=(e.clientX-last)/step; last=e.clientX;
+    if(cfRaf===null)cfLayout();
   });
-  stage.addEventListener('pointercancel',function(){x0=null});
+  ['pointerup','pointercancel','lostpointercapture'].forEach(function(ev){
+    stage.addEventListener(ev,function(){if(last!==null){last=null;cfHeld=false}});
+  });
 
-  cfRestart();
+  if(REDUCED){cfLayout();return}          /* sem movimento automatico */
+  cfRaf=requestAnimationFrame(cfFrame);
 }
 
 function buildMarquee(){
