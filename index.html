@@ -143,6 +143,22 @@
 
     .prow{transition:background-color .6s var(--e),color .6s var(--e),padding .6s var(--e)}
 
+
+    /* ── Historia da Nina, atras de um clique no bento ── */
+    .story{position:fixed;inset:0;z-index:70;background:rgba(23,19,15,.55);backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);display:flex;align-items:flex-start;justify-content:center;
+      padding:24px 16px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .5s var(--e)}
+    .story.on{opacity:1;pointer-events:auto}
+    .story-inner{position:relative;background:#FBF9F6;border-radius:var(--shell-r);max-width:760px;width:100%;
+      padding:44px 30px 40px;margin:auto;box-shadow:0 60px 90px -50px rgba(23,19,15,.7);
+      transform:translateY(26px);transition:transform .6s var(--e)}
+    .story.on .story-inner{transform:none}
+    .story-x{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:999px;
+      border:1px solid rgba(23,19,15,.14);color:#17130F;display:flex;align-items:center;justify-content:center;
+      transition:background-color .4s var(--e),color .4s var(--e)}
+    .story-x:hover{background:#17130F;color:#fff}
+    @media (min-width:640px){.story-inner{padding:52px 52px 48px}}
+
     .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,150%);opacity:0;pointer-events:none;z-index:120;
       background:#141110;color:#fff;border-radius:999px;padding:13px 24px;font-size:13px;display:flex;align-items:center;gap:10px;
       box-shadow:0 26px 50px -28px rgba(23,19,15,.8);transition:transform .7s var(--e),opacity .5s var(--e)}
@@ -171,7 +187,7 @@
       .rv{opacity:1;transform:none;transition:none}
       .mq{animation:none}
       .sheet a,.sheet button{opacity:1;transform:none;transition:none}
-      .bezel,.btn,.zoom img,#nav,.prow,.cf-item,.cf-nav,.cf-dot{transition:none}
+      .bezel,.btn,.zoom img,#nav,.prow,.cf-item,.cf-nav,.cf-dot,.story,.story-inner{transition:none}
       .bezel:hover,.btn:hover .cap,.zoom:hover img{transform:none}
     }
   </style>
@@ -222,7 +238,7 @@
         <h1 class="rv r1 wordmark font-display leading-[.84] tracking-[-.05em] mb-8" style="font-size:clamp(3.8rem,9.5vw,7.4rem)">
           old <span class="text-soft font-medium">to</span><br><span class="n-hi">gold</span>
         </h1>
-        <p class="rv r2 font-display text-[clamp(1.15rem,2vw,1.6rem)] leading-[1.28] tracking-[-.025em] max-w-[24ch] mb-9" data-t="h_t">We buy derelict houses, rebuild them completely, and hold them as rental assets.</p>
+        <p class="rv r2 font-display text-[clamp(1.15rem,2vw,1.6rem)] leading-[1.28] tracking-[-.025em] max-w-[24ch] mb-9" data-t="h_t">We purchase derelict or vacant houses, renovate them, and maintain them as rental properties.</p>
         <div class="rv r3 flex flex-wrap items-center gap-3">
           <a href="javascript:void(0)" onclick="go('projects')" class="btn btn-solid"><span data-t="h_cta1">See the three houses</span><span class="cap"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></span></a>
           <a href="#" data-pack class="btn btn-quiet"><span data-t="n_pack">Investment pack</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
@@ -264,17 +280,20 @@
 
       <div class="rv r2 bezel bezel-gold lg:col-span-2">
         <div class="core px-6 py-7 flex flex-col justify-center">
-          <p class="num text-[42px] leading-none text-ink">15<span class="text-white">+</span></p>
+          <p class="num text-[42px] leading-none text-ink">21<span class="text-white">+</span></p>
           <p class="text-[11.5px] text-ink/70 mt-2.5" data-t="b_yr">years in Ireland</p>
         </div>
       </div>
 
-      <div class="rv r3 bezel lg:col-span-3">
-        <div class="core px-6 py-7 flex flex-col justify-center">
-          <p class="num text-[42px] leading-none text-ink">€36k</p>
-          <p class="text-[11.5px] text-mid mt-2.5" data-t="b_rent">a year in rent, and counting</p>
-        </div>
-      </div>
+      <button onclick="story(true)" class="rv r3 bezel lg:col-span-3 text-left">
+        <span class="core px-6 py-7 flex flex-col justify-center h-full">
+          <span class="flex items-center justify-between gap-3">
+            <span class="font-display text-[19px] leading-tight" data-t="b_story">Nina's story</span>
+            <span class="w-8 h-8 rounded-full bg-pinkb text-white flex items-center justify-center shrink-0"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></span>
+          </span>
+          <span class="block text-[11.5px] text-mid mt-2.5" data-t="b_story_d">From a village in Brazil to a portfolio in Limerick</span>
+        </span>
+      </button>
 
     </div>
   </section>
@@ -291,19 +310,19 @@
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-12">
           <div class="lg:col-span-5">
             <span class="tag bg-white text-goldd mb-6" data-t="ab_tag">About</span>
-            <h2 class="font-display text-[clamp(2rem,4vw,3.1rem)] leading-[1.0]" data-t="ab_t">Fifteen years in Limerick.<br>Three houses back in use.</h2>
+            <h2 class="font-display text-[clamp(2rem,4vw,3.1rem)] leading-[1.0]" data-t="ab_t">21 years in Limerick.<br>Three houses back in use.</h2>
           </div>
           <div class="lg:col-span-6 lg:col-start-7">
             <div class="space-y-5 text-[16px] text-mid leading-[1.7]">
-              <p data-t="ab_p1">Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than fifteen years learning this market from the inside.</p>
+              <p data-t="ab_p1">Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than 21 years living, working and learning this market from the inside.</p>
               <p data-t="ab_p2">She founded <strong class="text-ink font-semibold">Old to Gold</strong> to do one thing properly: buy houses nobody else wants, bring them back to a high standard, and hold them.</p>
             </div>
           </div>
         </div>
         <div class="grid sm:grid-cols-3 gap-3 mt-10 pt-10 border-t border-line">
-          <div class="bezel bezel-flat"><div class="core px-6 py-6"><p class="num text-[30px] leading-none">2007</p><p class="text-[12px] text-mid mt-2.5" data-t="ab_s1">arrived in Ireland</p></div></div>
-          <div class="bezel bezel-flat"><div class="core px-6 py-6"><p class="num text-[30px] leading-none">2020</p><p class="text-[12px] text-mid mt-2.5" data-t="ab_s2">graduated, UL</p></div></div>
-          <div class="bezel bezel-gold"><div class="core px-6 py-6"><p class="num text-[30px] leading-none text-ink">3</p><p class="text-[12px] text-ink/70 mt-2.5" data-t="ab_s3">houses acquired</p></div></div>
+          <div class="bezel bezel-flat"><div class="core px-6 py-6"><p class="num text-[30px] leading-none">2020</p><p class="text-[12px] text-mid mt-2.5" data-t="ab_s1">graduated, University of Limerick</p></div></div>
+          <div class="bezel bezel-flat"><div class="core px-6 py-6"><p class="num text-[30px] leading-none">2022</p><p class="text-[12px] text-mid mt-2.5" data-t="ab_s2">first investment, Brazil</p></div></div>
+          <div class="bezel bezel-gold"><div class="core px-6 py-6"><p class="num text-[30px] leading-none text-ink">2024</p><p class="text-[12px] text-ink/70 mt-2.5" data-t="ab_s3">first investment, Ireland</p></div></div>
         </div>
       </div>
     </div>
@@ -575,11 +594,29 @@
   </section>
 
   <section class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-28">
+      <h2 class="rv font-display text-[clamp(1.7rem,3.2vw,2.4rem)] leading-[1.04] mb-8" data-t="rp_h1">How the model works</h2>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-        <div class="rv bezel"><div class="core px-7 py-8 h-full"><p class="num text-[30px] leading-none text-goldd mb-5">01</p><h3 class="font-display text-[18px] mb-2.5" data-t="r_s1t">The agreement</h3><p class="text-[14px] text-mid leading-[1.62]" data-t="r_s1d">A fixed monthly rent and a term, usually three to five years, written down and operated under Irish tenancy law.</p></div></div>
-        <div class="rv r1 bezel"><div class="core px-7 py-8 h-full"><p class="num text-[30px] leading-none text-pinkb mb-5">02</p><h3 class="font-display text-[18px] mb-2.5" data-t="r_s2t">We prepare it</h3><p class="text-[14px] text-mid leading-[1.62]" data-t="r_s2d">Furnishing, compliance and any work needed to bring the house up to standard, at our cost.</p></div></div>
-        <div class="rv r2 bezel"><div class="core px-7 py-8 h-full"><p class="num text-[30px] leading-none text-goldd mb-5">03</p><h3 class="font-display text-[18px] mb-2.5" data-t="r_s3t">We run it</h3><p class="text-[14px] text-mid leading-[1.62]" data-t="r_s3d">Tenant sourcing, rent collection, repairs and inspections. One point of contact, which is us.</p></div></div>
-        <div class="rv r3 bezel"><div class="core px-7 py-8 h-full"><p class="num text-[30px] leading-none text-pinkb mb-5">04</p><h3 class="font-display text-[18px] mb-2.5" data-t="r_s4t">You get it back</h3><p class="text-[14px] text-mid leading-[1.62]" data-t="r_s4d">At the end of the term the house returns to you in the same condition or better, maintained throughout.</p></div></div>
+        <div class="rv bezel"><div class="core px-7 py-7 h-full"><p class="num text-[26px] leading-none text-goldd mb-4">01</p><h3 class="font-display text-[17px] mb-2" data-t="rp_1t">Property assessment</h3><p class="text-[13.5px] text-mid leading-[1.6]" data-t="rp_1d">We inspect the property and discuss your objectives.</p></div></div>
+        <div class="rv r1 bezel"><div class="core px-7 py-7 h-full"><p class="num text-[26px] leading-none text-pinkb mb-4">02</p><h3 class="font-display text-[17px] mb-2" data-t="rp_2t">Agree the structure</h3><p class="text-[13.5px] text-mid leading-[1.6]" data-t="rp_2d">The proposed rent, the responsibilities, the term and the other commercial conditions.</p></div></div>
+        <div class="rv r2 bezel"><div class="core px-7 py-7 h-full"><p class="num text-[26px] leading-none text-goldd mb-4">03</p><h3 class="font-display text-[17px] mb-2" data-t="rp_3t">Prepare the property</h3><p class="text-[13.5px] text-mid leading-[1.6]" data-t="rp_3d">Where required, we arrange refurbishment, repairs, furnishing and compliance works.</p></div></div>
+        <div class="rv r3 bezel"><div class="core px-7 py-7 h-full"><p class="num text-[26px] leading-none text-pinkb mb-4">04</p><h3 class="font-display text-[17px] mb-2" data-t="rp_4t">The agreement</h3><p class="text-[13.5px] text-mid leading-[1.6]" data-t="rp_4d">The appropriate legal agreement is put in place between you and our business.</p></div></div>
+        <div class="rv bezel"><div class="core px-7 py-7 h-full"><p class="num text-[26px] leading-none text-goldd mb-4">05</p><h3 class="font-display text-[17px] mb-2" data-t="rp_5t">Tenanting</h3><p class="text-[13.5px] text-mid leading-[1.6]" data-t="rp_5d">We market the property, run the viewings and select suitable tenants.</p></div></div>
+        <div class="rv r1 bezel"><div class="core px-7 py-7 h-full"><p class="num text-[26px] leading-none text-pinkb mb-4">06</p><h3 class="font-display text-[17px] mb-2" data-t="rp_6t">Ongoing management</h3><p class="text-[13.5px] text-mid leading-[1.6]" data-t="rp_6d">Rent collection, tenant communication, maintenance and inspections.</p></div></div>
+        <div class="rv r2 bezel bezel-gold lg:col-span-2"><div class="core px-7 py-7 h-full flex flex-col justify-center"><p class="num text-[26px] leading-none text-ink mb-4">07</p><h3 class="font-display text-[17px] text-ink mb-2" data-t="rp_7t">You receive the agreed income</h3><p class="text-[13.5px] text-ink/75 leading-[1.6]" data-t="rp_7d">Paid according to the terms of the contract, whether the property is occupied or empty.</p></div></div>
+      </div>
+
+      <h2 class="rv font-display text-[clamp(1.7rem,3.2vw,2.4rem)] leading-[1.04] mt-20 mb-4" data-t="rp_h2">What we take on</h2>
+      <p class="rv r1 text-[15.5px] text-mid leading-[1.7] max-w-[62ch] mb-8" data-t="rp_h2d">The exact responsibilities are agreed with you and set out in the contract. In a full arrangement they cover everything below.</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+        <div class="rv bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_1t">Preparing the property</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_1d">Refurbishment and repairs, decoration and presentation, furniture where applicable, safety checks and certification, and making sure the property meets the applicable rental standards.</p></div></div>
+        <div class="rv r1 bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_2t">Rental assessment and marketing</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_2d">Market rent assessment, professional photographs, advertising, handling enquiries and arranging viewings.</p></div></div>
+        <div class="rv r2 bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_3t">Tenant selection</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_3d">Application forms, identification checks, references, income verification where appropriate, previous landlord references and interviews.</p></div></div>
+        <div class="rv bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_4t">Tenancy documentation</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_4d">Preparing the written agreement, agreeing the terms, collecting the deposit and first rent, giving tenants the required information, and completing RTB registration.</p></div></div>
+        <div class="rv r1 bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_5t">Rent and deposits</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_5d">Collecting rent, monitoring payments, handling arrears, holding deposits and keeping the records. You never chase rent.</p></div></div>
+        <div class="rv r2 bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_6t">Maintenance and repairs</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_6d">Tenants contact us, not you. We assess requests, arrange contractors, coordinate repairs, deal with urgent issues and watch for recurring problems.</p></div></div>
+        <div class="rv bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_7t">Inspections</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_7d">Regular inspections, with the required notice, to catch maintenance problems, damage and safety concerns before they get expensive.</p></div></div>
+        <div class="rv r1 bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_8t">Tenant communication</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_8d">We are the point of contact for questions, access arrangements and everything else that comes up during the tenancy.</p></div></div>
+        <div class="rv r2 bezel"><div class="core px-7 py-7 h-full"><h3 class="font-display text-[16px] mb-3.5" data-t="rs_9t">Compliance and records</h3><p class="text-[13.5px] text-mid leading-[1.62]" data-t="rs_9d">Records for the tenancy, rent, deposits, maintenance, inspections, safety documentation and RTB registration. Where specialist legal or tax advice is needed, we say so and you use a qualified professional.</p></div></div>
       </div>
 
       <div class="grid lg:grid-cols-2 gap-4">
@@ -610,6 +647,22 @@
           </div>
         </div>
       </div>
+  </section>
+
+
+  <section class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="rv bezel bezel-night bezel-flat">
+      <div class="core px-8 sm:px-12 py-14 text-center">
+        <p class="text-[13px] text-white/55 mb-6" data-t="rp_pl">Our promise to landlords</p>
+        <p class="font-display text-white text-[clamp(1.5rem,3.4vw,2.5rem)] leading-[1.14] max-w-[30ch] mx-auto mb-9" data-t="rp_pq">Turn your property into a reliable source of income without taking on the day-to-day responsibilities of being a landlord.</p>
+        <div class="grid sm:grid-cols-4 gap-3 max-w-[720px] mx-auto">
+          <p class="rounded-[14px] bg-white/[.06] border border-white/10 px-4 py-4 text-[13px] text-white/85" data-t="rp_c1">Your property</p>
+          <p class="rounded-[14px] bg-white/[.06] border border-white/10 px-4 py-4 text-[13px] text-white/85" data-t="rp_c2">Your investment</p>
+          <p class="rounded-[14px] bg-white/[.06] border border-white/10 px-4 py-4 text-[13px] text-white/85" data-t="rp_c3">Our management</p>
+          <p class="rounded-[14px] bg-pinkb border border-pinkb px-4 py-4 text-[13px] text-white font-semibold" data-t="rp_c4">Your agreed income</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <div class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-24">
@@ -644,6 +697,23 @@
   </div>
 </footer>
 
+
+<div id="story" class="story" role="dialog" aria-modal="true" aria-label="Nina Chagas">
+  <div class="story-inner">
+    <button onclick="story(false)" aria-label="Close" class="story-x"><i data-lucide="x" class="w-4 h-4"></i></button>
+    <p class="tag bg-sand text-goldd mb-7" data-t="st_tag">In her own words</p>
+    <h2 class="font-display text-[clamp(1.9rem,3.6vw,2.7rem)] leading-[1.02] mb-8" data-t="st_t">Thank you for coming<br>to my website.</h2>
+    <div class="space-y-5 text-[15.5px] text-mid leading-[1.75]">
+      <p data-t="st_p1">You are welcome to look around and to ask me anything. I came from Brazil at the age of eighteen to try for a better life. I knew it would be hard to leave my family, my friends, my culture and everything I knew behind. But I also knew I was not like most people in my village. I wanted more, and I could see that if I stayed, my future would be limited to what my town believed was normal.</p>
+      <p data-t="st_p2">My first job in Ireland was customer service in three different languages at Digital River. I gained a great deal of experience there and my English improved. After four and a half years in customer service I decided to go back to education at the University of Limerick, where I completed a Bachelor of Arts in Criminal Justice. That degree changed my life. It taught me to communicate, to work with people, and to take the initiative when it is needed.</p>
+      <p data-t="st_p3">Between academic years I worked with a corporate events company, HIYA Events and Entertainment, on conferences and events from the first client meeting through to final production. It can be a pressured job and it is a rewarding one, and I also trained as an event MC and DJ. I did my placement at the HSE in UHL as a receptionist and administrator. I am now a Senior Administrator at the University of Limerick.</p>
+      <p data-t="st_p4">At the end of 2022 I took my first step into property investment, in Brazil, alongside my family. In 2024 I began my first property investment in Ireland. What started as a vision is now a growing portfolio, with more than two properties and a third currently being refurbished. From old to gold, one property, one project and one lesson at a time.</p>
+      <p data-t="st_p5">At Old to Gold I am committed to my legal and ethical responsibilities. I value my tenants and work to keep a good relationship with them, built on communication and transparency. This journey is only beginning, and I want to thank you for taking the time to look at my website.</p>
+      <p class="font-display text-[17px] text-ink pt-2" data-t="st_sig">Nina Chagas</p>
+    </div>
+  </div>
+</div>
+
 <div id="toast" class="toast"><i data-lucide="info" class="w-4 h-4 text-gold" style="flex-shrink:0"></i><span id="tmsg"></span></div>
 
 <script>
@@ -655,7 +725,7 @@
 var INVESTMENT_PACK_URL = '#';
 
 /* PDF do guia de reforma, botao da home. Mesma regra: troque por uma URL. */
-var GUIDE_PDF_URL = '#';
+var GUIDE_PDF_URL = 'assets/Old-to-Gold-Guide.pdf';
 
 var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var ICONS = {attrs:{'stroke-width':1.25}};
@@ -843,14 +913,14 @@ var L='en';
 var T={
 en:{n_home:'Home',n_about:'About',n_proj:'Projects',n_r2r:'Rent-to-Rent',n_pack:'Investment pack',
 h_tag:'Limerick, Ireland',
-h_t:'We buy derelict houses, rebuild them completely, and hold them as rental assets.',
-h_cta1:'See the three houses',h_c2:'houses',
-b_sig:'Founded and run by Nina Chagas',b_yr:'years in Ireland',b_rent:'a year in rent, and counting',
+h_t:'We purchase derelict or vacant houses, renovate them, and maintain them as rental properties.',
+h_cta1:'See the three houses',
+b_sig:'Founded and run by Nina Chagas',b_yr:'years in Ireland',
 m1:'Buy',m2:'Refurbish',m3:'Let',m4:'Refinance',m5:'Repeat',
-ab_tag:'About',ab_t:'Fifteen years in Limerick.<br>Three houses back in use.',
-ab_p1:'Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than fifteen years learning this market from the inside.',
+ab_tag:'About',ab_t:'21 years in Limerick.<br>Three houses back in use.',
+ab_p1:'Nina Chagas moved from Brazil to Ireland at eighteen, built her career in Limerick and graduated from the University of Limerick in 2020. She has spent more than 21 years living, working and learning this market from the inside.',
 ab_p2:'She founded <strong class="text-ink font-semibold">Old to Gold</strong> to do one thing properly: buy houses nobody else wants, bring them back to a high standard, and hold them.',
-ab_s1:'arrived in Ireland',ab_s2:'graduated, UL',ab_s3:'houses acquired',
+ab_s1:'graduated, University of Limerick',ab_s2:'first investment, Brazil',ab_s3:'first investment, Ireland',
 wd_t:'Three stages, one house at a time.',
 w1t:'Acquire',w1d:'Derelict and undervalued houses across Limerick, bought below the cost of what they become. Grant eligibility is checked before we bid.',
 w2t:'Refurbish',w2d:'Full strip and rebuild. New layouts, new services, new bathrooms and kitchens, and a BER rating that makes the house cheap to run.',
@@ -858,10 +928,6 @@ w3t:'Let and manage',w3d:'Tenants found, rent collected, repairs handled. The ho
 r_tag:'For property owners',
 r_t:'A fixed rent every month.<br><span class="text-pinkb">None of the management.</span>',
 r_d:'We lease your house from you on a long agreement and pay you the same amount every month. Tenants, repairs and compliance become our problem. You are paid whether the house is occupied or empty.',
-r_s1t:'The agreement',r_s1d:'A fixed monthly rent and a term, usually three to five years, written down and operated under Irish tenancy law.',
-r_s2t:'We prepare it',r_s2d:'Furnishing, compliance and any work needed to bring the house up to standard, at our cost.',
-r_s3t:'We run it',r_s3d:'Tenant sourcing, rent collection, repairs and inspections. One point of contact, which is us.',
-r_s4t:'You get it back',r_s4d:'At the end of the term the house returns to you in the same condition or better, maintained throughout.',
 r_o_t:'If you own a house',
 r_o1:'The same rent arrives every month, including through empty periods.',
 r_o2:'No letting fees, no tenant screening, no calls at eleven at night.',
@@ -899,18 +965,47 @@ gd_f1:'What to check before you bid',gd_f2:'Which grants apply, and how to claim
 gd_b:'Download the guide',
 ig_1:'accounts reached, last 30 days',ig_2:'followers',ig_3:'views on the most watched reel',
 guide_soon:'The guide goes live shortly.',cf_prev:'Previous photo',cf_next:'Next photo',
+b_story:"Nina's story",b_story_d:'From a village in Brazil to a portfolio in Limerick',
+st_tag:'In her own words',st_t:'Thank you for coming<br>to my website.',
+st_p1:'You are welcome to look around and to ask me anything. I came from Brazil at the age of eighteen to try for a better life. I knew it would be hard to leave my family, my friends, my culture and everything I knew behind. But I also knew I was not like most people in my village. I wanted more, and I could see that if I stayed, my future would be limited to what my town believed was normal.',
+st_p2:'My first job in Ireland was customer service in three different languages at Digital River. I gained a great deal of experience there and my English improved. After four and a half years in customer service I decided to go back to education at the University of Limerick, where I completed a Bachelor of Arts in Criminal Justice. That degree changed my life. It taught me to communicate, to work with people, and to take the initiative when it is needed.',
+st_p3:'Between academic years I worked with a corporate events company, HIYA Events and Entertainment, on conferences and events from the first client meeting through to final production. It can be a pressured job and it is a rewarding one, and I also trained as an event MC and DJ. I did my placement at the HSE in UHL as a receptionist and administrator. I am now a Senior Administrator at the University of Limerick.',
+st_p4:'At the end of 2022 I took my first step into property investment, in Brazil, alongside my family. In 2024 I began my first property investment in Ireland. What started as a vision is now a growing portfolio, with more than two properties and a third currently being refurbished. From old to gold, one property, one project and one lesson at a time.',
+st_p5:'At Old to Gold I am committed to my legal and ethical responsibilities. I value my tenants and work to keep a good relationship with them, built on communication and transparency. This journey is only beginning, and I want to thank you for taking the time to look at my website.',
+st_sig:'Nina Chagas',
+rp_h1:'How the model works',
+rp_1t:'Property assessment',rp_1d:'We inspect the property and discuss your objectives.',
+rp_2t:'Agree the structure',rp_2d:'The proposed rent, the responsibilities, the term and the other commercial conditions.',
+rp_3t:'Prepare the property',rp_3d:'Where required, we arrange refurbishment, repairs, furnishing and compliance works.',
+rp_4t:'The agreement',rp_4d:'The appropriate legal agreement is put in place between you and our business.',
+rp_5t:'Tenanting',rp_5d:'We market the property, run the viewings and select suitable tenants.',
+rp_6t:'Ongoing management',rp_6d:'Rent collection, tenant communication, maintenance and inspections.',
+rp_7t:'You receive the agreed income',rp_7d:'Paid according to the terms of the contract, whether the property is occupied or empty.',
+rp_h2:'What we take on',rp_h2d:'The exact responsibilities are agreed with you and set out in the contract. In a full arrangement they cover everything below.',
+rs_1t:'Preparing the property',rs_1d:'Refurbishment and repairs, decoration and presentation, furniture where applicable, safety checks and certification, and making sure the property meets the applicable rental standards.',
+rs_2t:'Rental assessment and marketing',rs_2d:'Market rent assessment, professional photographs, advertising, handling enquiries and arranging viewings.',
+rs_3t:'Tenant selection',rs_3d:'Application forms, identification checks, references, income verification where appropriate, previous landlord references and interviews.',
+rs_4t:'Tenancy documentation',rs_4d:'Preparing the written agreement, agreeing the terms, collecting the deposit and first rent, giving tenants the required information, and completing RTB registration.',
+rs_5t:'Rent and deposits',rs_5d:'Collecting rent, monitoring payments, handling arrears, holding deposits and keeping the records. You never chase rent.',
+rs_6t:'Maintenance and repairs',rs_6d:'Tenants contact us, not you. We assess requests, arrange contractors, coordinate repairs, deal with urgent issues and watch for recurring problems.',
+rs_7t:'Inspections',rs_7d:'Regular inspections, with the required notice, to catch maintenance problems, damage and safety concerns before they get expensive.',
+rs_8t:'Tenant communication',rs_8d:'We are the point of contact for questions, access arrangements and everything else that comes up during the tenancy.',
+rs_9t:'Compliance and records',rs_9d:'Records for the tenancy, rent, deposits, maintenance, inspections, safety documentation and RTB registration. Where specialist legal or tax advice is needed, we say so and you use a qualified professional.',
+rp_pl:'Our promise to landlords',
+rp_pq:'Turn your property into a reliable source of income without taking on the day-to-day responsibilities of being a landlord.',
+rp_c1:'Your property',rp_c2:'Your investment',rp_c3:'Our management',rp_c4:'Your agreed income',
 toast:'Language changed to English',pack_soon:'The investment pack goes live shortly.'},
 
 pt:{n_home:'Início',n_about:'Sobre',n_proj:'Projetos',n_r2r:'Rent-to-Rent',n_pack:'Material completo',
 h_tag:'Limerick, Irlanda',
-h_t:'Compramos casas abandonadas, reconstruímos por inteiro e mantemos como ativo de aluguel.',
-h_cta1:'Ver as três casas',h_c2:'casas',
-b_sig:'Fundada e tocada por Nina Chagas',b_yr:'anos na Irlanda',b_rent:'por ano em aluguel, e subindo',
+h_t:'Compramos casas abandonadas ou vazias, reformamos e mantemos como imóvel de aluguel.',
+h_cta1:'Ver as três casas',
+b_sig:'Fundada e tocada por Nina Chagas',b_yr:'anos na Irlanda',
 m1:'Comprar',m2:'Reformar',m3:'Alugar',m4:'Refinanciar',m5:'Repetir',
-ab_tag:'Sobre',ab_t:'Quinze anos em Limerick.<br>Três casas de volta ao uso.',
-ab_p1:'Nina Chagas saiu do Brasil para a Irlanda aos dezoito anos, construiu a carreira em Limerick e formou-se na Universidade de Limerick em 2020. São mais de quinze anos aprendendo este mercado por dentro.',
+ab_tag:'Sobre',ab_t:'21 anos em Limerick.<br>Três casas de volta ao uso.',
+ab_p1:'Nina Chagas saiu do Brasil para a Irlanda aos dezoito anos, construiu a carreira em Limerick e formou-se na Universidade de Limerick em 2020. São mais de 21 anos morando, trabalhando e aprendendo este mercado por dentro.',
 ab_p2:'Fundou a <strong class="text-ink font-semibold">Old to Gold</strong> para fazer uma coisa bem feita: comprar casas que ninguém quer, devolvê-las a um alto padrão e mantê-las.',
-ab_s1:'chegou à Irlanda',ab_s2:'formou-se, UL',ab_s3:'casas compradas',
+ab_s1:'formou-se na Universidade de Limerick',ab_s2:'primeiro investimento, Brasil',ab_s3:'primeiro investimento, Irlanda',
 wd_t:'Três etapas, uma casa por vez.',
 w1t:'Comprar',w1d:'Casas abandonadas e subvalorizadas em Limerick, compradas abaixo do que valem depois de prontas. A elegibilidade a subsídio é checada antes da proposta.',
 w2t:'Reformar',w2d:'Demolição interna e reconstrução. Nova planta, novas instalações, banheiros e cozinha novos, e um BER que deixa a casa barata de manter.',
@@ -918,10 +1013,6 @@ w3t:'Alugar e administrar',w3d:'Inquilino encontrado, aluguel cobrado, reparo re
 r_tag:'Para proprietários',
 r_t:'Um aluguel fixo todo mês.<br><span class="text-pinkb">Zero gestão para você.</span>',
 r_d:'Alugamos a sua casa de você por um contrato longo e pagamos o mesmo valor todo mês. Inquilino, reparo e regularização viram problema nosso. Você recebe com a casa ocupada ou vazia.',
-r_s1t:'O contrato',r_s1d:'Um aluguel mensal fixo e um prazo, normalmente de três a cinco anos, por escrito e dentro da lei de locação irlandesa.',
-r_s2t:'Preparamos a casa',r_s2d:'Mobília, regularização e qualquer obra necessária para levar a casa ao padrão, por nossa conta.',
-r_s3t:'Tocamos o dia a dia',r_s3d:'Buscar inquilino, cobrar aluguel, fazer reparo e vistoria. Um único ponto de contato, que somos nós.',
-r_s4t:'Você recebe de volta',r_s4d:'Ao fim do prazo a casa volta para você nas mesmas condições ou melhores, mantida do início ao fim.',
 r_o_t:'Se você tem uma casa',
 r_o1:'O mesmo aluguel entra todo mês, inclusive nos períodos vazios.',
 r_o2:'Sem taxa de locação, sem selecionar inquilino, sem ligação às onze da noite.',
@@ -959,6 +1050,35 @@ gd_f1:'O que checar antes de dar o lance',gd_f2:'Quais subsídios se aplicam, e 
 gd_b:'Baixar o guia',
 ig_1:'contas alcançadas, últimos 30 dias',ig_2:'seguidores',ig_3:'visualizações no reel mais visto',
 guide_soon:'O guia entra no ar em breve.',cf_prev:'Foto anterior',cf_next:'Próxima foto',
+b_story:'A história da Nina',b_story_d:'De um vilarejo no Brasil a um portfólio em Limerick',
+st_tag:'Nas palavras dela',st_t:'Obrigada por vir<br>ao meu site.',
+st_p1:'Fique à vontade para olhar tudo e me perguntar qualquer coisa. Vim do Brasil aos dezoito anos tentar uma vida melhor. Sabia que seria difícil deixar minha família, meus amigos, minha cultura e tudo o que eu conhecia. Mas também sabia que eu não era como a maioria das pessoas do meu vilarejo. Eu queria mais, e via que, se ficasse, meu futuro ficaria limitado ao que a minha cidade considerava normal.',
+st_p2:'Meu primeiro emprego na Irlanda foi atendimento ao cliente em três idiomas, na Digital River. Ganhei muita experiência ali e meu inglês melhorou. Depois de quatro anos e meio em atendimento, decidi voltar a estudar na Universidade de Limerick, onde me formei em Justiça Criminal. Esse diploma mudou minha vida. Me ensinou a comunicar, a trabalhar com gente e a tomar iniciativa quando é preciso.',
+st_p3:'Entre os anos de faculdade, trabalhei numa empresa de eventos corporativos, a HIYA Events and Entertainment, em conferências e eventos, da primeira reunião com o cliente até a produção final. É um trabalho de pressão e é gratificante, e também me formei como MC e DJ de evento. Fiz meu estágio no HSE, no UHL, como recepcionista e administrativa. Hoje sou Senior Administrator na Universidade de Limerick.',
+st_p4:'No fim de 2022 dei meu primeiro passo em investimento imobiliário, no Brasil, junto com a minha família. Em 2024 comecei meu primeiro investimento na Irlanda. O que começou como uma visão hoje é um portfólio em crescimento, com mais de duas propriedades e uma terceira em reforma. De old to gold, uma casa, um projeto e uma lição por vez.',
+st_p5:'Na Old to Gold, assumo minhas responsabilidades legais e éticas. Valorizo meus inquilinos e trabalho para manter uma boa relação com eles, baseada em comunicação e transparência. Esta jornada está só começando, e quero agradecer por você ter dedicado um tempo a olhar o meu site.',
+st_sig:'Nina Chagas',
+rp_h1:'Como o modelo funciona',
+rp_1t:'Avaliação do imóvel',rp_1d:'Visitamos a casa e conversamos sobre os seus objetivos.',
+rp_2t:'Definição da estrutura',rp_2d:'O aluguel proposto, as responsabilidades, o prazo e as demais condições comerciais.',
+rp_3t:'Preparação do imóvel',rp_3d:'Quando necessário, cuidamos de reforma, reparos, mobília e adequação às normas.',
+rp_4t:'O contrato',rp_4d:'O contrato adequado é firmado entre você e a nossa empresa.',
+rp_5t:'Locação',rp_5d:'Divulgamos o imóvel, conduzimos as visitas e selecionamos os inquilinos.',
+rp_6t:'Gestão contínua',rp_6d:'Cobrança do aluguel, contato com o inquilino, manutenção e vistorias.',
+rp_7t:'Você recebe o valor acordado',rp_7d:'Pago conforme o contrato, com o imóvel ocupado ou vazio.',
+rp_h2:'O que assumimos',rp_h2d:'As responsabilidades exatas são acordadas com você e ficam no contrato. Num acordo completo, elas cobrem tudo o que está abaixo.',
+rs_1t:'Preparar o imóvel',rs_1d:'Reforma e reparos, pintura e apresentação, mobília quando aplicável, checagens de segurança e certificações, e garantir que a casa atenda aos padrões de locação.',
+rs_2t:'Avaliação e divulgação',rs_2d:'Avaliação do aluguel de mercado, fotos profissionais, divulgação, atendimento aos interessados e agendamento de visitas.',
+rs_3t:'Seleção do inquilino',rs_3d:'Formulário, checagem de identidade, referências, comprovação de renda quando cabível, referência de locador anterior e entrevista.',
+rs_4t:'Documentação da locação',rs_4d:'Preparar o contrato escrito, acordar os termos, receber depósito e primeiro aluguel, entregar ao inquilino as informações obrigatórias e registrar no RTB.',
+rs_5t:'Aluguel e depósitos',rs_5d:'Cobrar o aluguel, acompanhar os pagamentos, tratar atrasos, guardar depósitos e manter os registros. Você nunca corre atrás de aluguel.',
+rs_6t:'Manutenção e reparos',rs_6d:'O inquilino fala com a gente, não com você. Avaliamos os pedidos, acionamos prestadores, coordenamos reparos, tratamos urgências e observamos problemas recorrentes.',
+rs_7t:'Vistorias',rs_7d:'Vistorias regulares, com o aviso devido, para pegar problema de manutenção, dano e questão de segurança antes de ficar caro.',
+rs_8t:'Contato com o inquilino',rs_8d:'Somos o ponto de contato para dúvidas, acesso ao imóvel e tudo o mais que aparece durante a locação.',
+rs_9t:'Conformidade e registros',rs_9d:'Registros de contrato, aluguel, depósitos, manutenção, vistorias, documentação de segurança e registro no RTB. Quando é preciso parecer jurídico ou tributário especializado, dizemos, e você usa um profissional habilitado.',
+rp_pl:'Nossa promessa ao proprietário',
+rp_pq:'Transforme o seu imóvel numa fonte de renda confiável sem assumir o dia a dia de ser locador.',
+rp_c1:'Seu imóvel',rp_c2:'Seu investimento',rp_c3:'Nossa gestão',rp_c4:'Sua renda acordada',
 toast:'Idioma alterado para português',pack_soon:'O material completo entra no ar em breve.'}};
 
 function togLang(){
@@ -988,6 +1108,16 @@ function jump(id){
   if(wasHidden)showPage(pg.id);
   setTimeout(function(){el.scrollIntoView({behavior:REDUCED?'auto':'smooth',block:'start'})},wasHidden?150:0);
 }
+function story(open){
+  var el=document.getElementById('story');
+  el.classList.toggle('on',open);
+  document.body.style.overflow=open?'hidden':'';
+  if(open)el.scrollTop=0;
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){story(false);sheet(false)}
+});
+
 function sheet(open){
   var s=document.getElementById('sheet'), b=document.getElementById('burger');
   var next=(open===undefined)?!s.classList.contains('on'):open;
