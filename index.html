@@ -724,7 +724,14 @@
    ───────────────────────────────────────────────────────────── */
 var INVESTMENT_PACK_URL = '#';
 
-/* PDF do guia de reforma, botao da home. Mesma regra: troque por uma URL. */
+/* ┌────────────────────────────────────────────────────────────────────┐
+   │  ATENCAO: ESTADO TEMPORARIO DE TESTE.                              │
+   │  O guia de reforma e um produto PAGO. Neste momento o botao baixa  │
+   │  o PDF direto e de graca, so para testar o fluxo de download.      │
+   │  Antes de divulgar: troque esta URL pelo link de checkout          │
+   │  (Stripe, Gumroad, etc). O arquivo em assets/ fica sendo a entrega │
+   │  pos-pagamento, nao o destino do botao.                            │
+   └────────────────────────────────────────────────────────────────────┘ */
 var GUIDE_PDF_URL = 'assets/Old-to-Gold-Guide.pdf';
 
 var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
