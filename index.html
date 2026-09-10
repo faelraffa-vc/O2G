@@ -210,7 +210,7 @@
 
     <div class="flex items-center gap-2.5 shrink-0">
       <button onclick="togLang()" id="lb" class="n-ghost text-[11px] font-semibold w-[42px] h-[38px] rounded-full border border-ink/15 text-mid hover:border-ink hover:text-ink">PT</button>
-      <a href="#" data-pack class="n-cta hidden sm:inline-flex items-center gap-2.5 h-[38px] pl-5 pr-2 rounded-full bg-ink text-white text-[12.5px] font-semibold hover:bg-pinkb"><span data-t="n_pack">Investment pack</span><span class="w-[26px] h-[26px] rounded-full bg-white/15 flex items-center justify-center"><i data-lucide="arrow-down" class="w-3 h-3"></i></span></a>
+      <a href="#" data-guide class="n-cta hidden sm:inline-flex items-center gap-2.5 h-[38px] pl-5 pr-2 rounded-full bg-ink text-white text-[12.5px] font-semibold hover:bg-pinkb"><span data-t="n_guide">The renovation guide</span><span class="w-[26px] h-[26px] rounded-full bg-white/15 flex items-center justify-center"><i data-lucide="arrow-down" class="w-3 h-3"></i></span></a>
       <button onclick="sheet()" id="burger" aria-label="Menu" class="n-burger burger lg:hidden relative w-[38px] h-[38px] rounded-full border border-ink/15 text-ink"><i></i><i></i></button>
     </div>
   </div>
@@ -221,7 +221,7 @@
   <a href="javascript:void(0)" onclick="jump('about');sheet(false)" class="font-display text-[13vw] sm:text-6xl leading-[1.05]" data-t="n_about">About</a>
   <a href="javascript:void(0)" onclick="go('projects');sheet(false)" class="font-display text-[13vw] sm:text-6xl leading-[1.05]" data-t="n_proj">Projects</a>
   <a href="javascript:void(0)" onclick="go('r2r');sheet(false)" class="font-display text-[13vw] sm:text-6xl leading-[1.05]" data-t="n_r2r">Rent-to-Rent</a>
-  <a href="#" data-pack onclick="sheet(false)" class="btn btn-light mt-10 self-start"><span data-t="n_pack">Investment pack</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
+  <a href="#" data-guide onclick="sheet(false)" class="btn btn-light mt-10 self-start"><span data-t="n_guide">The renovation guide</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
   <button onclick="togLang()" class="mt-4 self-start text-[12px] font-semibold px-5 py-3 rounded-full border border-white/40">PT / EN</button>
 </div>
 
@@ -241,7 +241,7 @@
         <p class="rv r2 font-display text-[clamp(1.15rem,2vw,1.6rem)] leading-[1.28] tracking-[-.025em] max-w-[24ch] mb-9" data-t="h_t">We purchase derelict or vacant houses, renovate them, and maintain them as rental properties.</p>
         <div class="rv r3 flex flex-wrap items-center gap-3">
           <a href="javascript:void(0)" onclick="go('projects')" class="btn btn-solid"><span data-t="h_cta1">See the three houses</span><span class="cap"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></span></a>
-          <a href="#" data-pack class="btn btn-quiet"><span data-t="n_pack">Investment pack</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
+          <a href="#" data-guide class="btn btn-quiet"><span data-t="n_guide">The renovation guide</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
         </div>
       </div>
 
@@ -531,8 +531,8 @@
     <div class="grid lg:grid-cols-12 gap-4">
       <div class="rv bezel lg:col-span-5">
         <div class="core px-8 py-9 h-full flex flex-col justify-between gap-8">
-          <p class="text-[15.5px] text-mid leading-[1.7]" data-t="p3_d">The third house, bought and about to start. Costings and the refurbishment plan are published here as soon as the schedule is signed off. The current figures are already in the investment pack.</p>
-          <a href="#" data-pack class="btn btn-quiet self-start"><span data-t="pk_b">Download the pack</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
+          <p class="text-[15.5px] text-mid leading-[1.7]" data-t="p3_d">The third house, bought and about to start. Costings and the refurbishment plan are published here as soon as the schedule is signed off.</p>
+          <a href="#" data-guide class="btn btn-quiet self-start"><span data-t="gd_b">Download the guide</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
         </div>
       </div>
       <!-- TODO Maryfield: trocar cada TBC pelo valor real -->
@@ -549,30 +549,20 @@
     </div>
   </section>
 
-  <!-- Investment pack -->
+  <!-- Do numero para o metodo: leva ao guia, que e o unico PDF que existe -->
   <section class="max-w-[1240px] mx-auto px-4 sm:px-6 lg:px-8 pb-24 lg:pb-28">
     <div class="rv bezel bezel-night bezel-flat">
-      <div class="core">
-        <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-8 lg:p-10">
-          <figure class="lg:col-span-4">
-            <div class="ph zoom rounded-[18px]" style="aspect-ratio:1526/2048;background:#221d1a">
-              <img src="https://z-cdn-media.chatglm.cn/files/bc6d3be0-f60a-4a5c-b19a-8330a26438e9.jpeg?auth_key=1883121374-62ed8e38141c49c6b9a12aee5b5340da-0-660e0477ba9732b3104df2721297bd23" alt="Nina Chagas reading the Old to Gold property pack" width="1526" height="2048" loading="lazy">
-            </div>
-          </figure>
-          <div class="lg:col-span-8">
-            <span class="tag bg-white/10 text-white/80 mb-6" data-t="pk_tag">PDF</span>
-            <h2 class="font-display text-white text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.0] mb-6" data-t="pk_t">Every number,<br>in one <span class="text-gold">document.</span></h2>
-            <p class="text-[16px] text-white/65 leading-[1.7] max-w-[48ch] mb-8" data-t="pk_d">Purchase price, refurbishment cost, grant, projected rent and timeline for each house, plus how a Rent-to-Rent agreement is structured.</p>
-            <div class="grid sm:grid-cols-3 gap-3 mb-9">
-              <div class="rounded-[14px] bg-white/[.05] border border-white/10 px-5 py-4"><p class="num text-[22px] text-white leading-none">3</p><p class="text-[11px] text-white/55 mt-2" data-t="pk_f1">houses costed</p></div>
-              <div class="rounded-[14px] bg-white/[.05] border border-white/10 px-5 py-4"><p class="num text-[22px] text-white leading-none">€719k</p><p class="text-[11px] text-white/55 mt-2" data-t="pk_f2">committed to date</p></div>
-              <div class="rounded-[14px] bg-white/[.05] border border-white/10 px-5 py-4"><p class="num text-[22px] text-white leading-none">€6k</p><p class="text-[11px] text-white/55 mt-2" data-t="pk_f3">monthly rent at full let</p></div>
-            </div>
-            <div class="flex flex-wrap gap-3">
-              <a href="#" data-pack class="btn btn-solid"><span data-t="pk_b">Download the pack</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
-              <a href="mailto:contact@oldtogold.ie" class="btn btn-light"><span data-t="pk_ask">Ask a question</span><span class="cap"><i data-lucide="arrow-up-right" class="w-4 h-4"></i></span></a>
-            </div>
-          </div>
+      <div class="core grid lg:grid-cols-12 gap-8 lg:gap-12 items-center p-6 sm:p-8 lg:p-10">
+        <div class="lg:col-span-7">
+          <span class="tag bg-white/10 text-white/80 mb-6" data-t="gd_tag">PDF</span>
+          <h2 class="font-display text-white text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.02] mb-6" data-t="pj_g_t">Those are the numbers.<br>This is <span class="text-gold">how we got them.</span></h2>
+          <p class="text-[16px] text-white/65 leading-[1.7] max-w-[46ch] mb-8" data-t="pj_g_d">The guide covers how we choose a property, the ways to finance one in Ireland, and the Vacant Property Refurbishment Grant from application through to payment.</p>
+          <a href="#" data-guide class="btn btn-solid"><span data-t="gd_b">Download the guide</span><span class="cap"><i data-lucide="arrow-down" class="w-4 h-4"></i></span></a>
+        </div>
+        <div class="lg:col-span-4 lg:col-start-9 grid gap-3">
+          <p class="rounded-[14px] bg-white/[.06] border border-white/10 px-5 py-4 text-[13px] text-white/85" data-t="gd_f1">What to check before you bid</p>
+          <p class="rounded-[14px] bg-white/[.06] border border-white/10 px-5 py-4 text-[13px] text-white/85" data-t="gd_f2">Which grants apply, and how to claim them</p>
+          <p class="rounded-[14px] bg-white/[.06] border border-white/10 px-5 py-4 text-[13px] text-white/85" data-t="gd_f3">Where the budget really goes</p>
         </div>
       </div>
     </div>
@@ -681,7 +671,7 @@
           <li><a href="javascript:void(0)" onclick="jump('about')" class="text-mid hover:text-pinkd transition-colors" data-t="n_about">About</a></li>
           <li><a href="javascript:void(0)" onclick="go('projects')" class="text-mid hover:text-pinkd transition-colors" data-t="n_proj">Projects</a></li>
           <li><a href="javascript:void(0)" onclick="go('r2r')" class="text-mid hover:text-pinkd transition-colors" data-t="n_r2r">Rent-to-Rent</a></li>
-          <li><a href="#" data-pack class="text-mid hover:text-pinkd transition-colors" data-t="n_pack">Investment pack</a></li>
+          <li><a href="#" data-guide class="text-mid hover:text-pinkd transition-colors" data-t="n_guide">The renovation guide</a></li>
         </ul>
       </div>
       <div class="lg:col-span-4">
@@ -719,11 +709,9 @@
 <script>
 /* ─────────────────────────────────────────────────────────────
    PDF DE VENDA. Troque a linha abaixo pela URL do PDF.
-   Vale para todos os botoes "Investment pack" do site.
+   Vale para todos os botoes do guia no site.
    Enquanto for '#', os botoes avisam que o material sai em breve.
    ───────────────────────────────────────────────────────────── */
-var INVESTMENT_PACK_URL = '#';
-
 /* ┌────────────────────────────────────────────────────────────────────┐
    │  ATENCAO: ESTADO TEMPORARIO DE TESTE.                              │
    │  O guia de reforma e um produto PAGO. Neste momento o botao baixa  │
@@ -918,10 +906,10 @@ function buildGallery(){
 
 var L='en';
 var T={
-en:{n_home:'Home',n_about:'About',n_proj:'Projects',n_r2r:'Rent-to-Rent',n_pack:'Investment pack',
+en:{n_home:'Home',n_about:'About',n_proj:'Projects',n_r2r:'Rent-to-Rent',
 h_tag:'Limerick, Ireland',
 h_t:'We purchase derelict or vacant houses, renovate them, and maintain them as rental properties.',
-h_cta1:'See the three houses',
+n_guide:'The renovation guide',h_cta1:'See the three houses',
 b_sig:'Founded and run by Nina Chagas',b_yr:'years in Ireland',
 m1:'Buy',m2:'Refurbish',m3:'Let',m4:'Refinance',m5:'Repeat',
 ab_tag:'About',ab_t:'21 years in Limerick.<br>Three houses back in use.',
@@ -947,10 +935,6 @@ r_i3:'It scales. Each new agreement is another income stream, not another debt.'
 r_i4:'It runs beside the refurbishment portfolio, which is where the operating experience comes from.',
 r_note:'Written agreements, operated under Irish residential tenancy law. This page is information, not a promise of return.',
 r_cta:'Talk to us',
-pk_tag:'PDF',pk_t:'Every number,<br>in one <span class="text-gold">document.</span>',
-pk_d:'Purchase price, refurbishment cost, grant, projected rent and timeline for each house, plus how a Rent-to-Rent agreement is structured.',
-pk_f1:'houses costed',pk_f2:'committed to date',pk_f3:'monthly rent at full let',
-pk_b:'Download the pack',pk_ask:'Ask a question',
 rl_t:'The renovations, as they happen.',
 ct_t:'Tell us about<br>the property.',
 ct_d:'A house you would rather not manage, a house you want gone, or capital you want working in Limerick property. All three start the same way.',
@@ -962,7 +946,7 @@ k_a:'Bought for',k_b:'Rebuilt for',k_c:'Rent, per month',
 p1_d:'A three bedroom end of terrace, stripped back and rebuilt. Open plan kitchen and dining, living room, home office and a new bathroom. Electric heating, BER C1. Total cost €331,129, annual rent €36,000.',
 a_a:'Valuation',a_b:'Rent, projected',
 p2_d:'A three bedroom end of terrace on Henry Street, minutes from the city centre, opposite the former Shannon Arms. Work is under way.',
-p3_d:'The third house, bought and about to start. Costings and the refurbishment plan are published here as soon as the schedule is signed off. The current figures are already in the investment pack.',
+p3_d:'The third house, bought and about to start. Costings and the refurbishment plan are published here as soon as the schedule is signed off.',
 p_pu:'Purchase price',p_er:'Refurbishment, estimated',p_fe:'Fees',p_gr:'Government grant',p_lo:'Loan required',p_to:'Total cost',p_ar:'Rent, projected',
 tbc:'TBC',back:'Back to home',
 f_d:'Derelict houses in Limerick, bought, rebuilt and let. Founded by Nina Chagas.',f_l:'Pages',f_c:'Contact',
@@ -1001,12 +985,14 @@ rs_9t:'Compliance and records',rs_9d:'Records for the tenancy, rent, deposits, m
 rp_pl:'Our promise to landlords',
 rp_pq:'Turn your property into a reliable source of income without taking on the day-to-day responsibilities of being a landlord.',
 rp_c1:'Your property',rp_c2:'Your investment',rp_c3:'Our management',rp_c4:'Your agreed income',
-toast:'Language changed to English',pack_soon:'The investment pack goes live shortly.'},
+pj_g_t:'Those are the numbers.<br>This is <span class="text-gold">how we got them.</span>',
+pj_g_d:'The guide covers how we choose a property, the ways to finance one in Ireland, and the Vacant Property Refurbishment Grant from application through to payment.',
+toast:'Language changed to English'},
 
-pt:{n_home:'Início',n_about:'Sobre',n_proj:'Projetos',n_r2r:'Rent-to-Rent',n_pack:'Material completo',
+pt:{n_home:'Início',n_about:'Sobre',n_proj:'Projetos',n_r2r:'Rent-to-Rent',
 h_tag:'Limerick, Irlanda',
 h_t:'Compramos casas abandonadas ou vazias, reformamos e mantemos como imóvel de aluguel.',
-h_cta1:'Ver as três casas',
+n_guide:'O guia de reforma',h_cta1:'Ver as três casas',
 b_sig:'Fundada e tocada por Nina Chagas',b_yr:'anos na Irlanda',
 m1:'Comprar',m2:'Reformar',m3:'Alugar',m4:'Refinanciar',m5:'Repetir',
 ab_tag:'Sobre',ab_t:'21 anos em Limerick.<br>Três casas de volta ao uso.',
@@ -1032,10 +1018,6 @@ r_i3:'Escala. Cada contrato novo é mais uma fonte de renda, não mais uma dívi
 r_i4:'Roda ao lado do portfólio de reforma, que é de onde vem a experiência operacional.',
 r_note:'Acordos por escrito, dentro da lei irlandesa de locação residencial. Esta página é informação, não promessa de retorno.',
 r_cta:'Fale conosco',
-pk_tag:'PDF',pk_t:'Todos os números,<br>num só <span class="text-gold">documento.</span>',
-pk_d:'Preço de compra, custo de reforma, subsídio, aluguel projetado e cronograma de cada casa, além de como o contrato de Rent-to-Rent é estruturado.',
-pk_f1:'casas orçadas',pk_f2:'comprometidos até agora',pk_f3:'de aluguel mensal com tudo alugado',
-pk_b:'Baixar o material',pk_ask:'Tirar uma dúvida',
 rl_t:'As reformas, acontecendo.',
 ct_t:'Conte para a gente<br>sobre o imóvel.',
 ct_d:'Uma casa que você prefere não administrar, uma casa que você quer fora das suas mãos, ou capital que você quer trabalhando em imóvel em Limerick. Os três começam do mesmo jeito.',
@@ -1047,7 +1029,7 @@ k_a:'Comprada por',k_b:'Reformada por',k_c:'Aluguel, por mês',
 p1_d:'Casa geminada de três quartos, desmontada por dentro e reconstruída. Cozinha e jantar integrados, sala, escritório e banheiro novo. Aquecimento elétrico, BER C1. Custo total €331.129, aluguel anual €36.000.',
 a_a:'Avaliação',a_b:'Aluguel, projetado',
 p2_d:'Casa geminada de três quartos na Henry Street, a minutos do centro, em frente ao antigo Shannon Arms. A obra está em andamento.',
-p3_d:'A terceira casa, comprada e prestes a começar. Custos e plano de reforma entram aqui assim que o cronograma for fechado. Os números atuais já estão no material completo.',
+p3_d:'A terceira casa, comprada e prestes a começar. Custos e plano de reforma entram aqui assim que o cronograma for fechado.',
 p_pu:'Preço de compra',p_er:'Reforma, estimada',p_fe:'Taxas',p_gr:'Subsídio do governo',p_lo:'Financiamento',p_to:'Custo total',p_ar:'Aluguel, projetado',
 tbc:'A definir',back:'Voltar ao início',
 f_d:'Casas abandonadas em Limerick, compradas, reconstruídas e alugadas. Fundada por Nina Chagas.',f_l:'Páginas',f_c:'Contato',
@@ -1086,7 +1068,9 @@ rs_9t:'Conformidade e registros',rs_9d:'Registros de contrato, aluguel, depósit
 rp_pl:'Nossa promessa ao proprietário',
 rp_pq:'Transforme o seu imóvel numa fonte de renda confiável sem assumir o dia a dia de ser locador.',
 rp_c1:'Seu imóvel',rp_c2:'Seu investimento',rp_c3:'Nossa gestão',rp_c4:'Sua renda acordada',
-toast:'Idioma alterado para português',pack_soon:'O material completo entra no ar em breve.'}};
+pj_g_t:'Esses são os números.<br>Isto é <span class="text-gold">como chegamos nelas.</span>',
+pj_g_d:'O guia cobre como escolhemos um imóvel, as formas de financiar na Irlanda, e o Vacant Property Refurbishment Grant, da inscrição até o pagamento.',
+toast:'Idioma alterado para português'}};
 
 function togLang(){
   L=(L==='en')?'pt':'en';
@@ -1158,7 +1142,6 @@ function watchNav(){
 }
 
 function wireDownloads(){
-  wireOne('[data-pack]', INVESTMENT_PACK_URL, 'pack_soon');
   wireOne('[data-guide]', GUIDE_PDF_URL, 'guide_soon');
 }
 function wireOne(sel,url,msgKey){
